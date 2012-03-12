@@ -1,4 +1,5 @@
 # CollegeBook rack app
+require 'rubygems'
 require 'sinatra'
 require 'haml'
 
