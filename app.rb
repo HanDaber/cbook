@@ -19,8 +19,10 @@ class CollegeBook < Sinatra::Application
     include Rack::Utils
     alias_method :h, :escape_html
   end
+  
+  require_relative 'routes/init'
+  
 end
 
 require_relative 'models/init'
 require_relative 'helpers/init'
-require_relative 'routes/init'

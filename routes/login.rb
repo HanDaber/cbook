@@ -1,4 +1,4 @@
-class CollegeBook < Sinatra::Application
+#class CollegeBook < Sinatra::Application
   get "/login" do
     @title  = "Login"
     haml :login
@@ -18,4 +18,4 @@ class CollegeBook < Sinatra::Application
     session[:user] = session[:pass] = nil
     redirect '/'
   end
-end
+#end
