@@ -1,6 +1,7 @@
 # CollegeBook rack app
 # Dan Haber 3/2012
 # 
+
 require 'sinatra'
 require 'haml'
 

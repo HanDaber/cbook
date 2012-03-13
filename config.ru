@@ -1,4 +1,6 @@
 require 'rubygems'
+require 'sinatra'
+require 'haml'
 
 require 'sass/plugin/rack'
 use Sass::Plugin::Rack
