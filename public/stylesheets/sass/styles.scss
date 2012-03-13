@@ -16,9 +16,9 @@ $top-space: 70px;
 
 body{background-color:$dk-blu;}
 #header-container{height:$top-space;position:fixed;border-bottom:1px dotted black;background-color:$ot-blu;}
-#nav-container{position:relative;top-margin:$top-space;
-    ul{display:inline;}
-    li{display:inline;list-style:none;}}
+#nav-container{position:absolute;
+    ul{display:inline-block;position:relative;top:$top-space;}
+    li{display:inline-block;list-style:none;}}
 #main-container{position:relative;top:$top-space+30px;}
 #footer-container{position:fixed;bottom:0;background-color:$ot-blu;}
 footer{width:100%;}
@@ -29,7 +29,7 @@ footer{width:100%;}
 .r8{border-radius:8px;}
 .btn{background-color:#888;padding:3px;}
 .btn:hover{background-color:#eee;}
-.menu{background-color:#556688;padding:3px;display:inline-block;}
+.menu{background-color:#556688;padding:3px;display:inline-block;margin-bottom:3px;}
 .tag{background-color:#445588;padding:4px;}
 .post{background-color:#aaaaee;border:1px solid #22a;padding:5px;}
 .college_logo{position:absolute;top:0.8em;right:1.8em;
@@ -40,5 +40,66 @@ h1#title{font-family:'Annie Use Your Telescope',cursive;font-size:30pt;margin-le
 h2{font-size:18pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
 
 a{color:#00f;}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
 
 @import "helpers";
