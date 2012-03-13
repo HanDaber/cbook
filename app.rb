@@ -1,7 +1,6 @@
 # CollegeBook rack app
-require 'rubygems'
-require 'sinatra'
-require 'haml'
+# Dan Haber 3/2012
+# 
 
 class CollegeBook < Sinatra::Application
   enable :sessions

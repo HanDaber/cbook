@@ -1,8 +1,9 @@
-require "rubygems"
+require 'rubygems'
+require 'sinatra'
+require 'haml'
 
-# require "./app"
-# run Sinatra::Application
-
+require 'sass/plugin/rack'
+use Sass::Plugin::Rack
 
 root_dir = File.dirname(__FILE__)
 app_file = File.join(root_dir, './app.rb')

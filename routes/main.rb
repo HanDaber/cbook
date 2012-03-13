@@ -1,6 +1,8 @@
-#class CollegeBook < Sinatra::Application
-  get "/" do
-    @title = "Welcome to MyApp"        
-    haml :index
-  end
-#end
+get "/" do
+  @title = "Welcome to MyApp"        
+  haml :index
+end
+
+not_found do
+  html :'404'
+end
