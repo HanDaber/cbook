@@ -1,0 +1,73 @@
+[ pid=29846 thr=70138569379540 file=utils.rb:176 time=2012-03-12 16:09:55.898 ]: *** Exception PhusionPassenger::UnknownError in PhusionPassenger::Rack::ApplicationSpawner (Could not find haml-3.1.4 in any of the sources (Bundler::GemNotFound)) (process 29846, thread #<Thread:0x007f94d1069da8>):
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/spec_set.rb:90:in `block in materialize'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/spec_set.rb:83:in `map!'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/spec_set.rb:83:in `materialize'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/definition.rb:127:in `specs'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/definition.rb:172:in `specs_for'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/definition.rb:161:in `requested_specs'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/environment.rb:23:in `requested_specs'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/runtime.rb:11:in `setup'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler.rb:106:in `setup'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/utils.rb:326:in `prepare_app_process'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/rack/application_spawner.rb:156:in `block in initialize_server'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/utils.rb:572:in `report_app_init_status'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/rack/application_spawner.rb:154:in `initialize_server'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server.rb:204:in `start_synchronously'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/helper-scripts/passenger-spawn-server:99:in `<main>'
+[ pid=29844 thr=0x1041d2000 file=ext/nginx/HelperAgent.cpp:933 time=2012-03-12 16:09:56.10 ]: Uncaught exception in PassengerServer client thread:
+   exception: write() failed: Broken pipe (32)
+   backtrace:
+     in 'void Client::handleRequest(Passenger::FileDescriptor&)' (HelperAgent.cpp:828)
+     in 'void Client::threadMain()' (HelperAgent.cpp:952)
+
+[ pid=30297 thr=70286502481620 file=utils.rb:176 time=2012-03-12 16:16:17.941 ]: *** Exception PhusionPassenger::UnknownError in PhusionPassenger::Rack::ApplicationSpawner (Could not find haml-3.1.4 in any of the sources (Bundler::GemNotFound)) (process 30297, thread #<Thread:0x007fd9b4069da8>):
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/spec_set.rb:90:in `block in materialize'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/spec_set.rb:83:in `map!'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/spec_set.rb:83:in `materialize'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/definition.rb:127:in `specs'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/definition.rb:172:in `specs_for'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/definition.rb:161:in `requested_specs'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/environment.rb:23:in `requested_specs'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler/runtime.rb:11:in `setup'
+	from /Users/dh/.rvm/gems/ruby-1.9.2-p290@global/gems/bundler-1.1.0/lib/bundler.rb:106:in `setup'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/utils.rb:326:in `prepare_app_process'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/rack/application_spawner.rb:156:in `block in initialize_server'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/utils.rb:572:in `report_app_init_status'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/rack/application_spawner.rb:154:in `initialize_server'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server.rb:204:in `start_synchronously'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+	from <internal:prelude>:10:in `synchronize'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+	from /Users/dh/.passenger/standalone/3.0.11-x86_64-ruby1.9.2-macosx-10.7/support/helper-scripts/passenger-spawn-server:99:in `<main>'
+[ pid=30295 thr=0x10efce000 file=ext/nginx/HelperAgent.cpp:933 time=2012-03-12 16:16:18.53 ]: Uncaught exception in PassengerServer client thread:
+   exception: write() failed: Broken pipe (32)
+   backtrace:
+     in 'void Client::handleRequest(Passenger::FileDescriptor&)' (HelperAgent.cpp:828)
+     in 'void Client::threadMain()' (HelperAgent.cpp:952)
+
+127.0.0.1 - - [12/Mar/2012 16:18:12] "HEAD / " 200 2468 0.0314
+127.0.0.1 - - [12/Mar/2012 16:19:44] "GET / " 200 2468 0.0076
+127.0.0.1 - - [12/Mar/2012 16:21:18] "GET / " 200 2468 0.0075
