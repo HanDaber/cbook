@@ -258,10 +258,12 @@ body {
   top: 100px; }
 
 #footer-container {
-  height: 30px;
   position: fixed;
   bottom: 0;
   background-color: #003366; }
+
+footer {
+  width: 100%; }
 
 #tag_wrapper {
   float: right;
@@ -292,14 +294,15 @@ body {
 
 .btn {
   background-color: #888;
-  padding: 4px; }
+  padding: 3px; }
 
 .btn:hover {
   background-color: #eee; }
 
 .menu {
   background-color: #556688;
-  padding: 3px; }
+  padding: 3px;
+  display: inline-block; }
 
 .tag {
   background-color: #445588;
