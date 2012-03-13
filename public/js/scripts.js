@@ -8,4 +8,5 @@ $(document).ready(function(){
     for(var i=50; i<100; i++){
         filler_div.append("<br /><div class=\"post r4\">&#"+i+";</div>");
     }
+    $("a.pjax").pjax("#main-container");
 });

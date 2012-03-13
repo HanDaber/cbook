@@ -5,8 +5,18 @@
         %nav
             %a.college_logo{:href => "http://web.mit.edu/"}
                 %img{:src => "http://web.mit.edu/graphicidentity/interface/mit-greywhite-header3.gif", :alt => "MIT"}/
+            %p= Time.now.strftime("loaded : %Y/%m/%d %H:%M:%S")
+
+#nav-container
+    %ul
+        %li
+            %a.pjax{:href => "/"} Home
+        %li
+            %a.pjax{:href => "/random"} Random
 
 #main-container.wrapper.clearfix.b{:role => "main"}
+    
+    -# main
     #splash.r8
         %h2 Log In or Sign Up
         %input{:type => "text", :value => "anything"}
@@ -17,7 +27,7 @@
         %center
             .menu Home
             .menu About
-            .menu Advertising
+            .menu Advertise
             .menu Terms
             .menu Help
-            .menu Contact Us
+            .menu Contact

@@ -16,6 +16,9 @@ $top-space: 70px;
 
 body{background-color:$dk-blu;}
 #header-container{height:$top-space;position:fixed;border-bottom:1px dotted black;background-color:$ot-blu;}
+#nav-container{position:relative;top-margin:$top-space;
+    ul{display:inline;}
+    li{display:inline;list-style:none;}}
 #main-container{position:relative;top:$top-space+30px;}
 #footer-container{position:fixed;bottom:0;background-color:$ot-blu;}
 footer{width:100%;}
@@ -36,5 +39,6 @@ h1#title{font-family:'Annie Use Your Telescope',cursive;font-size:30pt;margin-le
     a{color:#aaaaaa;}}
 h2{font-size:18pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
 
+a{color:#00f;}
 
 @import "helpers";
