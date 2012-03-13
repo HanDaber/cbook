@@ -5,6 +5,12 @@
 require 'sinatra'
 require 'haml'
 
+class Sinatra::Request
+  def pjax?
+    env['HTTP_X_PJAX'] || self["_pjax"]
+  end
+end
+
 class CollegeBook < Sinatra::Application
   enable :sessions
 
