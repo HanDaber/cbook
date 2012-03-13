@@ -4,5 +4,5 @@ get "/" do
 end
 
 not_found do
-  html :'404'
+  haml :e404
 end
