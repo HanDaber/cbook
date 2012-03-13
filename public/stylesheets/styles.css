@@ -253,9 +253,24 @@ body {
   border-bottom: 1px dotted black;
   background-color: #003366; }
 
+#nav-container {
+  position: absolute; }
+  #nav-container ul {
+    display: inline-block;
+    position: relative;
+    top: 70px; }
+  #nav-container li {
+    display: inline-block;
+    list-style: none; }
+
 #main-container {
   position: relative;
   top: 100px; }
+
+#main {
+  width: 90%;
+  background-color: #337799;
+  border: 1px solid orange; }
 
 #footer-container {
   position: fixed;
@@ -286,6 +301,9 @@ footer {
   display: block;
   width: 100%; }
 
+.ib {
+  display: inline-block; }
+
 .r4 {
   border-radius: 4px; }
 
@@ -302,7 +320,8 @@ footer {
 .menu {
   background-color: #556688;
   padding: 3px;
-  display: inline-block; }
+  display: inline-block;
+  margin-bottom: 3px; }
 
 .tag {
   background-color: #445588;
@@ -336,9 +355,9 @@ footer {
 
 h1#title {
   font-family: 'Annie Use Your Telescope',cursive;
-  font-size: 28pt;
+  font-size: 30pt;
   margin-left: 0.6em;
-  margin-top: 0.2em; }
+  margin-top: 0.3em; }
   h1#title a {
     color: #aaaaaa; }
 
@@ -348,6 +367,50 @@ h2 {
   margin-left: 1px;
   margin-bottom: 5px; }
 
+a {
+  color: #00f; }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  /* Styles */ }
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+  /* Styles */ }
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+  /* Styles */ }
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  /* Styles */ }
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  /* Styles */ }
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  /* Styles */ }
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+  /* Styles */ }
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+  /* Styles */ }
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+  /* Styles */ }
 /**
  * Non-semantic helper classes: please define your styles before this section.
  */

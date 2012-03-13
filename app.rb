@@ -4,6 +4,7 @@
 
 require 'sinatra'
 require 'haml'
+require 'sass'
 
 class Sinatra::Request
   def pjax?

@@ -3,6 +3,11 @@ get "/" do
   haml :index
 end
 
+get "/main" do
+  @title = "Welcome to MyApp"        
+  haml :main
+end
+
 get '/:name' do
   haml <<"EOT", :layout => !request.pjax?
 %p Hello, #{params[:name]}!
