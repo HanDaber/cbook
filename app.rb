@@ -6,12 +6,14 @@ require 'sinatra'
 require 'haml'
 require 'sass'
 
+# Extend request object to handle pjax requests
 class Sinatra::Request
   def pjax?
     env['HTTP_X_PJAX'] || self["_pjax"]
   end
 end
 
+# Application Class
 class CollegeBook < Sinatra::Application
   enable :sessions
 

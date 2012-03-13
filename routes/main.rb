@@ -1,17 +1,17 @@
 get "/" do
-  @title = "Welcome to MyApp"        
+  @title = "Welcome to CollegeBook"
   haml :index
 end
 
 get "/main" do
-  @title = "Welcome to MyApp"        
   haml :main
 end
 
 get '/:name' do
   haml <<"EOT", :layout => !request.pjax?
-%p Hello, #{params[:name]}!
-%p= Time.now.strftime("You loaded this part at %Y/%m/%d %H:%M:%S.")
+%h1 #{params[:name]} Bulletin Board
+%h3 Testing...
+%p= Time.now.strftime("Debug: loaded@ %Y/%m/%d %H:%M:%S.")
 EOT
 end
 

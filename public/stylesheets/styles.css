@@ -266,11 +266,21 @@ body {
 #main-container {
   position: relative;
   top: 100px; }
-
-#main {
-  width: 90%;
-  background-color: #337799;
-  border: 1px solid orange; }
+  #main-container #main {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #337799;
+    border: 1px dotted #006699; }
+  #main-container #left {
+    float: left; }
+  #main-container #right {
+    float: right; }
+  #main-container .third {
+    width: 30%;
+    border: 1px dotted black; }
+  #main-container ul {
+    list-style: none; }
 
 #footer-container {
   position: fixed;
@@ -367,8 +377,11 @@ h2 {
   margin-left: 1px;
   margin-bottom: 5px; }
 
-a {
-  color: #00f; }
+a, a:visited {
+  color: #0ff; }
+
+a:hover {
+  color: #fee; }
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen

@@ -1,8 +1,8 @@
 #header-container.wrapper.clearfix.b
     %header
         %h1#title
-            %a{:href => "index.html"} CollegEbook
+            %a{:href => "/"} CollegEbook
         %nav
             %a.college_logo{:href => "http://web.mit.edu/"}
                 %img{:src => "http://web.mit.edu/graphicidentity/interface/mit-greywhite-header3.gif", :alt => "MIT"}/
-            %p{:style => "position:relative; top:-5px; left:10em;"}= Time.now.strftime("loaded : %Y/%m/%d %H:%M:%S")
+            %p{:style => "position:relative; top:-5px; left:10em;"}= Time.now.strftime("Debug: load@ %Y/%m/%d %H:%M:%S")
