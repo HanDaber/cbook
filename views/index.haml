@@ -8,7 +8,7 @@
     #splash.r8
         %h2{:style => "margin:6px auto 10px auto;"}
 
-        %form{:name => "login_form", :action => "/login", :method => "post"}
+        %form.ib{:name => "login_form", :action => "/login", :method => "post"}
             %fieldset
                 %legend Log In:
                 Username: 
@@ -16,6 +16,20 @@
                 %br/
                 Password:
                 %input{:type => "password", :name => "pass", :size => "10", value:"pass", style:"margin:5px;"}/
+                %br/
+                %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
+                
+        %form.ib{:name => "signup_form", :action => "/signup", :method => "post"}
+            %fieldset
+                %legend Sign Up:
+                Username: 
+                %input{:type => "text", :name => "user", :size => "10", value:"username", style:"margin:5px;"}/
+                %br/
+                E-mail:
+                %input{:type => "text", :name => "email", :size => "10", value:"email", style:"margin:5px;"}/
+                %br/
+                Password:
+                %input{:type => "password", :name => "pass", :size => "10", style:"margin:5px;"}/
                 %br/
                 %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
 

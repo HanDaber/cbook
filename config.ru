@@ -19,4 +19,9 @@ set :root,        root_dir
 set :app_file,    app_file
 disable :run
 
+require 'mongo_mapper'
+MongoMapper.database = "cbook-#{ENV['RACK_ENV']}"
+
+MongoMapper.connect(Rails.env)
+
 run CollegeBook.new

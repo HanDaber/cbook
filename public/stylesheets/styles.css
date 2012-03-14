@@ -326,6 +326,16 @@ footer {
   background-color: rgba(0, 51, 119, 0.2);
   padding: 8px;
   text-align: center; }
+  #splash form {
+    margin: 5px 10px;
+    vertical-align: top; }
+  #splash fieldset {
+    border: 1px solid rgba(0, 51, 119, 0.5);
+    padding: 5px;
+    background-color: rgba(0, 51, 119, 0.2); }
+  #splash legend {
+    padding: 5px;
+    font-size: 12pt; }
 
 .b {
   display: block;

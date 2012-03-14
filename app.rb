@@ -5,12 +5,21 @@
 require 'sinatra'
 require 'haml'
 require 'sass'
+require 'mongo_mapper'
 
 # Extend request object to handle pjax requests
 class Sinatra::Request
   def pjax?
     env['HTTP_X_PJAX'] || self["_pjax"]
   end
+end
+
+class User
+  include MongoMapper::Document
+  
+  key :name, String, :required => true
+  key :email, String, :required => true
+  key :pass, String, :required => true
 end
 
 # Application Class
