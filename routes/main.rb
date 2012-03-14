@@ -4,12 +4,16 @@ get "/" do
 end
 
 get "/main" do
-  haml :main
+  if session[:user]
+    haml :main
+  else
+    redirect "/"
+  end
 end
 
 get '/:name' do
   haml <<"EOT", :layout => !request.pjax?
-%h1 #{params[:name]} Bulletin Board
+%h1{style:"font-size:20pt;"} #{params[:name]} Bulletin Board
 %h3 Testing...
 %p= Time.now.strftime("Debug: loaded@ %Y/%m/%d %H:%M:%S.")
 EOT

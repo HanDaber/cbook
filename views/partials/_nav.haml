@@ -9,8 +9,5 @@
         %li
             %a.pjax{:href => "/main"} Preferences
         %li.login
-            - if 1 
-                - txt = "Log Out"
-            - else
-                - txt = "Log In"
-            %a.pjax{:href => "/main"}= txt
+            - txt = "Log Out #{session[:user].capitalize}"
+            %a.pjax{:href => "/logout"}= txt

@@ -1,13 +1,24 @@
 = haml(:'partials/_header', :layout => false)
 
-= haml(:'partials/_nav', :layout => false)
+-#= haml(:'partials/_nav', :layout => false)
 
 #main-container.wrapper.clearfix.b{:role => "main"}
     
     -# main
     #splash.r8
-        %h2{:style => "margin:6px auto 10px auto;"} Log In or Sign Up
-        %input{:type => "text", :value => "anything"}
-        %a.btn.r4{:href => "main"} Go!
+        %h2{:style => "margin:6px auto 10px auto;"}
+
+        %form{:name => "login_form", :action => "/login", :method => "post"}
+            %fieldset
+                %legend Log In:
+                Username: 
+                %input{:type => "text", :name => "user", :size => "10"}/
+                %br/
+                Password:
+                %input{:type => "password", :name => "pass", :size => "10"}/
+                %br/
+                %input.btn.r4{:type => "submit", :value => "Submit"}/
+
+        -#%a.btn.r4{:href => "main"} Go!
 
 = haml(:'partials/_footer', :layout => false)
