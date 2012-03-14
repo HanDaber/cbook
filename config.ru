@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'sinatra'
+
 require 'haml'
+Haml::Template.options[:format] = :html5
+
 require 'sass'
 
 require 'sass/plugin/rack'

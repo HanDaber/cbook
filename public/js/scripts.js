@@ -2,7 +2,7 @@ $(document).ready( function() {
     var menu_items = $(".menu");
     var w = $(window).width();
     var n = menu_items.length;
-	var x = 0.1;
+	var x = 0.2;
 	menu_items.width((w-(x*w))/n);
 	$(window).resize( function() {
 		var w = $(window).width();

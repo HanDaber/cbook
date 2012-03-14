@@ -1,4 +1,16 @@
-#nav-container
+#nav-container.wrapper.clearfix.b
     %ul
         %li
-            %a.pjax{:href => "/"} Home
+            %a.pjax{:href => "/main"} My Net
+        %li
+            %a.pjax{:href => "/main"} My Posts
+        %li
+            %a.pjax{:href => "/main"} My Tags
+        %li
+            %a.pjax{:href => "/main"} Preferences
+        %li.login
+            - if 1 
+                - txt = "Log Out"
+            - else
+                - txt = "Log In"
+            %a.pjax{:href => "/main"}= txt

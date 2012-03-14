@@ -250,28 +250,42 @@ body {
 #header-container {
   height: 70px;
   position: fixed;
-  border-bottom: 1px dotted black;
-  background-color: #003366; }
+  border-bottom: 1px solid #001933;
+  background-color: #003366;
+  z-index: 99; }
 
 #nav-container {
-  position: absolute; }
+  position: fixed;
+  z-index: 98;
+  top: 70px;
+  background-color: #337799;
+  border-bottom: 1px solid #265973; }
   #nav-container ul {
-    display: inline-block;
-    position: relative;
-    top: 70px; }
+    display: block;
+    position: relative; }
   #nav-container li {
     display: inline-block;
-    list-style: none; }
+    list-style: none;
+    border: 1px solid #193b4d;
+    margin: 0 0.4em 0 0.4em; }
+    #nav-container li a {
+      background-color: #265973;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      font-size: 11pt;
+      padding: 0.2em; }
+    #nav-container li.login {
+      float: right;
+      margin-right: 3em; }
 
 #main-container {
   position: relative;
-  top: 100px; }
+  top: 120px; }
   #main-container #main {
     width: 98%;
     margin-left: auto;
-    margin-right: auto;
-    background-color: #337799;
-    border: 1px dotted #006699; }
+    margin-right: auto; }
   #main-container #left {
     float: left; }
   #main-container #right {
@@ -353,25 +367,13 @@ footer {
     width: 81px;
     height: 46px; }
 
-.login {
-  float: right;
-  border: 1px dotted black;
-  padding: 4px;
-  position: relative;
-  top: 1px;
-  right: 80px;
-  color: black;
-  background-color: #006699;
-  width: 80px;
-  text-align: center; }
-
 h1#title {
   font-family: 'Annie Use Your Telescope',cursive;
   font-size: 30pt;
   margin-left: 0.6em;
   margin-top: 0.3em; }
   h1#title a {
-    color: #aaaaaa; }
+    color: #ddd; }
 
 h2 {
   font-size: 18pt;
@@ -380,7 +382,7 @@ h2 {
   margin-bottom: 5px; }
 
 a, a:visited {
-  color: #0ff; }
+  color: #aef; }
 
 a:hover {
   color: #fee; }
