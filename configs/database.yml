@@ -7,7 +7,7 @@ development:
 production:
   host: localhost
   port: 27017
-  database: cbook-prod
+  database: app3237740
   logfile: production.log
     
 environment: development

@@ -48,6 +48,7 @@ DEPENDENCIES
   bson_ext
   haml
   log_buddy
+  mongo
   mongo_mapper
   sass
   shotgun
