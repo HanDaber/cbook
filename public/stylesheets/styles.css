@@ -250,8 +250,8 @@ body {
 #header-container {
   height: 70px;
   position: fixed;
-  border-bottom: 1px solid #001933;
-  background-color: #003366;
+  border-bottom: 1px solid #001d44;
+  background-color: #003377;
   z-index: 99; }
 
 #nav-container {
@@ -287,19 +287,23 @@ body {
     margin-left: auto;
     margin-right: auto; }
   #main-container #left {
-    float: left; }
+    float: left;
+    width: 25%;
+    background-color: rgba(0, 51, 119, 0.2); }
+  #main-container #middle {
+    width: 40%;
+    background-color: rgba(0, 51, 119, 0.2); }
   #main-container #right {
-    float: right; }
-  #main-container .third {
-    width: 30%;
-    border: 1px dotted black; }
+    float: right;
+    width: 25%;
+    background-color: rgba(0, 51, 119, 0.2); }
   #main-container ul {
     list-style: none; }
 
 #footer-container {
   position: fixed;
   bottom: 0;
-  background-color: #003366; }
+  background-color: #003377; }
 
 footer {
   width: 100%; }

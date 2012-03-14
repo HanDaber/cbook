@@ -10,12 +10,13 @@
  */
 
 $lt-blu: #069;
-$ot-blu: #036;
+$dk-blu: #037;
+$tr-blu: transparentize($dk-blu, 0.8);
 $bl-red: #379;
 $top-space: 70px;
 
 body{background-color:$lt-blu;}
-#header-container{height:$top-space;position:fixed;border-bottom:1px solid darken($ot-blu, 10%);background-color:$ot-blu;z-index:99;}
+#header-container{height:$top-space;position:fixed;border-bottom:1px solid darken($dk-blu, 10%);background-color:$dk-blu;z-index:99;}
 #nav-container{position:fixed;z-index:98;top:$top-space;background-color:$bl-red;border-bottom:1px solid darken($bl-red, 10%);
     ul{display:block;position:relative;}
     li{display:inline-block;list-style:none;border:1px solid darken($bl-red, 20%);margin: 0 0.4em 0 0.4em;
@@ -25,12 +26,12 @@ body{background-color:$lt-blu;}
 }
 #main-container{position:relative;top:$top-space+50px;
     #main{width:98%;margin-left:auto;margin-right:auto;}
-    #left{float:left;}
-    #right{float:right;}
-    .third{width:30%;border:1px dotted black;}
+    #left{float:left;width:25%;background-color:$tr-blu;}
+    #middle{width:40%;background-color:$tr-blu;}
+    #right{float:right;width:25%;background-color:$tr-blu;}
     ul{list-style:none;}
 }
-#footer-container{position:fixed;bottom:0;background-color:$ot-blu;}
+#footer-container{position:fixed;bottom:0;background-color:$dk-blu;}
 footer{width:100%;}
 #tag_wrapper{float:right;margin-right:12%;background-color:#004466;padding:10px;border:1px solid #224455;}
 #splash{position:relative;width:60%;min-height:80px;max-height:50%;margin-left:auto;margin-right:auto;border:1px dotted black;background-color:$bl-red;padding:8px;text-align:center;}
