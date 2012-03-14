@@ -1,3 +1,5 @@
+require 'mongo_mapper'
+
 enable :sessions
 
 get "/login" do
@@ -27,16 +29,23 @@ EOT
 end
 
 post "/signup" do
-  @user = params[:user]
-  @email = params[:email]
-  @pass = params[:pass]
-  @new_user = User.new()
-  @new_user[:user] = @user
-  @new_user.email = @email
-  @new_user.pass = @pass
-  session[:user] = @user
-  session[:pass] = @pass
-  redirect :main
+  name = params[:name]
+  email = params[:email]
+  pass = params[:pass]
+  @new_user = User.create({
+      :user => name,
+      :email => email,
+      :pass => pass,
+      :created_at => Time.now
+  })
+  if @new_user.save
+      session[:user] = @new_user
+      redirect :main
+  else
+    haml <<"EOT", :layout => :layout
+%h1{style:"color:#e00"} Something went wrong, please go back and try again.
+EOT
+  end
 end
 
 get "/logout" do

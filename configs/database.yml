@@ -1,0 +1,13 @@
+development:
+  host: localhost
+  port: 27017
+  database: cbook-dev
+  logfile: development.log
+    
+production:
+  host: localhost
+  port: 27017
+  database: cbook-prod
+  logfile: production.log
+    
+environment: development

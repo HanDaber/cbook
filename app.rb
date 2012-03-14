@@ -20,6 +20,7 @@ class User
   key :name, String, :required => true
   key :email, String, :required => true
   key :pass, String, :required => true
+  key :created_at, Date
 end
 
 # Application Class
