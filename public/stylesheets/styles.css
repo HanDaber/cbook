@@ -300,6 +300,8 @@ footer {
 #splash {
   position: relative;
   width: 60%;
+  min-height: 80px;
+  max-height: 50%;
   margin-left: auto;
   margin-right: auto;
   border: 1px dotted black;
