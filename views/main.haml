@@ -3,78 +3,79 @@
 = haml(:'partials/_nav', :layout => false)
 
 #main-container.wrapper.clearfix.b{:role => "main"}
-    -# main
+
     %center
-        #main.r8
-            #left.ib
-                .b
-                %h3 My Self
-                %br/
-                %img{:src => "img/blank-user.gif"}
-                %br/
-                %code
-                    06/04/1992
-                    Philadelphia, PA
-                    Course: 2A
-                    Class:  2014
+        #main.r8.b
+            #left.column.ib
+                .b.h
+                    %h3 My Self
+                    %br/
+                    %img{:src => "img/blank-user.gif"}
+                    %br/
+                    %pre
+                        %code
+                            06/04/1992
+                            Philadelphia, PA
+                            Course: 2A
+                            Class:  2014
                     
-                %h4 Interests:
+                    %h4 Interests:
                 
-                soccer,
-                %br/
-                dancing,
-                %br/
-                travel
-                %br/
+                    soccer,
+                    %br/
+                    dancing,
+                    %br/
+                    travel
+                    %br/
                 
-                %h4 My net
+                    %h4 My net
 
-                Parties
-                %br/
-                Spain@MIT
-                %br/
-                Course 2
-                %br/
-                Varsity
-                %br/
-                Culture
-                %br/
+                    Parties
+                    %br/
+                    Spain@MIT
+                    %br/
+                    Course 2
+                    %br/
+                    Varsity
+                    %br/
+                    Culture
+                    %br/
 
-                %h4 My posts
+                    %h4 My posts
 
-                %code
-                    Total:       24
-                %br/
-                %code
-                    New replies: 8
-                %br/
+                    %code
+                        Total:       24
+                    %br/
+                    %code
+                        New replies: 8
+                    %br/
                 
-                %h4 Preferences
+                    %h4 Preferences
 
-                Email forwarding
+                    Email forwarding
 
-            #middle.ib
-                .b
-                %h3 My Feed
-                %br/
-                %p
-                    %hr{width:"80%"}/
-                - 7.times do |i|
-                    .feed_item= "asdf#{sprintf("%.2f", 1.62*i/2)}hgkj"
-                    %hr{width:"50%"}/
+            #middle.column.ib
+                .b.h
+                    %h3 My Feed
+                    %br/
+                    %p
+                        %hr{width:"80%"}/
+                    - 7.times do |i|
+                        .feed_item= "asdf#{sprintf("%.2f", 1.62*i/2)}hgkj"
+                        %hr{width:"50%"}/
             
-            #right.ib
-                .b
-                %h3 My Tags
-                %br/
-                %ul
-                    %li 
-                        %a.pjax{:href => "Food"} Food
-                    %li 
-                        %a.pjax{:href => "Spain@MIT"} Spain@MIT
-                    %li
-                        %a.pjax{:href => "Parties"} Parties
-                    %li
-                        %a.pjax{:href => "Class of 9999"} Class of 9999
+            #right.column.ib
+                .b.h
+                    %h3 My Tags
+                    %br/
+                    %ul
+                        %li 
+                            %a.pjax{:href => "Food"} Food
+                        %li 
+                            %a.pjax{:href => "Spain@MIT"} Spain@MIT
+                        %li
+                            %a.pjax{:href => "Parties"} Parties
+                        %li
+                            %a.pjax{:href => "Class of 9999"} Class of 9999
 
 = haml(:'partials/_footer', :layout => false)
