@@ -1,4 +1,3 @@
-=pod
 =head1 CollegEbook
 =head3 Source
 =over indentlevel
