@@ -9,7 +9,8 @@ require 'sass'
 require 'sass/plugin/rack'
 require 'mongo'
 require 'mongo_mapper'
-# require 'log_buddy'
+
+APP_ROOT = File.dirname(__FILE__)
 
 # Extend request object to handle pjax requests
 class Sinatra::Request
@@ -52,4 +53,4 @@ end
 
 require_relative 'routes/init'
 # require_relative 'models/init'
-# require_relative 'helpers/init'
+require_relative 'helpers/init'

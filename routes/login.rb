@@ -13,12 +13,11 @@ post "/login" do
     
     found_user = User.find_by_name(name)
 
-    # valid_user = ["Martha", "pass"]
-    # 
     if found_user && found_user[:name] == name
         if found_user[:pass] == pass
             session[:user] = found_user[:name]
             redirect :main
+            # redirect "u/#{name}"
         else
             haml <<"EOT", :layout => :layout
 %h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Wrong password, please go back and try again.
