@@ -19,17 +19,17 @@ $top-space: 70px;
 body{background-color:$lt-blu;}
 #header-container{height:$top-space;position:fixed;border-bottom:1px solid darken($dk-blu, 10%);background-color:$dk-blu;z-index:99;}
 #nav-container{position:fixed;z-index:98;top:$top-space;background-color:$bl-red;border-bottom:1px solid darken($bl-red, 10%);
-    ul{display:block;position:relative;}
-    li{display:inline-block;list-style:none;border:1px solid darken($bl-red, 20%);margin: 0 0.4em 0 0.4em;
-        a{background-color:darken($bl-red, 10%);display:inline-block;height:100%;width:100%;font-size:11pt;padding:0.2em;}
+    ul{display:block;position:relative;left:-10px;}
+    li{display:inline-block;list-style:none;margin: 0 0.5em 0 0.5em;
+        a{background-color:darken($bl-red, 10%);border:1px solid darken($bl-red, 20%);display:inline-block;height:100%;width:100%;font-size:11pt;padding:0.3em;}
         &.login{float:right;margin-right:3em;}
     }
 }
 #main-container{position:relative;top:$top-space+50px;
     #main{width:98%;margin-left:auto;margin-right:auto;}
-    #left{float:left;width:25%;background-color:$tr-blu;}
-    #middle{width:40%;background-color:$tr-blu;}
-    #right{float:right;width:25%;background-color:$tr-blu;}
+    #left{float:left;width:25%;background-color:$tr-blu;padding:1em;}
+    #middle{width:40%;background-color:$tr-blu;padding:1em;}
+    #right{float:right;width:25%;background-color:$tr-blu;padding:1em;}
     ul{list-style:none;}
 }
 #footer-container{position:fixed;bottom:0;background-color:$dk-blu;}

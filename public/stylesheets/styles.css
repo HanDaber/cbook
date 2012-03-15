@@ -262,19 +262,20 @@ body {
   border-bottom: 1px solid #265973; }
   #nav-container ul {
     display: block;
-    position: relative; }
+    position: relative;
+    left: -10px; }
   #nav-container li {
     display: inline-block;
     list-style: none;
-    border: 1px solid #193b4d;
-    margin: 0 0.4em 0 0.4em; }
+    margin: 0 0.5em 0 0.5em; }
     #nav-container li a {
       background-color: #265973;
+      border: 1px solid #193b4d;
       display: inline-block;
       height: 100%;
       width: 100%;
       font-size: 11pt;
-      padding: 0.2em; }
+      padding: 0.3em; }
     #nav-container li.login {
       float: right;
       margin-right: 3em; }
@@ -289,14 +290,17 @@ body {
   #main-container #left {
     float: left;
     width: 25%;
-    background-color: rgba(0, 51, 119, 0.2); }
+    background-color: rgba(0, 51, 119, 0.2);
+    padding: 1em; }
   #main-container #middle {
     width: 40%;
-    background-color: rgba(0, 51, 119, 0.2); }
+    background-color: rgba(0, 51, 119, 0.2);
+    padding: 1em; }
   #main-container #right {
     float: right;
     width: 25%;
-    background-color: rgba(0, 51, 119, 0.2); }
+    background-color: rgba(0, 51, 119, 0.2);
+    padding: 1em; }
   #main-container ul {
     list-style: none; }
 

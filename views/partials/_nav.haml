@@ -1,13 +1,18 @@
 #nav-container.wrapper.clearfix.b
     %ul
         %li
-            %a.pjax{:href => "/main"} My Net
+            %center
+                %a.pjax.r4{:href => "/main"} My Net
         %li
-            %a.pjax{:href => "/main"} My Posts
+            %center
+                %a.pjax.r4{:href => "/main"} My Posts
         %li
-            %a.pjax{:href => "/main"} My Tags
+            %center
+                %a.pjax.r4{:href => "/main"} My Tags
         %li
-            %a.pjax{:href => "/main"} Preferences
+            %center
+                %a.pjax.r4{:href => "/main"} Preferences
         %li.login
-            - txt = "Log Out #{session[:user].capitalize}"
-            %a.pjax{:href => "/logout"}= txt
+            %center
+                - txt = "Log Out #{session[:user].capitalize}"
+                %a.pjax.r4{:href => "/logout"}= txt
