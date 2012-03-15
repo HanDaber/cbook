@@ -9,6 +9,7 @@ require 'sass'
 require 'sass/plugin/rack'
 require 'mongo'
 require 'mongo_mapper'
+# require 'log_buddy'
 
 # Extend request object to handle pjax requests
 class Sinatra::Request
@@ -17,18 +18,8 @@ class Sinatra::Request
   end
 end
 
-class User
-  include MongoMapper::Document
-  
-  key :name, String, :required => true
-  key :email, String, :required => true
-  key :pass, String, :required => true
-  key :created_at, Date
-end
-
 # Application Class
 class CollegeBook < Sinatra::Application
-  enable :sessions
 
   configure :production do
     set :haml, { :ugly=>true }
@@ -44,9 +35,21 @@ class CollegeBook < Sinatra::Application
     alias_method :h, :escape_html
   end
   
-  
-  
 end
+
+# User class
+class User
+
+  include MongoMapper::Document
+  require_relative 'mongo_config'
+  
+  key :name, String, :required => true
+  key :email, String, :required => true
+  key :pass, String, :required => true
+  key :created_at, Date
+
+end
+
 require_relative 'routes/init'
-require_relative 'models/init'
-require_relative 'helpers/init'
+# require_relative 'models/init'
+# require_relative 'helpers/init'

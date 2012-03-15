@@ -1,7 +1,7 @@
-require 'rubygems'
-require 'yaml'
-require 'mongo_mapper'
-require 'log_buddy'
+# require 'rubygems'
+# require 'yaml'
+# require 'mongo_mapper'
+# require 'log_buddy'
 
 # Else read the local configuration
 @config = YAML.load_file("configs/database.yml")
@@ -27,7 +27,7 @@ else
   FileUtils.mkdir_p(log_dir) unless File.exist?(log_dir)
   logger = Logger.new(log_dir + @db_log)
   
-  LogBuddy.init(:logger => logger)
+  # LogBuddy.init(:logger => logger)
   MongoMapper.connection = Mongo::Connection.new(@db_host, @db_port, :logger => logger)
   MongoMapper.database = @db_name
 
