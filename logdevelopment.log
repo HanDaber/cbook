@@ -993,3 +993,9 @@ MONGODB (0ms) cbook-dev['users'].update({:_id=>BSON::ObjectId('4f61613a70e3a60d7
 MONGODB [DEBUG] Logging level is currently :debug which could negatively impact client-side performance. You should set your logging level no lower than :info in production.
 MONGODB (0ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
 MONGODB (0ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
+MONGODB [DEBUG] Logging level is currently :debug which could negatively impact client-side performance. You should set your logging level no lower than :info in production.
+MONGODB (0ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
+MONGODB (0ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
+MONGODB [DEBUG] Logging level is currently :debug which could negatively impact client-side performance. You should set your logging level no lower than :info in production.
+MONGODB (0ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
+MONGODB (0ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
