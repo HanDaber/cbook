@@ -46,7 +46,7 @@ footer{width:100%;}
 .r8{border-radius:8px;}
 .btn{background-color:#888;padding:3px;}
 .btn:hover{background-color:#eee;}
-.menu{background-color:#556688;padding:3px;display:inline-block;margin-bottom:3px;}
+.menu{background-color:transparentize($bl-red, 0.5);padding:3px;display:inline-block;margin-bottom:3px;}
 .tag{background-color:#445588;padding:4px;}
 .post{background-color:#aaaaee;border:1px solid #22a;padding:5px;}
 .college_logo{position:absolute;top:0.8em;right:1.8em;

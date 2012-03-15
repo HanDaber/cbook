@@ -358,7 +358,7 @@ footer {
   background-color: #eee; }
 
 .menu {
-  background-color: #556688;
+  background-color: rgba(51, 119, 153, 0.5);
   padding: 3px;
   display: inline-block;
   margin-bottom: 3px; }

@@ -8,5 +8,5 @@ EOT
 end
 
 get '/u/*.*' do |file, ext|
-  redirect "/#{file}.#{ext}"
+    redirect "/#{file}.#{ext}"
 end

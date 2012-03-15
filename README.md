@@ -8,8 +8,8 @@ Repo for cbook app
 
 ### More Info
 
-> Coming soon.
+> Application is run by calling rackup on Config.ru
 > 
-> Srsly.
+> More info soon.
 >
 > #### Peace

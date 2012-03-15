@@ -7,6 +7,7 @@ get "/login" do
     haml :index
 end
 
+# Duct-taped error messages for now
 post "/login" do
     name = params[:name]
     pass = params[:pass]
@@ -35,7 +36,7 @@ post "/signup" do
     email = params[:email]
     pass = params[:pass]
     
-    new_user = User.new()
+    new_user = User.create()
     new_user.name = name
     new_user.email = email
     new_user.pass = pass
