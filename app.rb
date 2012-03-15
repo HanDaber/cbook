@@ -2,9 +2,12 @@
 # Dan Haber 3/2012
 # 
 
+require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'sass'
+require 'sass/plugin/rack'
+require 'mongo'
 require 'mongo_mapper'
 
 # Extend request object to handle pjax requests
@@ -41,9 +44,9 @@ class CollegeBook < Sinatra::Application
     alias_method :h, :escape_html
   end
   
-  require_relative 'routes/init'
+  
   
 end
-
+require_relative 'routes/init'
 require_relative 'models/init'
 require_relative 'helpers/init'

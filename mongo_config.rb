@@ -1,6 +1,7 @@
+require 'rubygems'
+require 'yaml'
 require 'mongo_mapper'
 require 'log_buddy'
-require 'yaml'
 
 # Else read the local configuration
 @config = YAML.load_file("configs/database.yml")
