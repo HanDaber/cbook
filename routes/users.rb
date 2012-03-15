@@ -1,3 +1,4 @@
+# Not working yet
 get 'u/:name' do
     haml <<"EOT", :layout => false
 %h1{style:"font-size:20pt;"} #{params[:name]} USER PAGE
