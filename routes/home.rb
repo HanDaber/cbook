@@ -99,8 +99,12 @@ EOT
 end
 
 # Duct-taped Bulletin Boards for now
-get '/:name' do
-    @name = params[:name]
+get '/:user/:board' do
+    redirect "/#{params[:board]}"
+end
+
+get '/:board' do
+    @name = params[:board]
     haml :board
 end
 

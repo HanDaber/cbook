@@ -16,9 +16,9 @@
                     %br/
                     .create_post.ib
                         %form.ib{:name => "post_form", :action => "/#{@user[:name]}/post", :method => "post"}
-                            %fieldset
+                            %fieldset{style: "border:1px solid black;padding:0.5em 2em;"}
                                 %legend{style: "font-size:13pt;"} Create a post:
-                                %textarea{name: "post", cols: "30", rows: "5", style:"margin:5px;"}
+                                %textarea{name: "post", cols: "40", rows: "3", style:"margin:5px;"}
                                 %br/
                                 -# Totally not secure:
                                 %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
