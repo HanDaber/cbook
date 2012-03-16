@@ -14,6 +14,7 @@ $dk-blu: #037;
 $tr-blu: transparentize($dk-blu, 0.8);
 $tr-br-blu: transparentize($dk-blu, 0.5);
 $bl-red: #379;
+$link-color: #aef;
 $top-space: 70px;
 
 body{background-color:$lt-blu;}
@@ -27,17 +28,27 @@ body{background-color:$lt-blu;}
 }
 
 #nav-container{position:fixed;z-index:98;top:$top-space;background-color:$bl-red;border-bottom:1px solid darken($bl-red, 10%);
-    ul{display:block;position:relative;left:-10px;}
-    li{display:inline-block;list-style:none;margin: 0 0.5em 0 0.5em;
-        a{background-color:darken($bl-red, 10%);border:1px solid darken($bl-red, 20%);border-radius:2px;display:inline-block;height:100%;width:100%;font-size:11pt;padding:0.3em;}
-        &.login{float:right;margin-right:3em;}
-        .my{display:inline;}
+    ul{display:block;position:relative;}
+    a{display:inline-block;height:100%;width:100%;border:1px solid darken($bl-red, 20%);background-color:$tr-blu;}
+
+    @media screen and (max-width : 499px) {
+        ul{left:5px;
+            li{display:inline-block;list-style:none;margin:0 3px;padding:0;
+                a{font-size:9pt;border-radius:2px;border-bottom:0;border-top:0;margin:0 0.2em;padding:0.3em 0.4em;background-color:$bl-red;}
+                .my{display:none;}
+                .all_my{font-size:10pt;display:inline;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
+                &.login{float:right;margin-right:1em;}
+            }
+        }
     }
-    @media only screen and (max-width : 499px) {
-        li{margin:0 3px;padding:0;
-            a{border:none;background-color:$tr-blu;font-size:9pt;border-radius:0;margin:0;}
-            .my{display:none;}
-            &.login{float:right;margin-right:1em;}
+    @media screen and (min-width : 500px) {
+        ul{left:-10px;
+            li{display:inline-block;list-style:none;margin:0 3px;padding:0;
+                a{font-size:12pt;border-radius:4px;margin:0 0.2em;padding:0.2em;}
+                .my{display:inline;}
+                .all_my{display:none;}
+                &.login{float:right;margin-right:1em;}
+            }
         }
     }
 }
@@ -130,7 +141,7 @@ body{background-color:$lt-blu;}
 
 h2{font-size:14pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
 
-a, a:visited{color:#aef;}
+a, a:visited{color:$link-color;}
 a:hover{color:#fee;}
 
 /* Smartphones (portrait and landscape) ----------- */
