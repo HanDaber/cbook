@@ -369,8 +369,7 @@ body {
         text-align: left; } }
   @media screen and (max-width : 499px) {
     #main-container #middle {
-      width: 100%;
-      float: right; } }
+      width: 100%; } }
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #middle {
       width: 70%;

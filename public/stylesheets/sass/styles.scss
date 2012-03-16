@@ -74,7 +74,7 @@ body{background-color:$lt-blu;}
 
 
     @media screen and (max-width : 499px) {
-        #middle{width:100%;float:right;}
+        #middle{width:100%;}
     }
     @media screen and (min-width : 500px) and (max-width : 760px) {
         #middle{width:70%;float:right;}
