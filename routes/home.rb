@@ -71,6 +71,33 @@ get '/:user/prefs' do
     end
 end
 
+post '/:user/post' do
+    name = params[:user]
+    pass = params[:pass]
+    post_text = params[:post]
+    
+    found_user = User.find_by_name(name)
+
+    if found_user && found_user[:name] == name
+        if found_user[:pass] == pass
+            @user = found_user
+            new_post = @user.posts.create()
+            new_post.text = post_text
+            
+            session[:stat] = {status: new_post.save, msg: "Success!"}
+            redirect "#{found_user.name}/home"
+        else
+            haml <<"EOT", :layout => :layout
+%h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Wrong password, please go back and try again.
+EOT
+        end
+    else
+        haml <<"EOT", :layout => :layout
+%h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Username not found, please go back and try again.
+EOT
+    end
+end
+
 # Duct-taped Bulletin Boards for now
 get '/:name' do
     @name = params[:name]

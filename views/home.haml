@@ -14,6 +14,15 @@
                 .b.h
                     %h3 My Feed
                     %br/
+                    .create_post.ib
+                        %form.ib{:name => "post_form", :action => "/#{@user[:name]}/post", :method => "post"}
+                            %fieldset
+                                %legend{style: "font-size:13pt;"} Create a post:
+                                %textarea{name: "post", cols: "30", rows: "5", style:"margin:5px;"}
+                                %br/
+                                -# Totally not secure:
+                                %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                                %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %p
                         %hr{width:"50%"}/
                     - 20.times do |i|

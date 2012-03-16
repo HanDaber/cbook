@@ -53,6 +53,7 @@ EOT
     elsif new_user.save
         session[:name] = new_user.name
         session[:email] = new_user.email
+        # Totally not secure, sending password in plaintext:
         session[:pass] = new_user.pass
         session[:since] = new_user.created_at
         redirect "#{new_user.name}/home"
