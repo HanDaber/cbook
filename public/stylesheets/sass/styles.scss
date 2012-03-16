@@ -74,7 +74,7 @@ body{background-color:$lt-blu;}
         }
     }
     @media screen and (min-width : 500px) and (max-width : 760px) {
-        #left{float:left;width:19%;
+        #left{float:left;width:19%;display:inline-block;
             h3{float:left;}
             .user_image{float:left;}
             .box{padding:2px;margin:1px;border:1px dashed $tr-br-blu;}
@@ -82,7 +82,7 @@ body{background-color:$lt-blu;}
         }
     }
     @media screen and (min-width : 761px) {
-        #left{float:left;width:15%;margin-left:8px;
+        #left{float:left;width:15%;margin-left:8px;display:inline-block;
             h3{float:left;}
             .user_image{float:left;}
             .box{padding:2px;margin:1px;border:1px solid $tr-br-blu;}
@@ -95,10 +95,10 @@ body{background-color:$lt-blu;}
         #middle{display:block;}
     }
     @media screen and (min-width : 500px) and (max-width : 760px) {
-        #middle{width:70%;float:right;}
+        #middle{width:70%;float:right;display:inline-block;}
     }
     @media screen and (min-width : 761px) {
-        #middle{width:60%;}
+        #middle{width:60%;display:inline-block;}
     }
     
 

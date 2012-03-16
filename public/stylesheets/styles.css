@@ -374,7 +374,8 @@ body {
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #left {
       float: left;
-      width: 19%; }
+      width: 19%;
+      display: inline-block; }
       #main-container #left h3 {
         float: left; }
       #main-container #left .user_image {
@@ -389,7 +390,8 @@ body {
     #main-container #left {
       float: left;
       width: 15%;
-      margin-left: 8px; }
+      margin-left: 8px;
+      display: inline-block; }
       #main-container #left h3 {
         float: left; }
       #main-container #left .user_image {
@@ -406,10 +408,12 @@ body {
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #middle {
       width: 70%;
-      float: right; } }
+      float: right;
+      display: inline-block; } }
   @media screen and (min-width : 761px) {
     #main-container #middle {
-      width: 60%; } }
+      width: 60%;
+      display: inline-block; } }
   @media screen and (max-width : 499px) {
     #main-container #right {
       display: block; } }

@@ -25,15 +25,28 @@ get "/home" do
     end
 end
 
+get '/:user/posts' do
+    if session[:name] && session[:name] == params[:user]
+        user = User.find_by_name(params[:user])
+        if user
+            @posts = user.posts.all
+            haml "%h1{style:'color:#00e;font-size:16pt;margin:1em 2em;'}= \"#{@posts.length}\"", :layout => true
+        else
+            not_found
+        end
+    else
+        redirect '/'
+    end
+end
+
 # Duct-taped Bulletin Boards for now
 get '/:name' do
-    
-    haml <<"EOT", :layout => !request.pjax?
-%h1{style:"font-size:20pt;"} #{params[:name]} Bulletin Board
-%h3 Testing...
-%p= Time.now.strftime("Debug: loaded@ %Y/%m/%d %H:%M:%S.")
-EOT
+    @name = params[:name]
+    haml :board
+end
 
+get '/:word/*.*' do
+    redirect "/#{params[:splat][0]}.#{params[:splat][1]}"
 end
 
 not_found do
