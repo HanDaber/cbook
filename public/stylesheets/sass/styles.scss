@@ -24,12 +24,13 @@ body{background-color:$lt-blu;}
         a{background-color:darken($bl-red, 10%);border:1px solid darken($bl-red, 20%);border-radius:2px;display:inline-block;height:100%;width:100%;font-size:11pt;padding:0.3em;}
         &.login{float:right;margin-right:3em;}
         .my{display:inline;}
-        @media only screen and (max-width : 500px) {
-            li{margin:0;padding:0;}
+    }
+    @media only screen and (max-width : 500px) {
+        li{margin:0 3px;padding:0;
             a{border:none;background-color:$tr-blu;font-size:9pt;border-radius:0;margin:0;}
             .my{display:none;}
         }
-    }
+    } 
 }
 #main-container{position:relative;top:$top-space+50px;
 	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;
@@ -38,7 +39,7 @@ body{background-color:$lt-blu;}
     #main{}
     #left{float:left;width:20%;}
 	@media only screen and (max-width : 500px) {
-        #left{margin-left:auto;margin-right:auto;width:100%;
+        #left{width:100%;
             h3{float:left;}
             .user_image{float:left;}
             .box{padding:2px;margin:1px;border:1px dotted $tr-br-blu;}

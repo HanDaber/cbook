@@ -282,10 +282,10 @@ body {
       margin-right: 3em; }
     #nav-container li .my {
       display: inline; }
-    @media only screen and (max-width : 500px) {
-      #nav-container li li {
-        margin: 0;
-        padding: 0; }
+  @media only screen and (max-width : 500px) {
+    #nav-container li {
+      margin: 0 3px;
+      padding: 0; }
       #nav-container li a {
         border: none;
         background-color: rgba(0, 51, 119, 0.2);
@@ -309,8 +309,6 @@ body {
     width: 20%; }
   @media only screen and (max-width : 500px) {
     #main-container #left {
-      margin-left: auto;
-      margin-right: auto;
       width: 100%; }
       #main-container #left h3 {
         float: left; }
