@@ -6,7 +6,8 @@ get "/" do
         since = session[:since]
         pass = session[:pass]
         @user = {:name => name, :email => email, :since => since}
-        haml :home
+        # haml :home
+        redirect :home
     else
         haml :index
     end
