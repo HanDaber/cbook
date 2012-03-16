@@ -327,7 +327,7 @@ body {
     list-style: none; }
   @media screen and (max-width : 499px) {
     #main-container #left {
-      width: 100%; }
+      display: block; }
       #main-container #left h3 {
         float: left; }
       #main-container #left .user_image {
@@ -341,7 +341,7 @@ body {
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #left {
       float: left;
-      width: 18%; }
+      width: 19%; }
       #main-container #left h3 {
         float: left; }
       #main-container #left .user_image {
@@ -369,7 +369,7 @@ body {
         text-align: left; } }
   @media screen and (max-width : 499px) {
     #main-container #middle {
-      width: 100%; } }
+      display: block; } }
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #middle {
       width: 70%;
@@ -379,11 +379,11 @@ body {
       width: 60%; } }
   @media screen and (max-width : 499px) {
     #main-container #right {
-      width: 100%; } }
+      display: block; } }
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #right {
       float: left;
-      width: 20%; } }
+      width: 19%; } }
   @media screen and (min-width : 761px) {
     #main-container #right {
       float: right;

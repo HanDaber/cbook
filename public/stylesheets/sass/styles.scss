@@ -48,7 +48,7 @@ body{background-color:$lt-blu;}
     ul{list-style:none;}
 
 	@media screen and (max-width : 499px) {
-        #left{width:100%;
+        #left{display:block;
             h3{float:left;}
             .user_image{float:left;}
             .box{padding:2px;margin:1px;border:1px dotted $tr-br-blu;}
@@ -56,7 +56,7 @@ body{background-color:$lt-blu;}
         }
     }
     @media screen and (min-width : 500px) and (max-width : 760px) {
-        #left{float:left;width:18%;
+        #left{float:left;width:19%;
             h3{float:left;}
             .user_image{float:left;}
             .box{padding:2px;margin:1px;border:1px dashed $tr-br-blu;}
@@ -74,7 +74,7 @@ body{background-color:$lt-blu;}
 
 
     @media screen and (max-width : 499px) {
-        #middle{width:100%;}
+        #middle{display:block;}
     }
     @media screen and (min-width : 500px) and (max-width : 760px) {
         #middle{width:70%;float:right;}
@@ -85,10 +85,10 @@ body{background-color:$lt-blu;}
     
 
     @media screen and (max-width : 499px) {
-        #right{width:100%;}
+        #right{display:block;}
     }
     @media screen and (min-width : 500px) and (max-width : 760px) {
-        #right{float:left;width:20%;}
+        #right{float:left;width:19%;}
     }
     @media screen and (min-width : 761px) {
         #right{float:right;width:10%;margin-right:8px;}
