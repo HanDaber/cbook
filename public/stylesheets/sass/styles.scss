@@ -17,7 +17,15 @@ $bl-red: #379;
 $top-space: 70px;
 
 body{background-color:$lt-blu;}
-#header-container{height:$top-space;position:fixed;border-bottom:1px solid darken($dk-blu, 10%);background-color:$dk-blu;z-index:99;}
+#header-container{height:$top-space;position:fixed;border-bottom:1px solid darken($dk-blu, 10%);background-color:$dk-blu;z-index:99;
+    .college_logo{position:absolute;top:0.8em;right:1.8em;
+        img{border:0;width:81px;height:46px;}
+    }
+    h1#title{font-family:'Annie Use Your Telescope',cursive;font-size:30pt;margin-left:0.6em;margin-top:0.3em;
+        a{color:#ddd;}
+    }
+}
+
 #nav-container{position:fixed;z-index:98;top:$top-space;background-color:$bl-red;border-bottom:1px solid darken($bl-red, 10%);
     ul{display:block;position:relative;left:-10px;}
     li{display:inline-block;list-style:none;margin: 0 0.5em 0 0.5em;
@@ -25,20 +33,21 @@ body{background-color:$lt-blu;}
         &.login{float:right;margin-right:3em;}
         .my{display:inline;}
     }
-    @media only screen and (max-width : 500px) {
+    @media only screen and (max-width : 499px) {
         li{margin:0 3px;padding:0;
             a{border:none;background-color:$tr-blu;font-size:9pt;border-radius:0;margin:0;}
             .my{display:none;}
+            &.login{float:right;margin-right:1em;}
         }
-    } 
+    }
 }
-#main-container{position:relative;top:$top-space+50px;
-	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;
-//		.b{min-width:300px;max-width:100%;}
-	}
+
+#main-container{position:relative;top:$top-space+50px;padding-bottom:$top-space;
+	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;}
     #main{}
-    #left{float:left;width:20%;}
-	@media only screen and (max-width : 500px) {
+    ul{list-style:none;}
+
+	@media screen and (max-width : 499px) {
         #left{width:100%;
             h3{float:left;}
             .user_image{float:left;}
@@ -46,19 +55,63 @@ body{background-color:$lt-blu;}
             pre{text-align:left;}
         }
     }
-    #middle{width:50%;margin-left:auto;margin-right:auto;}
-    @media only screen and (max-width : 500px) {
+    @media screen and (min-width : 500px) and (max-width : 760px) {
+        #left{float:left;width:20%;
+            h3{float:left;}
+            .user_image{float:left;}
+            .box{padding:2px;margin:1px;border:1px dashed $tr-br-blu;}
+            pre{text-align:left;}
+        }
+    }
+    @media screen and (min-width : 761px) {
+        #left{float:left;width:15%;margin-left:8px;
+            h3{float:left;}
+            .user_image{float:left;}
+            .box{padding:2px;margin:1px;border:1px solid $tr-br-blu;}
+            pre{text-align:left;}
+        }        
+    }
+
+
+    @media screen and (max-width : 499px) {
         #middle{width:100%;float:right;}
     }
-    #right{float:right;width:20%;}
-    @media only screen and (max-width : 500px) {
+    @media screen and (min-width : 500px) and (max-width : 760px) {
+        #middle{width:70%;float:right;}
+    }
+    @media screen and (min-width : 761px) {
+        #middle{width:60%;}
+    }
+    
+
+    @media screen and (max-width : 499px) {
         #right{width:100%;}
     }
-    ul{list-style:none;}
+    @media screen and (min-width : 500px) and (max-width : 760px) {
+        #right{float:left;width:20%;}
+    }
+    @media screen and (min-width : 761px) {
+        #right{float:right;width:10%;margin-right:8px;}
+    }
+    
 }
-#footer-container{position:fixed;bottom:0;background-color:$dk-blu;}
-footer{width:100%;}
-#tag_wrapper{float:right;margin-right:12%;background-color:#004466;padding:10px;border:1px solid #224455;}
+
+#footer-container{position:fixed;bottom:0;background-color:$dk-blu;
+    footer{width:100%;
+//        .menu{background-color:transparentize($bl-red, 0.5);padding:3px;display:inline-block;margin-bottom:3px;}
+        @media screen and (max-width : 499px) {
+            .menu{background-color:transparentize($bl-red, 0.5);padding:1px 3px;display:inline-block;margin-bottom:3px;}
+        }
+        @media screen and (min-width : 500px) and (max-width : 760px) {
+            .menu{background-color:transparentize($bl-red, 0.5);padding:2px 3px;display:inline-block;margin-bottom:3px;}
+        }
+        @media screen and (min-width : 761px) {
+            .menu{background-color:transparentize($bl-red, 0.5);padding:3px 5px;display:inline-block;margin-bottom:3px;}
+        }
+    }
+}
+
+//#tag_wrapper{float:right;margin-right:12%;background-color:#004466;padding:10px;border:1px solid #224455;}
 #splash{position:relative;width:60%;min-height:80px;max-height:50%;margin-left:auto;margin-right:auto;border:1px solid $tr-br-blu;background-color:$tr-blu;padding:8px;text-align:center;
     form{margin:5px 10px;vertical-align:top;}
     fieldset{border:1px solid $tr-br-blu;padding:5px;background-color:$tr-blu;}
@@ -71,15 +124,11 @@ footer{width:100%;}
 .r8{border-radius:8px;}
 .btn{background-color:#888;padding:3px;}
 .btn:hover{background-color:#eee;}
-.menu{background-color:transparentize($bl-red, 0.5);padding:3px;display:inline-block;margin-bottom:3px;}
+
 .tag{background-color:#445588;padding:4px;}
 .post{background-color:#aaaaee;border:1px solid #22a;padding:5px;}
-.college_logo{position:absolute;top:0.8em;right:1.8em;
-    img{border:0;width:81px;height:46px;}}
 
-h1#title{font-family:'Annie Use Your Telescope',cursive;font-size:30pt;margin-left:0.6em;margin-top:0.3em;
-    a{color:#ddd;}}
-h2{font-size:18pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
+h2{font-size:14pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
 
 a, a:visited{color:#aef;}
 a:hover{color:#fee;}

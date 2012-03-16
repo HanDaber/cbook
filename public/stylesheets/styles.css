@@ -253,6 +253,21 @@ body {
   border-bottom: 1px solid #001d44;
   background-color: #003377;
   z-index: 99; }
+  #header-container .college_logo {
+    position: absolute;
+    top: 0.8em;
+    right: 1.8em; }
+    #header-container .college_logo img {
+      border: 0;
+      width: 81px;
+      height: 46px; }
+  #header-container h1#title {
+    font-family: 'Annie Use Your Telescope',cursive;
+    font-size: 30pt;
+    margin-left: 0.6em;
+    margin-top: 0.3em; }
+    #header-container h1#title a {
+      color: #ddd; }
 
 #nav-container {
   position: fixed;
@@ -282,7 +297,7 @@ body {
       margin-right: 3em; }
     #nav-container li .my {
       display: inline; }
-  @media only screen and (max-width : 500px) {
+  @media only screen and (max-width : 499px) {
     #nav-container li {
       margin: 0 3px;
       padding: 0; }
@@ -293,21 +308,24 @@ body {
         border-radius: 0;
         margin: 0; }
       #nav-container li .my {
-        display: none; } }
+        display: none; }
+      #nav-container li.login {
+        float: right;
+        margin-right: 1em; } }
 
 #main-container {
   position: relative;
-  top: 120px; }
+  top: 120px;
+  padding-bottom: 70px; }
   #main-container .column {
     vertical-align: top;
     margin-bottom: 8px;
     height: 100%;
     background-color: rgba(0, 51, 119, 0.2);
     padding: 1em; }
-  #main-container #left {
-    float: left;
-    width: 20%; }
-  @media only screen and (max-width : 500px) {
+  #main-container ul {
+    list-style: none; }
+  @media screen and (max-width : 499px) {
     #main-container #left {
       width: 100%; }
       #main-container #left h3 {
@@ -320,37 +338,83 @@ body {
         border: 1px dotted rgba(0, 51, 119, 0.5); }
       #main-container #left pre {
         text-align: left; } }
-  #main-container #middle {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto; }
-  @media only screen and (max-width : 500px) {
+  @media screen and (min-width : 500px) and (max-width : 760px) {
+    #main-container #left {
+      float: left;
+      width: 20%; }
+      #main-container #left h3 {
+        float: left; }
+      #main-container #left .user_image {
+        float: left; }
+      #main-container #left .box {
+        padding: 2px;
+        margin: 1px;
+        border: 1px dashed rgba(0, 51, 119, 0.5); }
+      #main-container #left pre {
+        text-align: left; } }
+  @media screen and (min-width : 761px) {
+    #main-container #left {
+      float: left;
+      width: 15%;
+      margin-left: 8px; }
+      #main-container #left h3 {
+        float: left; }
+      #main-container #left .user_image {
+        float: left; }
+      #main-container #left .box {
+        padding: 2px;
+        margin: 1px;
+        border: 1px solid rgba(0, 51, 119, 0.5); }
+      #main-container #left pre {
+        text-align: left; } }
+  @media screen and (max-width : 499px) {
     #main-container #middle {
       width: 100%;
       float: right; } }
-  #main-container #right {
-    float: right;
-    width: 20%; }
-  @media only screen and (max-width : 500px) {
+  @media screen and (min-width : 500px) and (max-width : 760px) {
+    #main-container #middle {
+      width: 70%;
+      float: right; } }
+  @media screen and (min-width : 761px) {
+    #main-container #middle {
+      width: 60%; } }
+  @media screen and (max-width : 499px) {
     #main-container #right {
       width: 100%; } }
-  #main-container ul {
-    list-style: none; }
+  @media screen and (min-width : 500px) and (max-width : 760px) {
+    #main-container #right {
+      float: left;
+      width: 20%; } }
+  @media screen and (min-width : 761px) {
+    #main-container #right {
+      float: right;
+      width: 10%;
+      margin-right: 8px; } }
 
 #footer-container {
   position: fixed;
   bottom: 0;
   background-color: #003377; }
-
-footer {
-  width: 100%; }
-
-#tag_wrapper {
-  float: right;
-  margin-right: 12%;
-  background-color: #004466;
-  padding: 10px;
-  border: 1px solid #224455; }
+  #footer-container footer {
+    width: 100%; }
+    @media screen and (max-width : 499px) {
+      #footer-container footer .menu {
+        background-color: rgba(51, 119, 153, 0.5);
+        padding: 1px 3px;
+        display: inline-block;
+        margin-bottom: 3px; } }
+    @media screen and (min-width : 500px) and (max-width : 760px) {
+      #footer-container footer .menu {
+        background-color: rgba(51, 119, 153, 0.5);
+        padding: 2px 3px;
+        display: inline-block;
+        margin-bottom: 3px; } }
+    @media screen and (min-width : 761px) {
+      #footer-container footer .menu {
+        background-color: rgba(51, 119, 153, 0.5);
+        padding: 3px 5px;
+        display: inline-block;
+        margin-bottom: 3px; } }
 
 #splash {
   position: relative;
@@ -397,12 +461,6 @@ footer {
 .btn:hover {
   background-color: #eee; }
 
-.menu {
-  background-color: rgba(51, 119, 153, 0.5);
-  padding: 3px;
-  display: inline-block;
-  margin-bottom: 3px; }
-
 .tag {
   background-color: #445588;
   padding: 4px; }
@@ -412,25 +470,8 @@ footer {
   border: 1px solid #22a;
   padding: 5px; }
 
-.college_logo {
-  position: absolute;
-  top: 0.8em;
-  right: 1.8em; }
-  .college_logo img {
-    border: 0;
-    width: 81px;
-    height: 46px; }
-
-h1#title {
-  font-family: 'Annie Use Your Telescope',cursive;
-  font-size: 30pt;
-  margin-left: 0.6em;
-  margin-top: 0.3em; }
-  h1#title a {
-    color: #ddd; }
-
 h2 {
-  font-size: 18pt;
+  font-size: 14pt;
   color: #aaa;
   margin-left: 1px;
   margin-bottom: 5px; }
