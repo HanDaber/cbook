@@ -289,14 +289,22 @@ body {
     height: 100%;
     background-color: rgba(0, 51, 119, 0.2);
     padding: 1em; }
-  #main-container #left {
-    float: left; }
-  #main-container #middle .feed_item {
+
+#left {
+  float: left;
+  width: 25%; }
+
+#middle {
+  width: 42%; }
+  #middle .feed_item {
     width: 28em; }
-  #main-container #right {
-    float: right; }
-  #main-container ul {
-    list-style: none; }
+
+#right {
+  float: right;
+  width: 25%; }
+
+ul {
+  list-style: none; }
 
 #footer-container {
   position: fixed;
