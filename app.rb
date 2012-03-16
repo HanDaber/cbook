@@ -4,11 +4,19 @@
 
 # Required libraries
 require 'rubygems'
+# Sinatra is a small framework 
+# => that provides URL routing 
+# => and some helper functions
 require 'sinatra'
+# HTML Templating with HAML
 require 'haml'
+# CSS function library
 require 'sass'
 require 'sass/plugin/rack'
+# MongoDB is a small document database engine
 require 'mongo'
+# MongoMapper provides an Object-Relational Model 
+# => between our Classes and MongoDB
 require 'mongo_mapper'
 
 # Extend request object to handle pjax requests
@@ -30,7 +38,8 @@ end
 
 # User Class
 class User
-
+    
+    # Import the MongoMapper::Document Class
     include MongoMapper::Document
     require_relative 'configs/mongo'
 
@@ -41,5 +50,6 @@ class User
 
 end
 
+# URL routing and helper functions
 require_relative 'routes/init'
 require_relative 'helpers/init'

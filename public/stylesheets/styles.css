@@ -279,6 +279,9 @@ body {
     #nav-container li.login {
       float: right;
       margin-right: 3em; }
+    @media only screen and (max-width : 320px) {
+      #nav-container li a {
+        display: inline; } }
 
 #main-container {
   position: relative;
@@ -291,14 +294,14 @@ body {
     padding: 1em; }
   #main-container #left {
     float: left;
-    width: 25%; }
+    width: 20%; }
   #main-container #middle {
-    width: 40%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto; }
   #main-container #right {
     float: right;
-    width: 25%; }
+    width: 20%; }
   #main-container ul {
     list-style: none; }
 

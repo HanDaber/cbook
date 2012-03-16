@@ -7,7 +7,9 @@
     %center
         #main.r8.b
             #left.column.ib
-                .b.h= haml(:'users/_info')
+                .b.h
+                    %h3= @name
+                    = haml(:'users/_info')
 
             #middle.column.ib
                 .b.h

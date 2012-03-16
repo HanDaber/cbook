@@ -5,6 +5,7 @@ end
 
 get "/main" do
     if session[:user]
+        @name = session[:user]
         haml :main
     else
         redirect "/"
