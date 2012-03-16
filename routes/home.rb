@@ -30,7 +30,8 @@ get '/:user/posts' do
         user = User.find_by_name(params[:user])
         if user
             @posts = user.posts.all
-            haml "%h1{style:'color:#00e;font-size:16pt;margin:1em 2em;'}= \"#{@posts.length}\"", :layout => true
+            # haml "%h1{style:'color:#00e;font-size:16pt;margin:1em 2em;'}= \"#{@posts.length}\"", :layout => true
+            haml :posts
         else
             not_found
         end
