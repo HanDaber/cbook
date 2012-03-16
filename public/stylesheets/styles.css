@@ -283,24 +283,22 @@ body {
 #main-container {
   position: relative;
   top: 120px; }
-  #main-container #main {
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto; }
+  #main-container .column {
+    vertical-align: top;
+    margin-bottom: 8px;
+    height: 100%;
+    background-color: rgba(0, 51, 119, 0.2);
+    padding: 1em; }
   #main-container #left {
     float: left;
-    width: 25%;
-    background-color: rgba(0, 51, 119, 0.2);
-    padding: 1em; }
+    width: 25%; }
   #main-container #middle {
     width: 40%;
-    background-color: rgba(0, 51, 119, 0.2);
-    padding: 1em; }
+    margin-left: auto;
+    margin-right: auto; }
   #main-container #right {
     float: right;
-    width: 25%;
-    background-color: rgba(0, 51, 119, 0.2);
-    padding: 1em; }
+    width: 25%; }
   #main-container ul {
     list-style: none; }
 
@@ -340,6 +338,9 @@ footer {
   #splash legend {
     padding: 5px;
     font-size: 12pt; }
+
+.h {
+  height: 100%; }
 
 .b {
   display: block;
