@@ -2,17 +2,23 @@
     %ul
         %li
             %center
-                %a.pjax.r4{:href => "/main"} My Net
+                %a.pjax{:href => "/main"}
+                    
+                    Net
         %li
             %center
-                %a.pjax.r4{:href => "/main"} My Posts
+                %a.pjax{:href => "/main"}
+                    .my My
+                    Posts
         %li
             %center
-                %a.pjax.r4{:href => "/main"} My Tags
+                %a.pjax{:href => "/main"}
+                    .my My
+                    Tags
         %li
             %center
-                %a.pjax.r4{:href => "/main"} Preferences
+                %a.pjax{:href => "/main"} Preferences
         %li.login
             %center
                 - txt = "Log Out #{session[:user].capitalize}"
-                %a.pjax.r4{:href => "/logout"}= txt
+                %a.pjax{:href => "/logout"}= txt

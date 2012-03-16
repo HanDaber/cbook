@@ -21,11 +21,13 @@ body{background-color:$lt-blu;}
 #nav-container{position:fixed;z-index:98;top:$top-space;background-color:$bl-red;border-bottom:1px solid darken($bl-red, 10%);
     ul{display:block;position:relative;left:-10px;}
     li{display:inline-block;list-style:none;margin: 0 0.5em 0 0.5em;
-        a{background-color:darken($bl-red, 10%);border:1px solid darken($bl-red, 20%);display:inline-block;height:100%;width:100%;font-size:11pt;padding:0.3em;}
+        a{background-color:darken($bl-red, 10%);border:1px solid darken($bl-red, 20%);border-radius:2px;display:inline-block;height:100%;width:100%;font-size:11pt;padding:0.3em;}
         &.login{float:right;margin-right:3em;}
-        @media only screen and (max-width : 400px) {
+        .my{display:inline;}
+        @media only screen and (max-width : 500px) {
             li{margin:0;padding:0;}
-            a{border:none;background-color:$tr-blu;font-size:9pt;}
+            a{border:none;background-color:$tr-blu;font-size:9pt;border-radius:0;margin:0;}
+            .my{display:none;}
         }
     }
 }
@@ -34,16 +36,23 @@ body{background-color:$lt-blu;}
 //		.b{min-width:300px;max-width:100%;}
 	}
     #main{}
-    #left{float:left;width:20%;
-//	width:25%;background-color:$tr-blu;padding:1em;float:left;
-	}
-    #middle{width:50%;margin-left:auto;margin-right:auto;
-//	width:40%;background-color:$tr-blu;padding:1em;
-//		.feed_item{width:28em;}
-	}
-    #right{float:right;width:20%;
-//	width:25%;background-color:$tr-blu;padding:1em;float:right;
-	}
+    #left{float:left;width:20%;}
+	@media only screen and (max-width : 500px) {
+        #left{margin-left:auto;margin-right:auto;width:100%;
+            h3{float:left;}
+            .user_image{float:left;}
+            .box{padding:2px;margin:1px;border:1px dotted $tr-br-blu;}
+            pre{text-align:left;}
+        }
+    }
+    #middle{width:50%;margin-left:auto;margin-right:auto;}
+    @media only screen and (max-width : 500px) {
+        #middle{width:100%;float:right;}
+    }
+    #right{float:right;width:20%;}
+    @media only screen and (max-width : 500px) {
+        #right{width:100%;}
+    }
     ul{list-style:none;}
 }
 #footer-container{position:fixed;bottom:0;background-color:$dk-blu;}

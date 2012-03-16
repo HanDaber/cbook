@@ -271,6 +271,7 @@ body {
     #nav-container li a {
       background-color: #265973;
       border: 1px solid #193b4d;
+      border-radius: 2px;
       display: inline-block;
       height: 100%;
       width: 100%;
@@ -279,14 +280,20 @@ body {
     #nav-container li.login {
       float: right;
       margin-right: 3em; }
-    @media only screen and (max-width : 400px) {
+    #nav-container li .my {
+      display: inline; }
+    @media only screen and (max-width : 500px) {
       #nav-container li li {
         margin: 0;
         padding: 0; }
       #nav-container li a {
         border: none;
         background-color: rgba(0, 51, 119, 0.2);
-        font-size: 9pt; } }
+        font-size: 9pt;
+        border-radius: 0;
+        margin: 0; }
+      #nav-container li .my {
+        display: none; } }
 
 #main-container {
   position: relative;
@@ -300,13 +307,35 @@ body {
   #main-container #left {
     float: left;
     width: 20%; }
+  @media only screen and (max-width : 500px) {
+    #main-container #left {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%; }
+      #main-container #left h3 {
+        float: left; }
+      #main-container #left .user_image {
+        float: left; }
+      #main-container #left .box {
+        padding: 2px;
+        margin: 1px;
+        border: 1px dotted rgba(0, 51, 119, 0.5); }
+      #main-container #left pre {
+        text-align: left; } }
   #main-container #middle {
     width: 50%;
     margin-left: auto;
     margin-right: auto; }
+  @media only screen and (max-width : 500px) {
+    #main-container #middle {
+      width: 100%;
+      float: right; } }
   #main-container #right {
     float: right;
     width: 20%; }
+  @media only screen and (max-width : 500px) {
+    #main-container #right {
+      width: 100%; } }
   #main-container ul {
     list-style: none; }
 
