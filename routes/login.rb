@@ -16,9 +16,11 @@ post "/login" do
 
     if found_user && found_user[:name] == name
         if found_user[:pass] == pass
-            session[:user] = found_user[:name]
-            redirect :main
-            # redirect "u/#{name}"
+            session[:name] = found_user.name
+            session[:email] = found_user.email
+            session[:pass] = found_user.pass
+            session[:since] = found_user.created_at
+            redirect :home
         else
             haml <<"EOT", :layout => :layout
 %h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Wrong password, please go back and try again.
@@ -40,7 +42,7 @@ post "/signup" do
     new_user.name = name
     new_user.email = email
     new_user.pass = pass
-    new_user.created_at = Time.now
+    new_user.created_at = Time.now()
     
     found_user = User.find_by_name(name)
     
@@ -49,8 +51,11 @@ post "/signup" do
 %h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} User already exists, please go back and try a different name.
 EOT
     elsif new_user.save
-        session[:user] = new_user.name
-        redirect :main
+        session[:name] = new_user.name
+        session[:email] = new_user.email
+        session[:pass] = new_user.pass
+        session[:since] = new_user.created_at
+        redirect :home
     else
         haml <<"EOT", :layout => :layout
 %h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Something went wrong, please go back and try again.
@@ -59,6 +64,6 @@ EOT
 end
 
 get "/logout" do
-    session[:user] = session[:pass] = nil
+    session[:name] = session[:pass] = nil
     redirect '/'
 end

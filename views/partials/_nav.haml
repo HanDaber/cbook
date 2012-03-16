@@ -3,23 +3,23 @@
         %li
             %center
                 .all_my My:
-                %a.pjax{:href => "/main"}
+                %a.pjax{:href => "/home"}
                     .my My
                     Net
         %li
             %center
-                %a.pjax{:href => "/main"}
+                %a.pjax{:href => "/#posts"}
                     .my My
                     Posts
         %li
             %center
-                %a.pjax{:href => "/main"}
+                %a.pjax{:href => "/#main"}
                     .my My
                     Tags
         %li
             %center
-                %a.pjax{:href => "/main"} Preferences
+                %a.pjax{:href => "/#main"} Preferences
         %li.login
             %center
-                - txt = "Log Out #{session[:user].capitalize}"
+                - txt = "Log Out #{@user[:name].capitalize}"
                 %a.pjax{:href => "/logout"}= txt

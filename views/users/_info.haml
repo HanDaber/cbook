@@ -1,9 +1,12 @@
-%h3.heading= @name
+%h3.heading= @user[:name].capitalize
+%br/
 %br/
 %img.user_image{src: "img/blank-user.gif"}
 
 .box.ib
+    
     %ul
+        %li="Member since #{@user[:since]}."
         %li 06/04/1992
         %li Philadelphia, PA
         %li Course: 2A

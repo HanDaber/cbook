@@ -18,6 +18,7 @@ require 'mongo'
 # MongoMapper provides an Object-Relational Model 
 # => between our Classes and MongoDB
 require 'mongo_mapper'
+require_relative 'configs/mongo'
 
 # Extend request object to handle pjax requests
 class Sinatra::Request
@@ -27,8 +28,12 @@ class Sinatra::Request
 end
 
 # Application Class
-class CollegeBook < Sinatra::Application
+class CollegeBook
 
+    # Import the MongoMapper::Document Class
+    include MongoMapper::Document
+    
+    private
     helpers do
         include Rack::Utils
         alias_method :h, :escape_html
@@ -37,17 +42,36 @@ class CollegeBook < Sinatra::Application
 end
 
 # User Class
-class User
+class User < CollegeBook
     
-    # Import the MongoMapper::Document Class
-    include MongoMapper::Document
-    require_relative 'configs/mongo'
+    key :name,          String, required: true
+    key :email,         String, required: true
+    key :pass,          String, required: true
+    key :created_at,    DateTime
 
-    key :name, String, :required => true
-    key :email, String, :required => true
-    key :pass, String, :required => true
-    key :created_at, Date
+    many :posts
+    many :tags
+end
 
+class Post < CollegeBook
+    
+    key :text,  String, required: true
+    
+    belongs_to :user
+    many :tags
+end
+
+class Tag < CollegeBook
+
+    key :slug, String, required: true
+    
+end
+
+class BulletinBoard < CollegeBook
+    
+    key :name,  String, required: true
+    
+    many :posts
 end
 
 # URL routing and helper functions

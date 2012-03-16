@@ -11,19 +11,9 @@ $(document).ready( function() {
 
 	$(window).resize( function() {
 		var this_w = $(window).width();
-        // if( this_w < 600 ) { 
-        //     this_w = 600; 
-        //     footer.css('background-color', '#556688'); 
-        // } else if ( this_w > 900 ) {
-        //     this_w = 900;
-        //     footer.css('background-color', '#003377');
-        // } else {
-        //     footer.css('background-color', '#003377');
-        // }
-
 		menu_items.width( (this_w - (x * this_w))/n );
-
 	});
 	
+	// Select which container to load pjax responses into
     $("a.pjax").pjax("#main-container");
 });
