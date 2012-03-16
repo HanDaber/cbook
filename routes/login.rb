@@ -2,10 +2,10 @@ require 'mongo_mapper'
 
 enable :sessions
 
-get "/login" do
-    @title  = "Login"
-    haml :index
-end
+# get "/login" do
+#     @title  = "Login"
+#     haml :index
+# end
 
 # Duct-taped error messages for now
 post "/login" do
@@ -20,7 +20,7 @@ post "/login" do
             session[:email] = found_user.email
             session[:pass] = found_user.pass
             session[:since] = found_user.created_at
-            redirect :home
+            redirect "#{found_user.name}/home"
         else
             haml <<"EOT", :layout => :layout
 %h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Wrong password, please go back and try again.
@@ -55,7 +55,7 @@ EOT
         session[:email] = new_user.email
         session[:pass] = new_user.pass
         session[:since] = new_user.created_at
-        redirect :home
+        redirect "#{new_user.name}/home"
     else
         haml <<"EOT", :layout => :layout
 %h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Something went wrong, please go back and try again.

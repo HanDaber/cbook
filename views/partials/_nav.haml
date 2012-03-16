@@ -3,22 +3,22 @@
         %li
             %center
                 .all_my My:
-                %a.pjax{:href => "/home"}
+                %a.pjax{:href => "/#{@user[:name]}/home"}
                     .my My
                     Net
         %li
             %center
-                %a.posts{:href => "#{@user[:name]}/posts"}
+                %a.posts{:href => "/#{@user[:name]}/posts"}
                     .my My
                     Posts
         %li
             %center
-                %a.pjax{:href => "/#main"}
+                %a.pjax{:href => "/#{@user[:name]}/tags"}
                     .my My
                     Tags
         %li
             %center
-                %a.pjax{:href => "/#main"} Preferences
+                %a.pjax{:href => "/#{@user[:name]}/prefs"} Preferences
         %li.login
             %center
                 %a{:href => "/logout"}

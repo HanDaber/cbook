@@ -389,7 +389,7 @@ body {
   @media screen and (min-width : 761px) {
     #main-container #left {
       float: left;
-      width: 15%;
+      width: 12%;
       margin-left: 8px;
       display: inline-block; }
       #main-container #left h3 {
@@ -420,11 +420,13 @@ body {
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #right {
       float: left;
-      width: 19%; } }
+      width: 19%;
+      display: inline-block; } }
   @media screen and (min-width : 761px) {
     #main-container #right {
+      display: inline-block;
       float: right;
-      width: 10%;
+      width: 12%;
       margin-right: 8px; } }
 
 #footer-container {

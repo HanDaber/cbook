@@ -38,7 +38,6 @@ class CollegeBook
         include Rack::Utils
         alias_method :h, :escape_html
     end
-  
 end
 
 # User Class
@@ -63,15 +62,17 @@ end
 
 class Tag < CollegeBook
 
-    key :slug, String, required: true
+    key :name, String, required: true
     
 end
 
 class BulletinBoard < CollegeBook
     
     key :name,  String, required: true
+    key :desc,  String, required: true
     
     many :posts
+    many :tags
 end
 
 # URL routing and helper functions

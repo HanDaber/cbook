@@ -82,7 +82,7 @@ body{background-color:$lt-blu;}
         }
     }
     @media screen and (min-width : 761px) {
-        #left{float:left;width:15%;margin-left:8px;display:inline-block;
+        #left{float:left;width:12%;margin-left:8px;display:inline-block;
             h3{float:left;}
             .user_image{float:left;}
             .box{padding:2px;margin:1px;border:1px solid $tr-br-blu;}
@@ -106,10 +106,10 @@ body{background-color:$lt-blu;}
         #right{display:block;}
     }
     @media screen and (min-width : 500px) and (max-width : 760px) {
-        #right{float:left;width:19%;}
+        #right{float:left;width:19%;display:inline-block;}
     }
     @media screen and (min-width : 761px) {
-        #right{float:right;width:10%;margin-right:8px;}
+        #right{display:inline-block;float:right;width:12%;margin-right:8px;}
     }
     
 }

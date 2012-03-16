@@ -1,0 +1,25 @@
+= haml(:'partials/_header', :layout => false)
+
+= haml(:'partials/_nav', :layout => false)
+
+#main-container.wrapper.clearfix.b{:role => "main"}
+    .prefs-container{style: "padding:20px 5em;"}
+        %fieldset{style: "border:1px solid black;"}
+            %legend Preferences:
+            .pref{style: "margin-left:1em;padding-top:1em;"}
+                %h3 E-mail address:
+                %p{style: "margin-left:1em;"}= @user[:email]
+            .pref{style: "margin-left:1em;padding-top:1em;"}
+                %h3 Member since:
+                %p{style: "margin-left:1em;"}= @user[:since]
+            .pref{style: "margin-left:1em;padding-top:1em;"}
+                %h3 
+                    Manage:
+                    %h4{style: "margin-left:1em;"} Posts:
+                    %p{style: "margin-left:2em;"}= @posts.length
+                    
+                    %h4{style: "margin-left:1em;"} Tags:
+                    %p{style: "margin-left:2em;"}= @tags.length
+            
+    
+= haml(:'partials/_footer', :layout => false)
