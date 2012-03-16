@@ -290,28 +290,44 @@ body {
       #nav-container ul li {
         display: inline-block;
         list-style: none;
-        margin: 0 3px;
-        padding: 0; }
+        margin: 0 0.4em; }
         #nav-container ul li a {
-          font-size: 9pt;
+          height: 1.2em;
+          display: inline-block;
+          font-size: 10pt;
           border-radius: 2px;
           border-bottom: 0;
           border-top: 0;
-          margin: 0 0.2em;
-          padding: 0.3em 0.4em;
+          margin: 0;
+          padding: 0.3em 0.3em 0 0.3em;
           background-color: #337799; }
         #nav-container ul li .my {
           display: none; }
         #nav-container ul li .all_my {
-          font-size: 10pt;
-          display: inline;
+          font-size: 11pt;
+          display: inline-block;
           position: absolute;
           left: -1.8em;
           top: 0.2em;
           color: #ddd; }
+        #nav-container ul li a.icon {
+          display: inline-block;
+          position: relative;
+          top: -0.1em; }
+          #nav-container ul li a.icon img {
+            width: 1.8em;
+            height: 1.8em;
+            position: relative;
+            top: -0.3em; }
         #nav-container ul li.login {
           float: right;
-          margin-right: 1em; } }
+          margin-right: 1em;
+          padding: 2px;
+          display: inline; }
+          #nav-container ul li.login center {
+            display: inline; }
+          #nav-container ul li.login a.wrd {
+            display: none; } }
   @media screen and (min-width : 500px) {
     #nav-container ul {
       left: -10px; }
@@ -328,6 +344,8 @@ body {
         #nav-container ul li .my {
           display: inline; }
         #nav-container ul li .all_my {
+          display: none; }
+        #nav-container ul li .log_my {
           display: none; }
         #nav-container ul li.login {
           float: right;

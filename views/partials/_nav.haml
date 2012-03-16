@@ -21,5 +21,7 @@
                 %a.pjax{:href => "/#main"} Preferences
         %li.login
             %center
-                - txt = "Log Out #{@user[:name].capitalize}"
-                %a.pjax{:href => "/logout"}= txt
+                %a.icon{:href => "/logout"}
+                    %img{src: "/img/logout.png"}
+                %a.wrd{:href => "/logout"}
+                    .my Log Out
