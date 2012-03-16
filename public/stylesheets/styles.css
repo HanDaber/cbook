@@ -289,22 +289,18 @@ body {
     height: 100%;
     background-color: rgba(0, 51, 119, 0.2);
     padding: 1em; }
-
-#left {
-  float: left;
-  width: 25%; }
-
-#middle {
-  width: 42%; }
-  #middle .feed_item {
-    width: 28em; }
-
-#right {
-  float: right;
-  width: 25%; }
-
-ul {
-  list-style: none; }
+  #main-container #left {
+    float: left;
+    width: 25%; }
+  #main-container #middle {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto; }
+  #main-container #right {
+    float: right;
+    width: 25%; }
+  #main-container ul {
+    list-style: none; }
 
 #footer-container {
   position: fixed;

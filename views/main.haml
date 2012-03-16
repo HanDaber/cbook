@@ -6,8 +6,8 @@
 
     %center
         #main.r8.b
-            / #left.column.ib
-            /     .b.h= haml(:'users/_info')
+            #left.column.ib
+                .b.h= haml(:'users/_info')
 
             #middle.column.ib
                 .b.h
@@ -15,39 +15,22 @@
                     %br/
                     %p
                         %hr{width:"80%"}/
-                    - 7.times do |i|
+                    - 20.times do |i|
                         .feed_item= "asdf#{sprintf("%.2f", 1.62*i/2)}hgkj"
                         %hr{width:"50%"}/
             
-            / #right.column.ib
-            /     .b.h
-            /         %h3 My Tags
-            /         %br/
-            /         %ul
-            /             %li 
-            /                 %a.pjax{:href => "Food"} Food
-            /             %li 
-            /                 %a.pjax{:href => "Spain@MIT"} Spain@MIT
-            /             %li
-            /                 %a.pjax{:href => "Parties"} Parties
-            /             %li
-            /                 %a.pjax{:href => "Class of 9999"} Class of 9999
-                        
-        #left.column.ib
-            .b.h= haml(:'users/_info')
-        
-        #right.column.ib
-            .b.h
-                %h3 My Tags
-                %br/
-                %ul
-                    %li 
-                        %a.pjax{:href => "Food"} Food
-                    %li 
-                        %a.pjax{:href => "Spain@MIT"} Spain@MIT
-                    %li
-                        %a.pjax{:href => "Parties"} Parties
-                    %li
-                        %a.pjax{:href => "Class of 9999"} Class of 9999
+            #right.column.ib
+                .b.h
+                    %h3 My Tags
+                    %br/
+                    %ul
+                        %li 
+                            %a.pjax{:href => "Food"} Food
+                        %li 
+                            %a.pjax{:href => "Spain@MIT"} Spain@MIT
+                        %li
+                            %a.pjax{:href => "Parties"} Parties
+                        %li
+                            %a.pjax{:href => "Class of 9999"} Class of 9999
 
 = haml(:'partials/_footer', :layout => false)
