@@ -409,8 +409,6 @@ body {
     height: 100%;
     background-color: rgba(0, 51, 119, 0.2);
     padding: 1em; }
-  #main-container #main {
-    border: 1px dotted yellow; }
   #main-container ul {
     list-style: none; }
   @media screen and (max-width : 499px) {

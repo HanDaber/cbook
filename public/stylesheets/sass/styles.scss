@@ -88,7 +88,7 @@ body{background-color:$lt-blu;}
 
 #main-container{position:relative;top:$top-space+50px;padding-bottom:$top-space;
 	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;}
-    #main{border:1px dotted yellow;}
+    #main{}
     ul{list-style:none;}
 
     @media screen and (max-width : 499px) {
