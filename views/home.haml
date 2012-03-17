@@ -47,8 +47,8 @@
                             %p you have no tags yet
                         - else
                             - @tags.each do |tag|
-                                - %li 
-                                    - %a.pjax{:href => "#{tag[:name]}"}= "#{tag[:name]}"
+                                %li 
+                                    %a.pjax{:href => "../#{tag[:name]}"}= "#{tag[:name]}"
 
 
 = haml(:'partials/_footer', :layout => false)

@@ -1,7 +1,7 @@
 get "/" do
     @title = "Welcome to CollegeBook"
     if session[:name]
-        # name = session[:name]
+        name = session[:name]
         # email = session[:email]
         # since = session[:since]
         # pass = session[:pass]
@@ -19,8 +19,8 @@ get "/:user/home" do
         if user
             @posts = user.posts.all
             @tags = user.tags.all
-            @user = {name: user.name, }
-            haml "#{user.name}/home"
+            @user = {name: user.name, email: user.email, since: user.created_at}
+            haml :home
         else
             not_found
         end    
