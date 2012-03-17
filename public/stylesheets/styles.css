@@ -408,7 +408,8 @@ body {
     margin-bottom: 8px;
     height: 100%;
     background-color: rgba(0, 51, 119, 0.2);
-    padding: 1em; }
+    padding: 1em;
+    border-radius: 2em; }
   #main-container ul {
     list-style: none; }
   @media screen and (max-width : 499px) {
