@@ -20,14 +20,17 @@
                                 %legend{style: "font-size:13pt;"} Create a post:
                                 %textarea{name: "post", cols: "40", rows: "3", style:"margin:5px;"}
                                 %br/
+                                Choose a tag:
+                                - @tags.each do |tag|
+                                    %input{type: "radio", name: "tag", value: "#{tag[:name]}", style: "margin-right:0.2em;"}= "#{tag[:name]}"
+                                %br/
                                 -# Totally not secure:
                                 %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
                                 %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %p
                         %hr{width:"50%"}/
-                    - 20.times do |i|
-                        .feed_item= "asdf#{sprintf("%.2f", 1.62*i/2)}hgkj"
-                        %hr{width:"20%"}/
+                    - 10.times do |i|
+                        .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:1em;"}= "asdf#{sprintf("%.2f", 1.62*i/2)}hgkj"
                     %p EOL
             
             #right.column

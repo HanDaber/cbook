@@ -87,9 +87,10 @@ body{background-color:$lt-blu;}
 }
 
 #main-container{position:relative;top:$top-space+50px;padding-bottom:$top-space;
-	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;border-radius:2em;}
+	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;border-radius:1em;}
     #main{}
     ul{list-style:none;}
+    .feed_item{background-color:$tr-blu;}
 
     @media screen and (max-width : 499px) {
         #left{display:block;

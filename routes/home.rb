@@ -79,6 +79,7 @@ post '/:user/post' do
     name = params[:user]
     pass = params[:pass]
     post_text = params[:post]
+    post_tag = params[:tag]
 
     found_user = User.find_by_name(name)
 
@@ -87,6 +88,15 @@ post '/:user/post' do
             @user = found_user
             new_post = @user.posts.create()
             new_post.text = post_text
+            new_post.tag = {name: post_tag}
+            
+            unless new_post.save
+                error_string_haml("Post save fail.")
+            end
+            
+            # @post = new_post
+            # new_post_tag = @post.tag.create()
+            # new_post_tag.name = post_tag
 
             session[:stat] = {status: new_post.save, msg: "Success!"}
             redirect "#{found_user.name}/home"

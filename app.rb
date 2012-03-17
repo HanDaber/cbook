@@ -54,13 +54,14 @@ class Post < CollegeBook
     key :text,  String, required: true
     
     belongs_to :user
-    many :tags
+    one :tag
 end
 
 class Tag < CollegeBook
 
     key :name, String, required: true
     
+    belongs_to :post
 end
 
 class BulletinBoard < CollegeBook

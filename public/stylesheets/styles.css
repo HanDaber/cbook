@@ -409,9 +409,11 @@ body {
     height: 100%;
     background-color: rgba(0, 51, 119, 0.2);
     padding: 1em;
-    border-radius: 2em; }
+    border-radius: 1em; }
   #main-container ul {
     list-style: none; }
+  #main-container .feed_item {
+    background-color: rgba(0, 51, 119, 0.2); }
   @media screen and (max-width : 499px) {
     #main-container #left {
       display: block; }
