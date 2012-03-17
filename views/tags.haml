@@ -4,7 +4,9 @@
 
 #main-container.wrapper.clearfix.b{:role => "main"}
     .tags-container{style: "padding:20px;"}
-        %h2 Tags:
-        %h2= @tags.length
+        %h2= "Tags: #{@tags.length}"
+        - @tags.each do |tag|
+            .post
+                %h2= tag.name
     
 = haml(:'partials/_footer', :layout => false)

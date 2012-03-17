@@ -143,8 +143,14 @@ body{background-color:$lt-blu;}
 .btn{background-color:#888;padding:3px;}
 .btn:hover{background-color:#eee;}
 
-.tag{background-color:#445588;padding:4px;}
-.post{background-color:#aaaaee;border:1px solid #22a;padding:5px;}
+@media screen and (max-width : 760px) {
+	.tag{background-color:#445588;padding:4px;}
+	.post{background-color:$tr-blu;border:1px solid $tr-br-blu;padding:5px;margin-bottom:1em;width:95%;}
+}
+@media screen and (min-width : 761px) {
+	.tag{background-color:#445588;padding:4px;}
+	.post{background-color:$tr-blu;border:1px solid $tr-br-blu;padding:5px;margin-bottom:1em;width:50%;}
+}
 
 h2{font-size:14pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
 

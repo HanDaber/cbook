@@ -4,9 +4,7 @@
 
 # Required libraries
 require 'rubygems'
-# Sinatra is a small framework 
-# => that provides URL routing 
-# => and some helper functions
+# Sinatra is a small framework that provides URL routing and some helper functions
 require 'sinatra'
 # HTML Templating with HAML
 require 'haml'
@@ -15,8 +13,7 @@ require 'sass'
 require 'sass/plugin/rack'
 # MongoDB is a small document database engine
 require 'mongo'
-# MongoMapper provides an Object-Relational Model 
-# => between our Classes and MongoDB
+# MongoMapper provides an Object-Relational Model between our Classes and MongoDB
 require 'mongo_mapper'
 require_relative 'configs/mongo'
 

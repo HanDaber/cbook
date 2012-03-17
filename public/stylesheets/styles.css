@@ -499,15 +499,28 @@ body {
 .btn:hover {
   background-color: #eee; }
 
-.tag {
-  background-color: #445588;
-  padding: 4px; }
+@media screen and (max-width : 760px) {
+  .tag {
+    background-color: #445588;
+    padding: 4px; }
 
-.post {
-  background-color: #aaaaee;
-  border: 1px solid #22a;
-  padding: 5px; }
+  .post {
+    background-color: rgba(0, 51, 119, 0.2);
+    border: 1px solid rgba(0, 51, 119, 0.5);
+    padding: 5px;
+    margin-bottom: 1em;
+    width: 95%; } }
+@media screen and (min-width : 761px) {
+  .tag {
+    background-color: #445588;
+    padding: 4px; }
 
+  .post {
+    background-color: rgba(0, 51, 119, 0.2);
+    border: 1px solid rgba(0, 51, 119, 0.5);
+    padding: 5px;
+    margin-bottom: 1em;
+    width: 50%; } }
 h2 {
   font-size: 14pt;
   color: #aaa;

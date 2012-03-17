@@ -4,7 +4,9 @@
 
 #main-container.wrapper.clearfix.b{:role => "main"}
     .posts-container{style: "padding:20px;"}
-        %h2 Posts:
-        %h2= @posts.length
+        %h2= "Posts: #{@posts.length}"
+        - @posts.each do |post|
+            .post
+                %h2= post.text
     
 = haml(:'partials/_footer', :layout => false)

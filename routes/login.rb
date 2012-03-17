@@ -22,14 +22,10 @@ post "/login" do
             session[:since] = found_user.created_at
             redirect "#{found_user.name}/home"
         else
-            haml <<"EOT", :layout => :layout
-%h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Wrong password, please go back and try again.
-EOT
+            error_string_haml("Wrong password, please go back and try again.")
         end
     else
-        haml <<"EOT", :layout => :layout
-%h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Username not found, please go back and try again.
-EOT
+        error_string_haml("Username not found, please go back and try again.")
     end
 end
 
@@ -47,9 +43,7 @@ post "/signup" do
     found_user = User.find_by_name(name)
     
     if found_user
-        haml <<"EOT", :layout => :layout
-%h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} User already exists, please go back and try a different name.
-EOT
+        error_string_haml("User already exists, please go back and try a different name.")
     elsif new_user.save
         session[:name] = new_user.name
         session[:email] = new_user.email
@@ -58,9 +52,7 @@ EOT
         session[:since] = new_user.created_at
         redirect "#{new_user.name}/home"
     else
-        haml <<"EOT", :layout => :layout
-%h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Something went wrong, please go back and try again.
-EOT
+        error_string_haml("Something went wrong, please go back and try again.")
     end
 end
 

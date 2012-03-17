@@ -34,14 +34,21 @@
                 .b.h
                     %h3 My Tags
                     %br/
+                    %form.ib{:name => "tag_form", :action => "/#{@user[:name]}/tag", :method => "post"}
+                        %fieldset{style: "padding:0.2em 0.8em;"}
+                            %legend{style: "font-size:11pt;"} Create a tag:
+                            %input{:type => "text", :name => "tag", :size => "10", style:"margin:2px;"}/
+                            %br/
+                            -# Totally not secure:
+                            %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                            %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %ul
-                        %li 
-                            %a.pjax{:href => "Food"} Food
-                        %li 
-                            %a.pjax{:href => "Spain@MIT"} Spain@MIT
-                        %li
-                            %a.pjax{:href => "Parties"} Parties
-                        %li
-                            %a.pjax{:href => "Class of 9999"} Class of 9999
+                        - if @tags.length == 0
+                            %p you have no tags yet
+                        - else
+                            - @tags.each do |tag|
+                                - %li 
+                                    - %a.pjax{:href => "#{tag[:name]}"}= "#{tag[:name]}"
+
 
 = haml(:'partials/_footer', :layout => false)

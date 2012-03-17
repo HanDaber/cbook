@@ -1,11 +1,11 @@
 get "/" do
     @title = "Welcome to CollegeBook"
     if session[:name]
-        name = session[:name]
-        email = session[:email]
-        since = session[:since]
-        pass = session[:pass]
-        @user = {:name => name, :email => email, :since => since}
+        # name = session[:name]
+        # email = session[:email]
+        # since = session[:since]
+        # pass = session[:pass]
+        # @user = {:name => name, :email => email, :since => since}
         # haml :home
         redirect "#{name}/home"
     else
@@ -15,11 +15,15 @@ end
 
 get "/:user/home" do
     if session[:name]
-        name = session[:name]
-        email = session[:email]
-        since = session[:since]
-        @user = {:name => name, :email => email, :since => since}
-        haml :home        
+        user = User.find_by_name(session[:name])
+        if user
+            @posts = user.posts.all
+            @tags = user.tags.all
+            @user = {name: user.name, }
+            haml "#{user.name}/home"
+        else
+            not_found
+        end    
     else
         redirect "/"
     end
@@ -75,7 +79,7 @@ post '/:user/post' do
     name = params[:user]
     pass = params[:pass]
     post_text = params[:post]
-    
+
     found_user = User.find_by_name(name)
 
     if found_user && found_user[:name] == name
@@ -83,18 +87,37 @@ post '/:user/post' do
             @user = found_user
             new_post = @user.posts.create()
             new_post.text = post_text
-            
+
             session[:stat] = {status: new_post.save, msg: "Success!"}
             redirect "#{found_user.name}/home"
         else
-            haml <<"EOT", :layout => :layout
-%h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Wrong password, please go back and try again.
-EOT
+            error_string_haml("Wrong password, please go back and try again.")
         end
     else
-        haml <<"EOT", :layout => :layout
-%h1{style:"color:#e00;font-size:16pt;margin:1em 2em;"} Username not found, please go back and try again.
-EOT
+        error_string_haml("Username not found, please go back and try again.")
+    end
+end
+
+post '/:user/tag' do
+    name = params[:user]
+    pass = params[:pass]
+    tag_name = params[:tag]
+
+    found_user = User.find_by_name(name)
+
+    if found_user && found_user[:name] == name
+        if found_user[:pass] == pass
+            @user = found_user
+            new_tag = @user.tags.create()
+            new_tag.name = tag_name
+
+            session[:stat] = {status: new_tag.save, msg: "Success!"}
+            redirect "#{found_user.name}/home"
+        else
+            error_string_haml("Wrong password, please go back and try again.")
+        end
+    else
+        error_string_haml("Username not found, please go back and try again.")
     end
 end
 
