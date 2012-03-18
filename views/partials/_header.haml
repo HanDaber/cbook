@@ -2,11 +2,11 @@
     %header
         %h1#title
             %a{:href => "/"} CollegEbook
-            / %a{:href => "/"} -
+            -# %a{:href => "/"} -
         %nav
             %a.college_logo{:href => "http://web.mit.edu/"}
                 %img{:src => "img/cached_logo-mit.gif", :alt => "MIT"}/
-            %p{:style => "position:relative; top:-5px; left:10em;"}= Time.now.strftime("Debug: load@ %Y/%m/%d %H:%M:%S")
+            -# %p{:style => "position:relative; top:-5px; left:10em;"}= Time.now.strftime("Debug: load@ %Y/%m/%d %H:%M:%S")
     - if session[:stat]
         - if session[:stat][:status] == true
             - color = "green"

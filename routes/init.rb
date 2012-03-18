@@ -21,9 +21,33 @@ def route_to(loc)
         user = User.find_by_name(@name)
         
         if user
-            @posts = user.posts.all
             @tags = user.tags
             @user = user
+            
+            if @page == :home
+                
+                all_posts = Post.all
+                
+                @posts = []
+                all_posts.each do |post|
+                    show_post = false
+                    
+                    @tags.each do |tag|
+                        post.post_tags.each { |t| show_post = true if t == tag.name }
+                    end
+
+                    if show_post
+                        @posts << post
+                    end
+                end
+                
+                unless @posts
+                    @posts.post_tags = {text: "nil", post_tags: "nil"}
+                end
+            else
+                @posts = user.posts.all
+            end
+            
             haml @page
         else
             redirect "/"

@@ -32,8 +32,9 @@
                                 %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %p
                         %hr{width:"50%"}/
-                    - 10.times do |i|
-                        .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:1em;"}= "asdf#{sprintf("%.2f", 1.62*i/2)}hgkj"
+                    %h1= "#{@posts.length}"
+                    - @posts.each do |p|
+                        .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:1em;"}= "#{p.text}"
                     %p EOL
             
             #right.column

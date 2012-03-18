@@ -39,13 +39,14 @@ get '/:board' do
     
     if board
         @board = board
-        @posts = []
+        
         all_posts = Post.all
 
+        @posts = []
         all_posts.each do |post|
             show_post = false
             post.post_tags.each { |t| show_post = true if t[1] == @board.name }
-            
+
             if show_post
                 @posts << post
             end
