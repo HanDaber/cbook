@@ -405,7 +405,7 @@ body {
         border-bottom: 0;
         border-top: 0;
         margin: 0;
-        padding: 1em 1em; }
+        padding: 1em 0.3em; }
       #nav-container ul li .my {
         display: inline; }
       #nav-container ul li .all_my {
