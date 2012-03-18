@@ -36,7 +36,14 @@ class CollegeBook
     end
 end
 
-# User Class
+class Board < CollegeBook
+    
+    key :name,  String, required: true
+    key :bio,  String, required: true
+    
+    many :posts
+end
+
 class User < CollegeBook
     
     key :name,          String,     required: true
@@ -51,28 +58,19 @@ end
 
 class Post < CollegeBook
     
-    key :text,  String, required: true
+    key :text,      String, required: true
+    key :post_tags, Array
     
     belongs_to :user
-    one :tag
+    many :tags, :in => :post_tags
 end
 
 class Tag < CollegeBook
-
-    # include MongoMapper::EmbeddedDocument
     
     key :name, String, required: true
-    
-    belongs_to :post
-end
-
-class Board < CollegeBook
-    
-    key :name,  String, required: true
-    key :desc,  String, required: true
-    
-    many :posts
-    one :tag
+    # 
+    # belongs_to :user
+    # belongs_to :post
 end
 
 # URL routing and helper functions

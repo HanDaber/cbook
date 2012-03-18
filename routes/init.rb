@@ -22,7 +22,7 @@ def route_to(loc)
         
         if user
             @posts = user.posts.all
-            @tags = user.tags.all
+            @tags = user.tags
             @user = user
             haml @page
         else

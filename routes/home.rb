@@ -39,6 +39,22 @@ get '/:board' do
     
     if board
         @board = board
+        @posts = []
+        all_posts = Post.all
+
+        all_posts.each do |post|
+            show_post = false
+            post.post_tags.each { |t| show_post = true if t[1] == @board.name }
+            
+            if show_post
+                @posts << post
+            end
+        end
+        
+        unless @posts
+            @posts.post_tags = {text: "nil", post_tags: "nil"}
+        end
+        
         @show = true
     else
         @create = true
@@ -62,14 +78,14 @@ post '/:user/post' do
     found_user = User.find_by_name(@who)
         
     @post_text = params[:post]
-    @post_tag = params[:tag]
+    @post_tags = params[:tag]
 
     if found_user
         if found_user[:pass] == @pass
-            @user = found_user
-            new_post = @user.posts.create()
-            new_post.text = @post_text
-            new_post.tag.name = @post_tag
+
+            new_post = found_user.posts.create({text: @post_text})
+
+            new_post.post_tags = @post_tags.each { |t| t[1] }
             
             unless new_post.save
                 error_string_haml("Post save fail.")
@@ -94,13 +110,8 @@ post '/:user/tag' do
 
     if found_user
         if found_user[:pass] == @pass
-            @user = found_user
-            new_tag = @user.tags.create()
-            new_tag.name = @tag_name
             
-            unless new_tag.save
-                error_string_haml("Post save fail.")
-            end
+            new_tag = found_user.tags.create({name: @tag_name})
             
             session[:stat] = {status: new_tag.save, msg: "Success?"}
             redirect "#{found_user.name}/home"
@@ -122,7 +133,7 @@ post '/:user/prefs' do
     if found_user
         if found_user[:pass] == @pass
 
-            session[:stat] = {status: found_user.update_attributes!(:bio => user_bio), msg: "Success?"}
+            session[:stat] = {status: found_user.update_attributes!(:bio => @user_bio), msg: "Success?"}
             redirect "#{found_user.name}/home"
         else
             error_string_haml("Wrong password, please go back and try again.")
@@ -145,7 +156,7 @@ post '/board/new' do
             
             new_board = Board.create()
             new_board.name = @board_name
-            new_board.desc = @board_desc
+            new_board.bio = @board_desc
             
             unless new_board.save
                 error_string_haml("Post save fail.")

@@ -23,9 +23,9 @@
                                 %fieldset.ib.fl
                                     %legend{style: "font-size:13pt;"} Add a tag:
                                     %ul
-                                    - @tags.each do |tag|
+                                    - @tags.each_with_index do |tag, i|
                                         %li
-                                            %input{type: "radio", name: "tag", value: "#{tag[:name]}", style: "margin-right:0.2em;"}= "#{tag[:name]}"
+                                            %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag[:name]}", style: "margin-right:0.2em;"}= "#{tag[:name]}"
                                 %br/
                                 -# Totally not secure:
                                 %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/

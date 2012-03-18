@@ -9,10 +9,15 @@
         #main.r8.b.clearfix
             #left.column
                 .b.h
-                    .b= @board.name
+                    .b
+                        = @board.name
+                        %br/
+                        - if @show && @user
+                            [ADD TO TAGS]
+                            %br/
                     - if @show
                         %h3.b Board info:
-                        %p= @board.desc
+                        %p= @board.bio
 
             #middle
                 .h.column
@@ -22,8 +27,9 @@
                         %p
                             %hr{width:"50%"}/
                         .feed-container
+                            %h1= @posts.length
                             - 15.times do |i|
-                                .feed_item{style: "border:1px solid black;"}= "asdf#{3 * ( 1 + rand(8) )}"
+                                .feed_item{style: "border:1px solid black;margin:2em;"}= "asdf#{3 * ( 1 + rand(8) )}"
                         %p EOL
                     - if @create
                         .new_board

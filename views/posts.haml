@@ -8,7 +8,10 @@
         - @posts.each do |post|
             .post
                 %h2= post.text
-                - if post.tag
-                    %p= "(tagged as #{post.tag.name})"
+                - if post.post_tags
+                    %p= "Tagged as (#{post.post_tags.length}):"
+                    %ul
+                    - post.post_tags.each do |t|
+                        %li= "#{t[1]}"
     
 = haml(:'partials/_footer', :layout => false)
