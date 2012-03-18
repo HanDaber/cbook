@@ -34,9 +34,11 @@
                                 %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %p
                         %hr{width:"50%"}/
-                    %h1= "#{@posts.length}"
+                    %h6= "#{@posts.length}"
                     - @posts.each do |p|
-                        .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:1em;"}= "#{p.text}"
+                        .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:1em;"}
+                            %h1.b= "#{p.text}"
+                            %p{style: "float:right;margin:0 0.5em 3em 0;"}= "by #{p.user.name}"
             
             #right.column
                 .b.h

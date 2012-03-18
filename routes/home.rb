@@ -113,8 +113,6 @@ post '/:user/tag' do
         if found_user[:pass] == @pass
             
             new_tag = found_user.tags.create({name: @tag_name})
-            # new_tag = Tag.create({name: @tag_name})
-            # new_tag.user = found_user
             
             session[:stat] = {status: new_tag.save, msg: "Success?"}
             redirect "#{found_user.name}/home"
