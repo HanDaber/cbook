@@ -275,16 +275,16 @@ body {
     #header-container .college_logo {
       position: absolute;
       top: 0.8em;
-      right: 1.8em; }
+      right: 1.2em; }
       #header-container .college_logo img {
         border: 0;
         width: 40px;
         height: 22px; }
     #header-container h1#title {
       font-family: 'Annie Use Your Telescope',cursive;
-      font-size: 20pt;
-      margin-left: 0.6em;
-      margin-top: 0.3em; }
+      font-size: 16pt;
+      margin-left: 0.5em;
+      margin-top: 0.2em; }
       #header-container h1#title a {
         color: #ddd; } }
 #nav-container {

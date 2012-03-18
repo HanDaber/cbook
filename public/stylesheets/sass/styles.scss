@@ -28,10 +28,10 @@ body{background-color:$lt-blu;}
 }
 @media screen and (max-width : 760px) and (orientation : landscape) {
     #header-container{height:$top-space - 30px;
-        .college_logo{position:absolute;top:0.8em;right:1.8em;
+        .college_logo{position:absolute;top:0.8em;right:1.2em;
             img{border:0;width:40px;height:22px;}
         }
-        h1#title{font-family:'Annie Use Your Telescope',cursive;font-size:20pt;margin-left:0.6em;margin-top:0.3em;
+        h1#title{font-family:'Annie Use Your Telescope',cursive;font-size:16pt;margin-left:0.5em;margin-top:0.2em;
             a{color:#ddd;}
         }
     }
