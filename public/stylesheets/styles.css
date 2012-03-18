@@ -426,7 +426,7 @@ body {
         margin: 0 1em; }
         #nav-container ul li a {
           display: inline-block;
-          font-size: 10pt;
+          font-size: 12pt;
           border-radius: 2px;
           border-bottom: 0;
           border-top: 0;
@@ -448,7 +448,7 @@ body {
             top: 0; }
         #nav-container ul li.login {
           float: right;
-          margin-right: 1em; }
+          margin-right: 2.5em; }
           #nav-container ul li.login a.wrd {
             display: none; } }
 
