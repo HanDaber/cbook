@@ -273,38 +273,28 @@ body {
   #header-container {
     height: 35px; }
     #header-container .college_logo {
-      position: absolute;
       top: 0.5em;
       right: 0.8em; }
       #header-container .college_logo img {
-        border: 0;
         width: 40px;
         height: 22px; }
     #header-container h1#title {
-      font-family: 'Annie Use Your Telescope',cursive;
       font-size: 18pt;
       margin-left: 0.5em;
-      margin-top: 0.1em; }
-      #header-container h1#title a {
-        color: #ddd; } }
+      margin-top: 0.1em; } }
 @media screen and (max-width : 760px) and (orientation : landscape) {
   #header-container {
     height: 35px; }
     #header-container .college_logo {
-      position: absolute;
       top: 0.5em;
       right: 0.8em; }
       #header-container .college_logo img {
-        border: 0;
         width: 40px;
         height: 22px; }
     #header-container h1#title {
-      font-family: 'Annie Use Your Telescope',cursive;
       font-size: 18pt;
       margin-left: 0.5em;
-      margin-top: 0.1em; }
-      #header-container h1#title a {
-        color: #ddd; } }
+      margin-top: 0.1em; } }
 #nav-container {
   position: fixed;
   z-index: 98;
@@ -313,92 +303,81 @@ body {
   border-bottom: 1px solid #265973; }
   #nav-container ul {
     display: block;
-    position: relative; }
+    position: relative;
+    left: 5px; }
+    #nav-container ul li {
+      display: inline-block;
+      list-style: none; }
   #nav-container a {
     display: inline-block;
     height: 100%;
     width: 100%;
     border: 1px solid #193b4d;
-    background-color: rgba(0, 51, 119, 0.2); }
+    font-size: 10pt;
+    background-color: #337799; }
   @media screen and (max-width : 499px) {
-    #nav-container ul {
-      left: 5px; }
-      #nav-container ul li {
+    #nav-container ul li {
+      margin: 0 0.3em; }
+      #nav-container ul li a {
+        border-radius: 2px;
+        border-bottom: 0;
+        border-top: 0;
+        margin: 0;
+        padding: 0.35em 0.25em; }
+      #nav-container ul li .my {
+        display: none; }
+      #nav-container ul li .all_my {
+        font-size: 11pt;
         display: inline-block;
-        list-style: none;
-        margin: 0 0.3em; }
-        #nav-container ul li a {
-          display: inline-block;
-          font-size: 10pt;
-          border-radius: 2px;
-          border-bottom: 0;
-          border-top: 0;
-          margin: 0;
-          padding: 0.35em 0.25em;
-          background-color: #337799; }
-        #nav-container ul li .my {
-          display: none; }
-        #nav-container ul li .all_my {
-          font-size: 11pt;
-          display: inline-block;
-          position: absolute;
-          left: -1.8em;
-          top: 0.2em;
-          color: #ddd; }
-        #nav-container ul li a.icon {
-          display: inline-block;
+        position: absolute;
+        left: -1.8em;
+        top: 0.2em;
+        color: #ddd; }
+      #nav-container ul li a.icon {
+        display: inline-block;
+        position: relative;
+        top: -0.1em; }
+        #nav-container ul li a.icon img {
+          width: 1.8em;
+          height: 1.8em;
           position: relative;
-          top: -0.1em; }
-          #nav-container ul li a.icon img {
-            width: 1.8em;
-            height: 1.8em;
-            position: relative;
-            top: 0; }
-        #nav-container ul li.login {
-          float: right;
-          margin-right: 1em; }
-          #nav-container ul li.login a.wrd {
-            display: none; } }
+          top: 0; }
+      #nav-container ul li.login {
+        float: right;
+        margin-right: 1em; }
+        #nav-container ul li.login a.wrd {
+          display: none; } }
   @media screen and (min-width : 500px) and (max-width : 760px) {
-    #nav-container ul {
-      left: 5px; }
-      #nav-container ul li {
+    #nav-container ul li {
+      margin: 0 0.5em; }
+      #nav-container ul li a {
+        border-radius: 2px;
+        border-bottom: 0;
+        border-top: 0;
+        margin: 0;
+        padding: 0.5em; }
+      #nav-container ul li .my {
+        display: inline; }
+      #nav-container ul li .all_my {
+        display: none; }
+      #nav-container ul li a.icon {
         display: inline-block;
-        list-style: none;
-        margin: 0 0.5em; }
-        #nav-container ul li a {
-          display: inline-block;
-          font-size: 10pt;
-          border-radius: 2px;
-          border-bottom: 0;
-          border-top: 0;
-          margin: 0;
-          padding: 0.5em;
-          background-color: #337799; }
-        #nav-container ul li .my {
-          display: inline; }
-        #nav-container ul li .all_my {
-          display: none; }
-        #nav-container ul li a.icon {
-          display: inline-block;
+        position: relative;
+        top: -0.1em; }
+        #nav-container ul li a.icon img {
+          width: 1.8em;
+          height: 1.8em;
           position: relative;
-          top: -0.1em; }
-          #nav-container ul li a.icon img {
-            width: 1.8em;
-            height: 1.8em;
-            position: relative;
-            top: 0; }
-        #nav-container ul li.login {
-          float: right;
-          margin-right: 1em; }
-          #nav-container ul li.login a.wrd {
-            display: none; } }
+          top: 0; }
+      #nav-container ul li.login {
+        float: right;
+        margin-right: 1em; }
+        #nav-container ul li.login a.wrd {
+          display: none; } }
   @media screen and (min-width : 761px) {
     #nav-container ul {
       left: -10px; }
       #nav-container ul li {
-        display: inline-block;
-        list-style: none;
         margin: 0.2em 0.5em;
         padding: 0; }
         #nav-container ul li a {
@@ -418,39 +397,33 @@ body {
           float: right;
           margin-right: 1em; } }
   @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) {
-    #nav-container ul {
-      left: 5px; }
-      #nav-container ul li {
+    #nav-container ul li {
+      margin: 0 1em; }
+      #nav-container ul li a {
+        font-size: 12pt;
+        border-radius: 2px;
+        border-bottom: 0;
+        border-top: 0;
+        margin: 0;
+        padding: 1em 1em; }
+      #nav-container ul li .my {
+        display: inline; }
+      #nav-container ul li .all_my {
+        display: none; }
+      #nav-container ul li a.icon {
         display: inline-block;
-        list-style: none;
-        margin: 0 1em; }
-        #nav-container ul li a {
-          display: inline-block;
-          font-size: 12pt;
-          border-radius: 2px;
-          border-bottom: 0;
-          border-top: 0;
-          margin: 0;
-          padding: 1em 1em;
-          background-color: #337799; }
-        #nav-container ul li .my {
-          display: inline; }
-        #nav-container ul li .all_my {
-          display: none; }
-        #nav-container ul li a.icon {
-          display: inline-block;
+        position: relative;
+        top: -0.1em; }
+        #nav-container ul li a.icon img {
+          width: 1.8em;
+          height: 1.8em;
           position: relative;
-          top: -0.1em; }
-          #nav-container ul li a.icon img {
-            width: 1.8em;
-            height: 1.8em;
-            position: relative;
-            top: 0; }
-        #nav-container ul li.login {
-          float: right;
-          margin-right: 2.5em; }
-          #nav-container ul li.login a.wrd {
-            display: none; } }
+          top: 0; }
+      #nav-container ul li.login {
+        float: right;
+        margin-right: 2.5em; }
+        #nav-container ul li.login a.wrd {
+          display: none; } }
 
 @media screen and (max-width : 499px) {
   #nav-container {
@@ -471,8 +444,18 @@ body {
     border-radius: 0.2em; }
   #main-container ul {
     list-style: none; }
+  #main-container .user_image {
+    float: left; }
+  #main-container h3 {
+    float: left; }
+  #main-container .box {
+    padding: 2px;
+    margin: 1px;
+    border: 1px dotted rgba(0, 51, 119, 0.5); }
   #main-container .feed_item {
     background-color: rgba(0, 51, 119, 0.2); }
+  #main-container pre {
+    text-align: justify; }
   #main-container .create_post {
     width: 80%; }
     #main-container .create_post fieldset {
@@ -488,7 +471,7 @@ body {
       text-align: left;
       width: 3.8em;
       height: 2em;
-      background-color: rgba(0, 51, 119, 0.2); }
+      border: 1px dotted rgba(0, 51, 119, 0.2); }
     @media screen and (max-width : 499px) {
       #main-container .create_post textarea {
         width: 180px; } }
@@ -506,48 +489,18 @@ body {
         height: 40px; } }
   @media screen and (max-width : 499px) {
     #main-container #left {
-      display: block; }
-      #main-container #left h3 {
-        float: left; }
-      #main-container #left .user_image {
-        float: left; }
-      #main-container #left .box {
-        padding: 2px;
-        margin: 1px;
-        border: 1px dotted rgba(0, 51, 119, 0.5); }
-      #main-container #left pre {
-        text-align: left; } }
+      display: block; } }
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #left {
       float: left;
       width: 21%;
-      display: inline-block; }
-      #main-container #left h3 {
-        float: left; }
-      #main-container #left .user_image {
-        float: left; }
-      #main-container #left .box {
-        padding: 2px;
-        margin: 1px;
-        border: 1px dashed rgba(0, 51, 119, 0.5); }
-      #main-container #left pre {
-        text-align: left; } }
+      display: inline-block; } }
   @media screen and (min-width : 761px) {
     #main-container #left {
       float: left;
       width: 14%;
       margin-left: 6px;
-      display: inline-block; }
-      #main-container #left h3 {
-        float: left; }
-      #main-container #left .user_image {
-        float: left; }
-      #main-container #left .box {
-        padding: 2px;
-        margin: 1px;
-        border: 1px solid rgba(0, 51, 119, 0.5); }
-      #main-container #left pre {
-        text-align: left; } }
+      display: inline-block; } }
   @media screen and (max-width : 499px) {
     #main-container #middle {
       display: block; } }
@@ -611,6 +564,28 @@ body {
         display: inline-block;
         margin-bottom: 3px; } }
 
+@media screen and (max-width : 760px) {
+  .tag {
+    background-color: #445588;
+    padding: 4px; }
+
+  .post {
+    background-color: rgba(0, 51, 119, 0.2);
+    border: 1px solid rgba(0, 51, 119, 0.5);
+    padding: 5px;
+    margin-bottom: 1em;
+    width: 95%; } }
+@media screen and (min-width : 761px) {
+  .tag {
+    background-color: #445588;
+    padding: 4px; }
+
+  .post {
+    background-color: rgba(0, 51, 119, 0.2);
+    border: 1px solid rgba(0, 51, 119, 0.5);
+    padding: 5px;
+    margin-bottom: 1em;
+    width: 50%; } }
 #splash {
   position: relative;
   width: 60%;
@@ -659,28 +634,6 @@ body {
 .btn:hover {
   background-color: #eee; }
 
-@media screen and (max-width : 760px) {
-  .tag {
-    background-color: #445588;
-    padding: 4px; }
-
-  .post {
-    background-color: rgba(0, 51, 119, 0.2);
-    border: 1px solid rgba(0, 51, 119, 0.5);
-    padding: 5px;
-    margin-bottom: 1em;
-    width: 95%; } }
-@media screen and (min-width : 761px) {
-  .tag {
-    background-color: #445588;
-    padding: 4px; }
-
-  .post {
-    background-color: rgba(0, 51, 119, 0.2);
-    border: 1px solid rgba(0, 51, 119, 0.5);
-    padding: 5px;
-    margin-bottom: 1em;
-    width: 50%; } }
 h2 {
   font-size: 14pt;
   color: #aaa;
@@ -688,10 +641,10 @@ h2 {
   margin-bottom: 5px; }
 
 a, a:visited {
-  color: #aaeeff; }
+  color: #ffe5e5; }
 
 a:hover {
-  color: #fee; }
+  color: #ffeeee; }
 
 /**
  * Non-semantic helper classes: please define your styles before this section.

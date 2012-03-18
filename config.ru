@@ -22,6 +22,7 @@ set :haml, { :ugly=>true }
     # Sass should compile without spaces (reduces file size)
 use Sass::Plugin::Rack
 set :sass, {:style => :compressed}
+
 set :clean_trace, true
 
 # run app.rb

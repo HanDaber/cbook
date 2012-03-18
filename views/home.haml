@@ -26,10 +26,6 @@
                                         - i = 0
                                         - @tags.each do |tag|
                                             - i += 1
-                                            -# if i % 4 == 0
-                                                -#%li{style: "clear:left;"}
-                                                    -#%input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
-                                            -# else
                                             %li
                                                 %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
                                                 
@@ -61,8 +57,8 @@
                         - else
                             -# = @tags.inspect
                             - @tags.each do |tag|
-                                %li 
-                                    %a.pjax{:href => "../#{tag.name}"}= "#{tag.name}"
+                                %li.home_tags
+                                    %a{:href => "../#{tag.name}"}= "#{tag.name}"
 
 
 = haml(:'partials/_footer', :layout => false)
