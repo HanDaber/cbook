@@ -396,7 +396,7 @@ body {
         #nav-container ul li.login {
           float: right;
           margin-right: 1em; } }
-  @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) {
+  @media only screen and (min-device-width : 761px) and (max-device-width : 1280px), screen and (orientation : landscape) {
     #nav-container ul li {
       margin: 0 1em; }
       #nav-container ul li a {
@@ -434,7 +434,7 @@ body {
       border-top: 0;
       margin: 0;
       padding: 0.2em 0.15em; } }
-@media screen and (min-width : 500px) and (max-width : 760px) and (orientation : portrait) {
+@media screen and (min-width : 500px) and (max-width : 760px) and (orientation : landscape) {
   #nav-container {
     top: 35px; }
 
