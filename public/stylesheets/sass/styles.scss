@@ -97,7 +97,8 @@ body{background-color:$lt-blu;}
         }
     }
     
-    @media only screen and (min-device-width : 761px) and (max-device-width : 1024px) {
+//    Tablet styles: 
+    @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) {
         ul{left:5px;
             li{display:inline-block;list-style:none;margin:0 0.5em;
                 a{display:inline-block;font-size:10pt;border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.5em;background-color:$bl-red;}
