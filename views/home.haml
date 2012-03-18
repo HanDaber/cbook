@@ -21,13 +21,19 @@
                                 %textarea{name: "post", cols: "40", rows: "3", style:"margin:5px;"}
                                 %br/
                                 %fieldset.ib.fl
-                                    %legend{style: "font-size:13pt;"} Add a tag:
+                                    %legend{style: "font-size:13pt;"} Add some tags:
                                     %ul
-                                    - i = 0
-                                    - @tags.each do |tag|
-                                        %li
-                                            %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
-                                            - i++
+                                        - i = 0
+                                        - @tags.each do |tag|
+                                            - i += 1
+                                            -# if i % 4 == 0
+                                                -#%li{style: "clear:left;"}
+                                                    -#%input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
+                                            -# else
+                                            %li
+                                                %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
+                                                
+                                                
                                 %br/
                                 -# Totally not secure:
                                 %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
@@ -35,16 +41,13 @@
                     %p
                         %hr{width:"50%"}/
                     %h6= "#{@posts.length}"
-                    - @posts.each do |p|
-                        .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:1em;"}
-                            %h1.b= "#{p.text}"
-                            %p{style: "float:right;margin:0 0.5em 3em 0;"}= "by #{p.user.name}"
+                    .feed-container= haml(:'partials/_posts_list')
             
             #right.column
                 .b.h
                     %h3 My Net
                     %br/
-                    %form.ib{:name => "tag_form", :action => "/#{@user[:name]}/tag", :method => "post"}
+                    %form.ib{:name => "tag_form", :action => "/#{@user.name}/tag", :method => "post"}
                         %fieldset{style: "padding:0.2em 0.8em;"}
                             %legend{style: "font-size:11pt;"} Create a tag:
                             %input{:type => "text", :name => "tag", :size => "8", style:"margin:2px;"}/

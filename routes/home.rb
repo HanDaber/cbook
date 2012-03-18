@@ -30,6 +30,7 @@ get '/:board' do
     
     @board = Board.create()
     @board.name = board_tag
+    @posts = []
     
     if session[:name] && session[:pass]
         @user = User.find_by_name(session[:name])
@@ -42,7 +43,6 @@ get '/:board' do
         
         all_posts = Post.all
 
-        @posts = []
         all_posts.each do |post|
             show_post = false
             post.post_tags.each { |t| show_post = true if t[1] == @board.name }
@@ -53,7 +53,7 @@ get '/:board' do
         end
         
         unless @posts
-            @posts.post_tags = {text: "nil", post_tags: "nil"}
+            @posts = {text: "nil", post_tags: "nil"}
         end
         
         @show = true
@@ -112,10 +112,16 @@ post '/:user/tag' do
     if found_user
         if found_user[:pass] == @pass
             
-            new_tag = found_user.tags.create({name: @tag_name})
-            
-            session[:stat] = {status: new_tag.save, msg: "Success?"}
-            redirect "#{found_user.name}/home"
+            duh = false
+            found_user.tags.each { |t| duh = true if t.name == @tag_name }
+            if duh
+                error_string_haml("You already have that tag.")
+            else
+                new_tag = found_user.tags.create({name: @tag_name})
+                session[:stat] = {status: new_tag.save, msg: "Success?"}
+                redirect "#{found_user.name}/home"
+            end
+
         else
             error_string_haml("Wrong password, please go back and try again.")
         end

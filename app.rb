@@ -39,15 +39,15 @@ end
 class Board < CollegeBook
     
     key :name,  String, required: true
-    key :bio,  String, required: true
+    key :bio,   String, required: true
     
     many :posts
 end
 
 class User < CollegeBook
     
-    key :name,          String,     required: true
-    key :email,         String,     required: true
+    key :name,          String,     required: true, unique: true
+    key :email,         String,     required: true, unique: true, format: /^[A-Z0-9._]+@mit\.edu$/i
     key :pass,          String,     required: true
     key :bio,           String
     key :created_at,    DateTime,   required: true

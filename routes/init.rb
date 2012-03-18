@@ -23,12 +23,12 @@ def route_to(loc)
         if user
             @user = user
             @tags = @user.tags
+            @posts = []
             
             if @page == :home
                 
                 all_posts = Post.all
-                
-                @posts = []
+
                 all_posts.each do |post|
                     show_post = false
                     
@@ -42,7 +42,7 @@ def route_to(loc)
                 end
                 
                 unless @posts
-                    @posts.post_tags = {text: "nil", post_tags: "nil"}
+                    @posts = {text: "nil", post_tags: "nil"}
                 end
             else
                 @posts = user.posts.all

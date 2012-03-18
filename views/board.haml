@@ -13,7 +13,14 @@
                         = @board.name
                         %br/
                         - if @show && @user
-                            [ADD TO TAGS]
+                            %form.ib{:name => "tag_form", :action => "/#{@user.name}/tag", :method => "post"}
+                                %fieldset{style: "padding:0.2em 0.8em;"}
+                                    %legend{style: "font-size:11pt;"} Add this tag:
+                                    %br/
+                                    -# Totally not secure:
+                                    %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                                    %input{:type => "hidden", :name => "tag", value: "#{@board.name}"}/
+                                    %input.btn.r4{:type => "submit", :value => "Add!", style:"margin:5px;"}/
                             %br/
                     - if @show
                         %h3.b Board info:
@@ -21,20 +28,17 @@
 
             #middle
                 .h.column
-                    %h3= "Posts tagged for #{@board.name}" 
+                    %h3= "#{@posts.length} posts tagged with #{@board.name}" 
                     %br/
                     - if @show
                         %p
                             %hr{width:"50%"}/
-                        .feed-container
-                            %h1= @posts.length
-                            - @posts.each do |p|
-                                .feed_item{style: "border:1px solid black;margin:2em;"}= "#{p.text}"
+                        .feed-container= haml(:'partials/_posts_list')
 
                     - if @create && !@login
                         .new_board
                             %h1 No such board exists yet.
-                            %form.ib{:name => "login_form", :action => "/board/new", :method => "post"}
+                            %form.ib{:name => "board_form", :action => "/board/new", :method => "post"}
                                 %fieldset
                                     %legend You can create it:
                                     %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
