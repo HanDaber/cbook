@@ -52,6 +52,10 @@ get '/:board' do
             end
         end
         
+        tags = @user.tags
+        @has_tag = false
+        tags.each { |t| @has_tag = true if t[1] == @board.name }
+        
         unless @posts
             @posts = {text: "nil", post_tags: "nil"}
         end

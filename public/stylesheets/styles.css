@@ -269,6 +269,24 @@ body {
     #header-container h1#title a {
       color: #ddd; }
 
+@media screen and (max-width : 499px) {
+  #header-container {
+    height: 35px; }
+    #header-container .college_logo {
+      position: absolute;
+      top: 0.5em;
+      right: 0.8em; }
+      #header-container .college_logo img {
+        border: 0;
+        width: 40px;
+        height: 22px; }
+    #header-container h1#title {
+      font-family: 'Annie Use Your Telescope',cursive;
+      font-size: 18pt;
+      margin-left: 0.5em;
+      margin-top: 0.1em; }
+      #header-container h1#title a {
+        color: #ddd; } }
 @media screen and (max-width : 760px) and (orientation : landscape) {
   #header-container {
     height: 35px; }
@@ -381,13 +399,15 @@ body {
       #nav-container ul li {
         display: inline-block;
         list-style: none;
-        margin: 0 3px;
+        margin: 0.2em 0.5em;
         padding: 0; }
         #nav-container ul li a {
           font-size: 12pt;
           border-radius: 4px;
           margin: 0 0.2em;
           padding: 0.2em; }
+          #nav-container ul li a:hover {
+            background: #68a; }
         #nav-container ul li .my {
           display: inline; }
         #nav-container ul li .all_my {
@@ -398,55 +418,16 @@ body {
           float: right;
           margin-right: 1em; } }
 
+@media screen and (max-width : 499px) {
+  #nav-container {
+    top: 35px; } }
 @media screen and (max-width : 760px) and (orientation : landscape) {
   #nav-container {
     top: 35px; } }
 #main-container {
   position: relative;
   top: 120px;
-  padding-bottom: 70px;
- /*@media screen and (max-device-width : 499px) {
-    #left{display:block;
-        h3{float:left;}
-        .user_image{float:left;}
-        .box{padding:2px;margin:1px;border:1px dotted $tr-br-blu;}
-        pre{text-align:left;}
-    }
-}*/
- /*@media screen and (min-device-width : 500px) and (max-device-width : 760px) {
-    #left{float:left;width:19%;display:inline-block;
-        h3{float:left;}
-        .user_image{float:left;}
-        .box{padding:2px;margin:1px;border:1px dashed $tr-br-blu;}
-        pre{text-align:left;}
-    }
-}*/
- /*@media screen and (min-device-width : 761px) {
-    #left{float:left;width:12%;margin-left:8px;display:inline-block;
-        h3{float:left;}
-        .user_image{float:left;}
-        .box{padding:2px;margin:1px;border:1px solid $tr-br-blu;}
-        pre{text-align:left;}
-    }        
-}*/
- /*@media screen and (max-device-width : 499px) {
-    #middle{display:block;}
-}*/
- /*@media screen and (min-device-width : 500px) and (max-devicewidth : 760px) {
-    #middle{width:70%;float:right;display:inline-block;}
-}*/
- /*@media screen and (min-device-width : 761px) {
-    #middle{width:60%;display:inline-block;}
-}*/
- /*@media screen and (max-device-width : 499px) {
-    #right{display:block;}
-}*/
- /*@media screen and (min-device-width : 500px) and (max-device-width : 760px) {
-    #right{float:left;width:19%;display:inline-block;}
-}*/
- /*@media screen and (min-device-width : 761px) {
-    #right{display:inline-block;float:right;width:12%;margin-right:8px;}
-}*/ }
+  padding-bottom: 70px; }
   #main-container .column {
     vertical-align: top;
     margin-bottom: 8px;
@@ -564,6 +545,12 @@ body {
       margin-right: 8px;
       vertical-align: top; } }
 
+@media screen and (max-width : 499px) {
+  #main-container {
+    top: 85px; } }
+@media screen and (max-width : 760px) and (orientation : landscape) {
+  #main-container {
+    top: 85px; } }
 #footer-container {
   position: fixed;
   bottom: 0;

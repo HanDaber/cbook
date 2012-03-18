@@ -12,19 +12,20 @@
                     .b
                         = @board.name
                         %br/
-                        - if @show && @user
+
+                    - if @show
+                        %h3.b Board info:
+                        %p= @board.bio
+                        %br/
+                        
+                        - if @user && !@has_tag
                             %form.ib{:name => "tag_form", :action => "/#{@user.name}/tag", :method => "post"}
                                 %fieldset{style: "padding:0.2em 0.8em;"}
                                     %legend{style: "font-size:11pt;"} Add this tag:
-                                    %br/
                                     -# Totally not secure:
                                     %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
                                     %input{:type => "hidden", :name => "tag", value: "#{@board.name}"}/
                                     %input.btn.r4{:type => "submit", :value => "Add!", style:"margin:5px;"}/
-                            %br/
-                    - if @show
-                        %h3.b Board info:
-                        %p= @board.bio
 
             #middle
                 .h.column
