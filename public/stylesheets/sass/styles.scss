@@ -9,6 +9,7 @@
  * Author: Dan Haber
  */
 
+// Variables
 $lt-blu: #069;
 $dk-blu: #037;
 $tr-blu: transparentize($dk-blu, 0.8);
@@ -16,6 +17,8 @@ $tr-br-blu: transparentize($dk-blu, 0.5);
 $bl-red: #379;
 $link-color: #aef;
 $top-space: 70px;
+
+// Mixins
 
 body{background-color:$lt-blu;}
 #header-container{height:$top-space;position:fixed;border-bottom:1px solid darken($dk-blu, 10%);background-color:$dk-blu;z-index:99;
@@ -174,7 +177,7 @@ body{background-color:$lt-blu;}
     }
     
     @media screen and (min-width : 761px) {
-        #middle{width:63%;display:inline-block;position:absolute;margin-left:19%;}
+        #middle{width:63%;display:inline-block;margin-left:1%;margin-right:auto;float:left;}
     }
     
     
@@ -243,65 +246,22 @@ h2{font-size:14pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
 a, a:visited{color:$link-color;}
 a:hover{color:#fee;}
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-/* Styles */
-}
+// Smartphones (portrait and landscape): @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
 
-/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-/* Styles */
-}
+// Smartphones (landscape): @media only screen and (min-width : 321px) {}
 
-/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width : 320px) {
-/* Styles */
-}
+// Smartphones (portrait): @media only screen and (max-width : 320px) {}
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-/* Styles */
-}
+// iPads (portrait and landscape): @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
 
-/* iPads (landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-/* Styles */
-}
+// iPads (landscape): @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
 
-/* iPads (portrait) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
-/* Styles */
-}
+// iPads (portrait): @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
 
-/* Desktops and laptops ----------- */
-@media only screen
-and (min-width : 1224px) {
-/* Styles */
-}
+// Desktops and laptops: @media only screen and (min-width : 1224px) {}
 
-/* Large screens ----------- */
-@media only screen
-and (min-width : 1824px) {
-/* Styles */
-}
+// Large screens: @media only screen and (min-width : 1824px) {}
 
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-}
+// iPhone 4: @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {}
 
 @import "helpers";
