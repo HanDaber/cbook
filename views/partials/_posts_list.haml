@@ -1,0 +1,4 @@
+- @posts.each do |p|
+    .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:1em;"}
+        %h1.b= "#{p.text}"
+        %p{style: "float:right;margin:0 0.5em 3em 0;"}= "by #{p.user.name}"
