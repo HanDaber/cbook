@@ -7,6 +7,15 @@
         %fieldset{style: "border:1px solid black;"}
             %legend Preferences:
             .pref{style: "margin-left:1em;padding-top:1em;"}
+                %form.ib{:name => "bio_form", :action => "/#{@user[:name]}/prefs", :method => "post"}
+                    %fieldset{style: "padding:0.2em 0.8em;"}
+                        %legend{style: "font-size:11pt;"} Update your bio:
+                        %textarea{name: "bio", cols: "40", rows: "3", style:"margin:5px;"}
+                        %br/
+                        -# Totally not secure:
+                        %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                        %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
+            .pref{style: "margin-left:1em;padding-top:1em;"}
                 %h3 E-mail address:
                 %p{style: "margin-left:1em;"}= @user[:email]
             .pref{style: "margin-left:1em;padding-top:1em;"}

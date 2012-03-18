@@ -29,8 +29,7 @@ class CollegeBook
 
     # Import the MongoMapper::Document Class
     include MongoMapper::Document
-    
-    private
+
     helpers do
         include Rack::Utils
         alias_method :h, :escape_html
@@ -40,10 +39,11 @@ end
 # User Class
 class User < CollegeBook
     
-    key :name,          String, required: true
-    key :email,         String, required: true
-    key :pass,          String, required: true
-    key :created_at,    DateTime
+    key :name,          String,     required: true
+    key :email,         String,     required: true
+    key :pass,          String,     required: true
+    key :bio,           String
+    key :created_at,    DateTime,   required: true
 
     many :posts
     many :tags

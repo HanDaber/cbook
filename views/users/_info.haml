@@ -4,9 +4,13 @@
 %img.user_image{src: "img/blank-user.gif"}
 
 .box.ib
+    %h4="Member since #{@user[:created_at]}."
+    %br/
+    %h4 User bio:
+    %p= @user[:bio]
     
+.box.ib
     %ul
-        %li="Member since #{@user[:since]}."
         %li 06/04/1992
         %li Philadelphia, PA
         %li Course: 2A
