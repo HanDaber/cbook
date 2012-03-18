@@ -334,7 +334,7 @@ body {
           border-bottom: 0;
           border-top: 0;
           margin: 0;
-          padding: 0.3em 0.25em;
+          padding: 0.35em 0.25em;
           background-color: #337799; }
         #nav-container ul li .my {
           display: none; }
@@ -417,6 +417,40 @@ body {
         #nav-container ul li.login {
           float: right;
           margin-right: 1em; } }
+  @media only screen and (min-device-width : 761px) and (max-device-width : 1024px) {
+    #nav-container ul {
+      left: 5px; }
+      #nav-container ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 0 0.5em; }
+        #nav-container ul li a {
+          display: inline-block;
+          font-size: 10pt;
+          border-radius: 2px;
+          border-bottom: 0;
+          border-top: 0;
+          margin: 0;
+          padding: 0.5em;
+          background-color: #337799; }
+        #nav-container ul li .my {
+          display: inline; }
+        #nav-container ul li .all_my {
+          display: none; }
+        #nav-container ul li a.icon {
+          display: inline-block;
+          position: relative;
+          top: -0.1em; }
+          #nav-container ul li a.icon img {
+            width: 1.8em;
+            height: 1.8em;
+            position: relative;
+            top: 0; }
+        #nav-container ul li.login {
+          float: right;
+          margin-right: 1em; }
+          #nav-container ul li.login a.wrd {
+            display: none; } }
 
 @media screen and (max-width : 499px) {
   #nav-container {
