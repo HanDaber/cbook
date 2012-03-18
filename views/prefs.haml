@@ -10,7 +10,7 @@
                 %form.ib{:name => "bio_form", :action => "/#{@user[:name]}/prefs", :method => "post"}
                     %fieldset{style: "padding:0.2em 0.8em;"}
                         %legend{style: "font-size:11pt;"} Update your bio:
-                        %textarea{name: "bio", cols: "40", rows: "3", style:"margin:5px;"}
+                        %textarea{name: "bio", cols: "30", rows: "3", style:"margin:5px;"}
                         %br/
                         -# Totally not secure:
                         %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
