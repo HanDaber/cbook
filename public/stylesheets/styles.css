@@ -269,6 +269,9 @@ body {
     #header-container h1#title a {
       color: #ddd; }
 
+@media screen and (max-width : 760px) and (orientation : landscape) {
+  #header-container {
+    height: 50px; } }
 #nav-container {
   position: fixed;
   z-index: 98;

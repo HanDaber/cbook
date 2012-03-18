@@ -26,6 +26,9 @@ body{background-color:$lt-blu;}
         a{color:#ddd;}
     }
 }
+@media screen and (max-width : 760px) and (orientation : landscape) {
+    #header-container{height:$top-space - 20px;}
+}
 
 #nav-container{position:fixed;z-index:98;top:$top-space;background-color:$bl-red;border-bottom:1px solid darken($bl-red, 10%);
     ul{display:block;position:relative;}
