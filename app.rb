@@ -53,23 +53,24 @@ class User < CollegeBook
     key :created_at,    DateTime,   required: true
 
     many :posts
-    many :tags
+    many :tags, :as => :taggable
 end
 
 class Post < CollegeBook
     
     key :text,      String, required: true
     key :post_tags, Array
+    timestamps!
     
     belongs_to :user
-    many :tags, :in => :post_tags
+    many :tags, :in => :post_tags, :as => :taggable
 end
 
 class Tag < CollegeBook
     
     key :name, String, required: true
-    # 
-    # belongs_to :user
+    
+    belongs_to :taggable, :polymorphic => true
     # belongs_to :post
 end
 

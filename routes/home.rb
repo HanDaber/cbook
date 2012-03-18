@@ -85,8 +85,8 @@ post '/:user/post' do
         if found_user[:pass] == @pass
 
             new_post = found_user.posts.create({text: @post_text})
-
-            new_post.post_tags = @post_tags.each { |t| t[1] }
+            
+            new_post.post_tags = @post_tags.each { |t| t[1] } if @post_tags
             
             unless new_post.save
                 error_string_haml("Post save fail.")
@@ -113,6 +113,8 @@ post '/:user/tag' do
         if found_user[:pass] == @pass
             
             new_tag = found_user.tags.create({name: @tag_name})
+            # new_tag = Tag.create({name: @tag_name})
+            # new_tag.user = found_user
             
             session[:stat] = {status: new_tag.save, msg: "Success?"}
             redirect "#{found_user.name}/home"

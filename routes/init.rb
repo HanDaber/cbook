@@ -21,8 +21,9 @@ def route_to(loc)
         user = User.find_by_name(@name)
         
         if user
-            @tags = user.tags
             @user = user
+            @tags = @user.tags
+            # @tags = Tag.where('user.name' => @user.name).all
             
             if @page == :home
                 
@@ -33,7 +34,7 @@ def route_to(loc)
                     show_post = false
                     
                     @tags.each do |tag|
-                        post.post_tags.each { |t| show_post = true if t == tag.name }
+                        post.post_tags.each { |t| show_post = true if t[1] == tag.name }
                     end
 
                     if show_post

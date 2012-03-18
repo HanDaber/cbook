@@ -23,9 +23,11 @@
                                 %fieldset.ib.fl
                                     %legend{style: "font-size:13pt;"} Add a tag:
                                     %ul
-                                    - @tags.each_with_index do |tag, i|
+                                    - i = 0
+                                    - @tags.each do |tag|
                                         %li
-                                            %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag[:name]}", style: "margin-right:0.2em;"}= "#{tag[:name]}"
+                                            %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
+                                            - i++
                                 %br/
                                 -# Totally not secure:
                                 %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
@@ -52,9 +54,10 @@
                         - if @tags.length == 0
                             %p you have no tags yet
                         - else
+                            -# = @tags.inspect
                             - @tags.each do |tag|
                                 %li 
-                                    %a.pjax{:href => "../#{tag[:name]}"}= "#{tag[:name]}"
+                                    %a.pjax{:href => "../#{tag.name}"}= "#{tag.name}"
 
 
 = haml(:'partials/_footer', :layout => false)
