@@ -468,7 +468,7 @@ body {
       display: inline-block; } }
   @media screen and (min-width : 761px) {
     #main-container #middle {
-      width: 60%;
+      width: 63%;
       display: inline-block;
       position: absolute;
       margin-left: 19%; } }
