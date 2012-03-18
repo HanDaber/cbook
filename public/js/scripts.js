@@ -15,6 +15,6 @@ $(document).ready( function() {
 	});
 	
 	// Select which container to load pjax responses into
-    $("a.pjax").pjax("#main-container");
-    $(".posts").pjax("#middle");
+    // $("a.pjax").pjax("#main-container");
+    // $(".posts").pjax("#middle");
 });

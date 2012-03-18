@@ -5,17 +5,8 @@
     -##############################################
     #splash.r8
         %h2{:style => "margin:6px auto 10px auto;"}
-
-        %form.ib{:name => "login_form", :action => "/login", :method => "post"}
-            %fieldset
-                %legend Log In:
-                Username: 
-                %input{:type => "text", :name => "name", :size => "10", style:"margin:5px;"}/
-                %br/
-                Password:
-                %input{:type => "password", :name => "pass", :size => "10", style:"margin:5px;"}/
-                %br/
-                %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
+        
+        = haml(:'partials/_login_form', :layout => false)
                 
         %form.ib{:name => "signup_form", :action => "/signup", :method => "post"}
             %fieldset

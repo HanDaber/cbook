@@ -59,18 +59,20 @@ end
 
 class Tag < CollegeBook
 
+    # include MongoMapper::EmbeddedDocument
+    
     key :name, String, required: true
     
     belongs_to :post
 end
 
-class BulletinBoard < CollegeBook
+class Board < CollegeBook
     
     key :name,  String, required: true
     key :desc,  String, required: true
     
     many :posts
-    many :tags
+    one :tag
 end
 
 # URL routing and helper functions
