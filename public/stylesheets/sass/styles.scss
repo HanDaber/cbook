@@ -87,10 +87,17 @@ body{background-color:$lt-blu;}
 }
 
 #main-container{position:relative;top:$top-space+50px;padding-bottom:$top-space;
-	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;border-radius:1em;}
+	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;border-radius:0.2em;}
     #main{}
     ul{list-style:none;}
     .feed_item{background-color:$tr-blu;}
+    .create_post{width:80%;
+        fieldset{background-color:$tr-blu; border-radius:0.5em;}
+        @media screen and (max-width : 499px) {textarea{width:180px;}}
+        @media screen and (min-width : 500px) and (max-width : 760px) {textarea{width:210px;height:60px;}}
+        @media screen and (min-width : 761px) and (max-width : 949px) {textarea{width:300px;height:80px;}}
+        @media screen and (min-width : 950px) {textarea{width:400px;height:40px;}}
+    }
 
     @media screen and (max-width : 499px) {
         #left{display:block;
@@ -206,6 +213,7 @@ body{background-color:$lt-blu;}
 .h{height:100%;}
 .b{display:block;width:100%;}
 .ib{display:inline-block;}
+.fl{float:left;}
 .r4{border-radius:4px;}
 .r8{border-radius:8px;}
 .btn{background-color:#888;padding:3px;}

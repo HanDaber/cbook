@@ -4,19 +4,20 @@
 %img.user_image{src: "img/blank-user.gif"}
 
 .box.ib
-    %h3 User bio:
+    %h3.b User bio:
     %h4="Member since #{@user[:created_at]}."
     %br/
     %p= @user[:bio]
     
 .box.ib
-    %h4 Current courses (class of 2014):
+    %h4.b Courses:
     %ul
         %li Math 2A
         %li Physics 99Z
+    %h6 (class of 2014)
 
 .box.ib
-    %h4 Interests:
+    %h4.b Interests:
     %ul
         %li soccer
         %li dancing

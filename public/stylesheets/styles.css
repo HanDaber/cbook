@@ -409,11 +409,31 @@ body {
     height: 100%;
     background-color: rgba(0, 51, 119, 0.2);
     padding: 1em;
-    border-radius: 1em; }
+    border-radius: 0.2em; }
   #main-container ul {
     list-style: none; }
   #main-container .feed_item {
     background-color: rgba(0, 51, 119, 0.2); }
+  #main-container .create_post {
+    width: 80%; }
+    #main-container .create_post fieldset {
+      background-color: rgba(0, 51, 119, 0.2);
+      border-radius: 0.5em; }
+    @media screen and (max-width : 499px) {
+      #main-container .create_post textarea {
+        width: 180px; } }
+    @media screen and (min-width : 500px) and (max-width : 760px) {
+      #main-container .create_post textarea {
+        width: 210px;
+        height: 60px; } }
+    @media screen and (min-width : 761px) and (max-width : 949px) {
+      #main-container .create_post textarea {
+        width: 300px;
+        height: 80px; } }
+    @media screen and (min-width : 950px) {
+      #main-container .create_post textarea {
+        width: 400px;
+        height: 40px; } }
   @media screen and (max-width : 499px) {
     #main-container #left {
       display: block; }
@@ -544,6 +564,9 @@ body {
 
 .ib {
   display: inline-block; }
+
+.fl {
+  float: left; }
 
 .r4 {
   border-radius: 4px; }

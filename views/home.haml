@@ -20,9 +20,12 @@
                                 %legend{style: "font-size:13pt;"} Create a post:
                                 %textarea{name: "post", cols: "40", rows: "3", style:"margin:5px;"}
                                 %br/
-                                Choose a tag:
-                                - @tags.each do |tag|
-                                    %input{type: "radio", name: "tag", value: "#{tag[:name]}", style: "margin-right:0.2em;"}= "#{tag[:name]}"
+                                %fieldset.ib.fl
+                                    %legend{style: "font-size:13pt;"} Add a tag:
+                                    %ul
+                                    - @tags.each do |tag|
+                                        %li
+                                            %input{type: "radio", name: "tag", value: "#{tag[:name]}", style: "margin-right:0.2em;"}= "#{tag[:name]}"
                                 %br/
                                 -# Totally not secure:
                                 %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
@@ -40,7 +43,7 @@
                     %form.ib{:name => "tag_form", :action => "/#{@user[:name]}/tag", :method => "post"}
                         %fieldset{style: "padding:0.2em 0.8em;"}
                             %legend{style: "font-size:11pt;"} Create a tag:
-                            %input{:type => "text", :name => "tag", :size => "10", style:"margin:2px;"}/
+                            %input{:type => "text", :name => "tag", :size => "8", style:"margin:2px;"}/
                             %br/
                             -# Totally not secure:
                             %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
