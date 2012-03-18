@@ -27,7 +27,14 @@ body{background-color:$lt-blu;}
     }
 }
 @media screen and (max-width : 760px) and (orientation : landscape) {
-    #header-container{height:$top-space - 30px;}
+    #header-container{height:$top-space - 30px;
+        .college_logo{position:absolute;top:0.8em;right:1.8em;
+            img{border:0;width:40px;height:22px;}
+        }
+        h1#title{font-family:'Annie Use Your Telescope',cursive;font-size:20pt;margin-left:0.6em;margin-top:0.3em;
+            a{color:#ddd;}
+        }
+    }
 }
 
 #nav-container{position:fixed;z-index:98;top:$top-space;background-color:$bl-red;border-bottom:1px solid darken($bl-red, 10%);
@@ -89,7 +96,7 @@ body{background-color:$lt-blu;}
     }*/
 }
 @media screen and (max-width : 760px) and (orientation : landscape) {
-    #nav-container{height:$top-space - 30px;}
+    #nav-container{top:$top-space - 30px;}
 }
 
 #main-container{position:relative;top:$top-space+50px;padding-bottom:$top-space;
