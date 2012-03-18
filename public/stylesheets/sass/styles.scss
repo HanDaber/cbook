@@ -114,7 +114,7 @@ body{background-color:$lt-blu;}
         }
     }
 }
-@media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape) { #nav-container{top:$top-space - 35px;
+@media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape), screen and (max-device-width : 1024px)  { #nav-container{top:$top-space - 35px;
     a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.35em 0.25em;}
 } }
 //@media screen and (min-width : 500px) and (max-width : 760px) and (orientation : landscape) { 

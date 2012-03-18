@@ -425,7 +425,7 @@ body {
         #nav-container ul li.login a.wrd {
           display: none; } }
 
-@media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape) {
+@media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape), screen and (max-device-width : 1024px) {
   #nav-container {
     top: 35px; }
     #nav-container a {
