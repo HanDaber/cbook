@@ -4,53 +4,44 @@
 %img.user_image{src: "img/blank-user.gif"}
 
 .box.ib
+    %h3 User bio:
     %h4="Member since #{@user[:created_at]}."
     %br/
-    %h4 User bio:
     %p= @user[:bio]
     
 .box.ib
+    %h4 Current courses (class of 2014):
     %ul
-        %li 06/04/1992
-        %li Philadelphia, PA
-        %li Course: 2A
-        %li Class:  2014
+        %li Math 2A
+        %li Physics 99Z
 
 .box.ib
     %h4 Interests:
+    %ul
+        %li soccer
+        %li dancing
+        %li travel
 
-    soccer,
-    %br/
-    dancing,
-    %br/
-    travel
-    %br/
+/ .box.ib
+/     %h4 My net
+/ 
+/     Parties
+/     %br/
+/     Spain@MIT
+/     %br/
+/     Course 2
+/     %br/
+/     Varsity
+/     %br/
+/     Culture
+/     %br/
 
-.box.ib
-    %h4 My net
-
-    Parties
-    %br/
-    Spain@MIT
-    %br/
-    Course 2
-    %br/
-    Varsity
-    %br/
-    Culture
-    %br/
-
-.box.ib
-    %h4 My posts
-
-    %code
-        Total:       24
-    %br/
-    %code
-        New replies: 8
-    %br/
-
-.box.ib
-    %h4 Preferences
-
-    Email forwarding
+/ .box.ib
+/     %h4 My posts
+/ 
+/     %code
+/         Total:       24
+/     %br/
+/     %code
+/         New replies: 8
+/     %br/
