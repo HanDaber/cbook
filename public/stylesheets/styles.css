@@ -445,8 +445,8 @@ body {
   @media screen and (min-width : 761px) {
     #main-container #left {
       float: left;
-      width: 12%;
-      margin-left: 8px;
+      width: 14%;
+      margin-left: 6px;
       display: inline-block; }
       #main-container #left h3 {
         float: left; }
@@ -470,8 +470,8 @@ body {
     #main-container #middle {
       width: 60%;
       display: inline-block;
-      margin-left: auto;
-      margin-right: auto; } }
+      position: absolute;
+      margin-left: 19%; } }
   @media screen and (max-width : 499px) {
     #main-container #right {
       display: block; } }
@@ -484,8 +484,9 @@ body {
     #main-container #right {
       display: inline-block;
       float: right;
-      width: 12%;
-      margin-right: 8px; } }
+      width: 13%;
+      margin-right: 8px;
+      vertical-align: top; } }
 
 #footer-container {
   position: fixed;

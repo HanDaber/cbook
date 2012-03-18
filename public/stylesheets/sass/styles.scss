@@ -125,7 +125,7 @@ body{background-color:$lt-blu;}
     }*/
 
     @media screen and (min-width : 761px) {
-        #left{float:left;width:12%;margin-left:8px;display:inline-block;
+        #left{float:left;width:14%;margin-left:6px;display:inline-block;
             h3{float:left;}
             .user_image{float:left;}
             .box{padding:2px;margin:1px;border:1px solid $tr-br-blu;}
@@ -155,7 +155,7 @@ body{background-color:$lt-blu;}
     }*/
     
     @media screen and (min-width : 761px) {
-        #middle{width:60%;display:inline-block;margin-left:auto;margin-right:auto;}
+        #middle{width:60%;display:inline-block;position:absolute;margin-left:19%;}
     }/*@media screen and (min-device-width : 761px) {
         #middle{width:60%;display:inline-block;}
     }*/
@@ -175,7 +175,7 @@ body{background-color:$lt-blu;}
     }*/
     
     @media screen and (min-width : 761px) {
-        #right{display:inline-block;float:right;width:12%;margin-right:8px;}
+        #right{display:inline-block;float:right;width:13%;margin-right:8px;vertical-align:top;}
     }/*@media screen and (min-device-width : 761px) {
         #right{display:inline-block;float:right;width:12%;margin-right:8px;}
     }*/
