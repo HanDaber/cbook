@@ -499,7 +499,8 @@ body {
     #main-container #right {
       float: left;
       width: 21%;
-      display: inline-block; } }
+      display: inline-block;
+      clear: left; } }
   @media screen and (min-width : 761px) {
     #main-container #right {
       display: inline-block;
