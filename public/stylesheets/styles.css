@@ -292,18 +292,7 @@ body {
   z-index: 98;
   top: 70px;
   background-color: #337799;
-  border-bottom: 1px solid #265973;
- /*@media screen and (min-device-width : 500px) {
-    ul{left:-10px;
-        li{display:inline-block;list-style:none;margin:0 3px;padding:0;
-            a{font-size:12pt;border-radius:4px;margin:0 0.2em;padding:0.2em;}
-            .my{display:inline;}
-            .all_my{display:none;}
-            .log_my{display:none;}
-            &.login{float:right;margin-right:1em;}
-        }
-    }
-}*/ }
+  border-bottom: 1px solid #265973; }
   #nav-container ul {
     display: block;
     position: relative; }
@@ -319,7 +308,7 @@ body {
       #nav-container ul li {
         display: inline-block;
         list-style: none;
-        margin: 0 0.4em; }
+        margin: 0 0.3em; }
         #nav-container ul li a {
           display: inline-block;
           font-size: 10pt;
@@ -327,7 +316,7 @@ body {
           border-bottom: 0;
           border-top: 0;
           margin: 0;
-          padding: 0.3em 0.3em 0 0.3em;
+          padding: 0.3em 0.25em;
           background-color: #337799; }
         #nav-container ul li .my {
           display: none; }
@@ -352,7 +341,41 @@ body {
           margin-right: 1em; }
           #nav-container ul li.login a.wrd {
             display: none; } }
-  @media screen and (min-width : 500px) {
+  @media screen and (min-width : 500px) and (max-width : 760px) {
+    #nav-container ul {
+      left: 5px; }
+      #nav-container ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 0 0.5em; }
+        #nav-container ul li a {
+          display: inline-block;
+          font-size: 10pt;
+          border-radius: 2px;
+          border-bottom: 0;
+          border-top: 0;
+          margin: 0;
+          padding: 0.5em;
+          background-color: #337799; }
+        #nav-container ul li .my {
+          display: inline; }
+        #nav-container ul li .all_my {
+          display: none; }
+        #nav-container ul li a.icon {
+          display: inline-block;
+          position: relative;
+          top: -0.1em; }
+          #nav-container ul li a.icon img {
+            width: 1.8em;
+            height: 1.8em;
+            position: relative;
+            top: 0; }
+        #nav-container ul li.login {
+          float: right;
+          margin-right: 1em; }
+          #nav-container ul li.login a.wrd {
+            display: none; } }
+  @media screen and (min-width : 761px) {
     #nav-container ul {
       left: -10px; }
       #nav-container ul li {
@@ -377,7 +400,7 @@ body {
 
 @media screen and (max-width : 760px) and (orientation : landscape) {
   #nav-container {
-    top: 40px; } }
+    top: 35px; } }
 #main-container {
   position: relative;
   top: 120px;
