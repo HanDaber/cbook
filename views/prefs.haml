@@ -4,7 +4,7 @@
 
 #main-container.wrapper.clearfix.b{:role => "main"}
     .prefs-container{style: "padding:20px 5em;"}
-        %fieldset{style: "border:1px solid black;"}
+        %fieldset.ib{style: "border:1px solid black;"}
             %legend Preferences:
             .pref{style: "margin-left:1em;padding-top:1em;"}
                 %form.ib{:name => "bio_form", :action => "/#{@user[:name]}/prefs", :method => "post"}

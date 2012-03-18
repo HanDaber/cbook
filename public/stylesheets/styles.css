@@ -423,7 +423,7 @@ body {
       #nav-container ul li {
         display: inline-block;
         list-style: none;
-        margin: 0 0.5em; }
+        margin: 0 1em; }
         #nav-container ul li a {
           display: inline-block;
           font-size: 10pt;
@@ -431,7 +431,7 @@ body {
           border-bottom: 0;
           border-top: 0;
           margin: 0;
-          padding: 0.5em;
+          padding: 1em 1em;
           background-color: #337799; }
         #nav-container ul li .my {
           display: inline; }
