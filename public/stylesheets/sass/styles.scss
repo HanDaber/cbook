@@ -109,7 +109,7 @@ body{background-color:$lt-blu;}
     }*/
     
     @media screen and (min-width : 500px) and (max-width : 760px) {
-        #left{float:left;width:19%;display:inline-block;
+        #left{float:left;width:21%;display:inline-block;
             h3{float:left;}
             .user_image{float:left;}
             .box{padding:2px;margin:1px;border:1px dashed $tr-br-blu;}
@@ -169,7 +169,7 @@ body{background-color:$lt-blu;}
     }*/
     
     @media screen and (min-width : 500px) and (max-width : 760px) {
-        #right{float:left;width:19%;display:inline-block;}
+        #right{float:left;width:21%;display:inline-block;}
     }/*@media screen and (min-device-width : 500px) and (max-device-width : 760px) {
         #right{float:left;width:19%;display:inline-block;}
     }*/
