@@ -271,7 +271,7 @@ body {
 
 @media screen and (max-width : 760px) and (orientation : landscape) {
   #header-container {
-    height: 50px; } }
+    height: 40px; } }
 #nav-container {
   position: fixed;
   z-index: 98;
@@ -360,6 +360,9 @@ body {
           float: right;
           margin-right: 1em; } }
 
+@media screen and (max-width : 760px) and (orientation : landscape) {
+  #nav-container {
+    height: 40px; } }
 #main-container {
   position: relative;
   top: 120px;
