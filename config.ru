@@ -9,7 +9,6 @@ app_file = File.join(root_dir, 'app.rb')
 set :environment, ENV['RACK_ENV'].to_sym
 set :root,        root_dir
 set :app_file,    app_file
-disable :run
 
 # Require our application
 require app_file

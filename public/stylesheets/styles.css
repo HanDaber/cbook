@@ -269,6 +269,27 @@ body {
     #header-container h1#title a {
       color: #ddd; }
 
+#nav-container {
+  position: fixed;
+  z-index: 98;
+  top: 70px;
+  background-color: #337799;
+  border-bottom: 1px solid #265973; }
+  #nav-container ul {
+    display: block;
+    position: relative;
+    left: 5px; }
+    #nav-container ul li {
+      display: inline-block;
+      list-style: none; }
+  #nav-container a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #193b4d;
+    font-size: 10pt;
+    background-color: #337799; }
+
 @media screen and (max-width : 499px) {
   #header-container {
     height: 35px; }
@@ -295,136 +316,6 @@ body {
       font-size: 18pt;
       margin-left: 0.5em;
       margin-top: 0.1em; } }
-#nav-container {
-  position: fixed;
-  z-index: 98;
-  top: 70px;
-  background-color: #337799;
-  border-bottom: 1px solid #265973; }
-  #nav-container ul {
-    display: block;
-    position: relative;
-    left: 5px; }
-    #nav-container ul li {
-      display: inline-block;
-      list-style: none; }
-  #nav-container a {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border: 1px solid #193b4d;
-    font-size: 10pt;
-    background-color: #337799; }
-  @media screen and (max-width : 499px) {
-    #nav-container ul li {
-      margin: 0 0.3em; }
-      #nav-container ul li a {
-        border-radius: 2px;
-        border-bottom: 0;
-        border-top: 0;
-        margin: 0;
-        padding: 0.35em 0.25em; }
-      #nav-container ul li .my {
-        display: none; }
-      #nav-container ul li .all_my {
-        font-size: 11pt;
-        display: inline-block;
-        position: absolute;
-        left: -1.8em;
-        top: 0.2em;
-        color: #ddd; }
-      #nav-container ul li a.icon {
-        display: inline-block;
-        position: relative;
-        top: -0.1em; }
-        #nav-container ul li a.icon img {
-          width: 1.8em;
-          height: 1.8em;
-          position: relative;
-          top: 0; }
-      #nav-container ul li.login {
-        float: right;
-        margin-right: 1em; }
-        #nav-container ul li.login a.wrd {
-          display: none; } }
-  @media screen and (min-width : 500px) and (max-width : 760px) {
-    #nav-container ul li {
-      margin: 0 0.5em; }
-      #nav-container ul li a {
-        border-radius: 2px;
-        border-bottom: 0;
-        border-top: 0;
-        margin: 0;
-        padding: 0.5em; }
-      #nav-container ul li .my {
-        display: inline; }
-      #nav-container ul li .all_my {
-        display: none; }
-      #nav-container ul li a.icon {
-        display: inline-block;
-        position: relative;
-        top: -0.1em; }
-        #nav-container ul li a.icon img {
-          width: 1.8em;
-          height: 1.8em;
-          position: relative;
-          top: 0; }
-      #nav-container ul li.login {
-        float: right;
-        margin-right: 1em; }
-        #nav-container ul li.login a.wrd {
-          display: none; } }
-  @media screen and (min-width : 761px) {
-    #nav-container ul {
-      left: -10px; }
-      #nav-container ul li {
-        margin: 0.2em 0.5em;
-        padding: 0; }
-        #nav-container ul li a {
-          font-size: 12pt;
-          border-radius: 4px;
-          margin: 0 0.2em;
-          padding: 0.2em; }
-          #nav-container ul li a:hover {
-            background: #68a; }
-        #nav-container ul li .my {
-          display: inline; }
-        #nav-container ul li .all_my {
-          display: none; }
-        #nav-container ul li .log_my {
-          display: none; }
-        #nav-container ul li.login {
-          float: right;
-          margin-right: 1em; } }
-  @media only screen and (min-device-width : 761px) and (max-device-width : 1280px), screen and (orientation : landscape) {
-    #nav-container ul li {
-      margin: 0 1em; }
-      #nav-container ul li a {
-        font-size: 12pt;
-        border-radius: 2px;
-        border-bottom: 0;
-        border-top: 0;
-        margin: 0;
-        padding: 1em 0.3em; }
-      #nav-container ul li .my {
-        display: inline; }
-      #nav-container ul li .all_my {
-        display: none; }
-      #nav-container ul li a.icon {
-        display: inline-block;
-        position: relative;
-        top: -0.1em; }
-        #nav-container ul li a.icon img {
-          width: 1.8em;
-          height: 1.8em;
-          position: relative;
-          top: 0; }
-      #nav-container ul li.login {
-        float: right;
-        margin-right: 2.5em; }
-        #nav-container ul li.login a.wrd {
-          display: none; } }
-
 @media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape), screen and (max-device-width : 1024px) {
   #nav-container {
     top: 35px; }
@@ -468,6 +359,115 @@ body {
       float: right;
       margin-right: 1em; }
       li.login a.wrd {
+        display: none; } }
+@media screen and (max-width : 499px) {
+  ul li {
+    margin: 0 0.3em; }
+    ul li a {
+      border-radius: 2px;
+      border-bottom: 0;
+      border-top: 0;
+      margin: 0;
+      padding: 0.35em 0.25em; }
+    ul li .my {
+      display: none; }
+    ul li .all_my {
+      font-size: 11pt;
+      display: inline-block;
+      position: absolute;
+      left: -1.8em;
+      top: 0.2em;
+      color: #ddd; }
+    ul li a.icon {
+      display: inline-block;
+      position: relative;
+      top: -0.1em; }
+      ul li a.icon img {
+        width: 1.8em;
+        height: 1.8em;
+        position: relative;
+        top: 0; }
+    ul li.login {
+      float: right;
+      margin-right: 1em; }
+      ul li.login a.wrd {
+        display: none; } }
+@media screen and (min-width : 500px) and (max-width : 760px) {
+  ul li {
+    margin: 0 0.5em; }
+    ul li a {
+      border-radius: 2px;
+      border-bottom: 0;
+      border-top: 0;
+      margin: 0;
+      padding: 0.5em; }
+    ul li .my {
+      display: inline; }
+    ul li .all_my {
+      display: none; }
+    ul li a.icon {
+      display: inline-block;
+      position: relative;
+      top: -0.1em; }
+      ul li a.icon img {
+        width: 1.8em;
+        height: 1.8em;
+        position: relative;
+        top: 0; }
+    ul li.login {
+      float: right;
+      margin-right: 1em; }
+      ul li.login a.wrd {
+        display: none; } }
+@media screen and (min-width : 761px) {
+  ul {
+    left: -10px; }
+    ul li {
+      margin: 0.2em 0.5em;
+      padding: 0; }
+      ul li a {
+        font-size: 12pt;
+        border-radius: 4px;
+        margin: 0 0.2em;
+        padding: 0.2em; }
+        ul li a:hover {
+          background: #68a; }
+      ul li .my {
+        display: inline; }
+      ul li .all_my {
+        display: none; }
+      ul li .log_my {
+        display: none; }
+      ul li.login {
+        float: right;
+        margin-right: 1em; } }
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px), screen and (orientation : landscape) {
+  ul li {
+    margin: 0 1em; }
+    ul li a {
+      font-size: 12pt;
+      border-radius: 2px;
+      border-bottom: 0;
+      border-top: 0;
+      margin: 0;
+      padding: 1em 0.3em; }
+    ul li .my {
+      display: inline; }
+    ul li .all_my {
+      display: none; }
+    ul li a.icon {
+      display: inline-block;
+      position: relative;
+      top: -0.1em; }
+      ul li a.icon img {
+        width: 1.8em;
+        height: 1.8em;
+        position: relative;
+        top: 0; }
+    ul li.login {
+      float: right;
+      margin-right: 2.5em; }
+      ul li.login a.wrd {
         display: none; } }
 #main-container {
   position: relative;
