@@ -66,15 +66,6 @@ a:hover{color:$hover-color;}
         h1#title{font-size:18pt;margin-left:0.5em;margin-top:0.1em;}
     }
 }
-//@media screen and (max-width : 760px) and (orientation : landscape) {
-//    #header-container{height:$top-space - 35px;
-//        .college_logo{top:0.5em;right:0.8em;
-//            img{width:40px;height:22px;}
-//        }
-//        h1#title{font-size:18pt;margin-left:0.5em;margin-top:0.1em;}
-//    }
-//}
-
 
 
 
@@ -95,25 +86,6 @@ a:hover{color:$hover-color;}
 @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
 @media screen and (min-width : 1281px) {}
 
-//@media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape), screen and (max-device-width : 1024px)  { 
-//    #nav-container{top:$top-space - 35px;
-//        a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.2em 0.15em;}
-//    } 
-//}
-//@media screen and (min-width : 500px) and (max-width : 760px) and (orientation : landscape) { 
-//    #nav-container{top:$top-space - 35px;} 
-//    li{margin:0 0.3em;
-//        a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.35em 0.25em;}
-//        .my{display:none;}
-//        .all_my{font-size:11pt;display:inline-block;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
-//        a.icon{display:inline-block;position:relative;top:-0.1em;
-//            img{width:1.8em;height:1.8em;position:relative;top:0;}
-//        }
-//        &.login{float:right;margin-right:1em;
-//            a.wrd{display:none;}
-//        }
-//    }
-//}
 @media screen and (max-width : 499px) {
 	#nav-container{top:$top-space - 35px;}
 	li{margin:0 0.3em;
@@ -133,7 +105,7 @@ a:hover{color:$hover-color;}
     li{margin:0 0.5em;
         a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.5em;}
         .my{display:inline;}
-        .all_my{font-size:11pt;display:inline-block;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
+        .all_my{display:none;}
         a.icon{display:inline-block;position:relative;top:-0.1em;
             img{width:1.8em;height:1.8em;position:relative;top:0;}
         }
@@ -156,25 +128,6 @@ a:hover{color:$hover-color;}
     }
 }
 
-
-
-    
-//    Tablet styles: 
-//    @media only screen and (min-device-width : 761px) and (max-device-width : 1280px), screen and (orientation : landscape) {
-//        ul{
-//            li{margin:0 1em;
-//                a{font-size:12pt;border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:1em 0.3em;}
-//                .my{display:inline;}
-//                .all_my{display:none;}
-//                a.icon{display:inline-block;position:relative;top:-0.1em;
-//                    img{width:1.8em;height:1.8em;position:relative;top:0;}
-//                }
-//                &.login{float:right;margin-right:2.5em;
-//                    a.wrd{display:none;}
-//                }
-//            }
-//        }
-//    }
 
 
 

@@ -11,6 +11,10 @@ get '/:user/home' do
     route_to(:home)
 end
 
+get '/:user/net' do
+    route_to(:net)
+end
+
 get '/:user/posts' do
     route_to(:posts)
 end
