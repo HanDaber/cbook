@@ -247,12 +247,79 @@ a:hover {
 body {
   background-color: #006699; }
 
+#splash {
+  position: relative;
+  width: 60%;
+  min-height: 80px;
+  max-height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 51, 119, 0.5);
+  background-color: rgba(0, 51, 119, 0.2);
+  padding: 8px;
+  text-align: center; }
+  #splash form {
+    margin: 5px 10px;
+    vertical-align: top; }
+  #splash fieldset {
+    border: 1px solid rgba(0, 51, 119, 0.5);
+    padding: 5px;
+    background-color: rgba(0, 51, 119, 0.2); }
+  #splash legend {
+    padding: 5px;
+    font-size: 12pt; }
+
+.h {
+  height: 100%; }
+
+.b {
+  display: block;
+  width: 100%; }
+
+.ib {
+  display: inline-block; }
+
+.fl {
+  float: left; }
+
+.r4 {
+  border-radius: 4px; }
+
+.r8 {
+  border-radius: 8px; }
+
+.btn {
+  background-color: #888;
+  padding: 3px; }
+
+.btn:hover {
+  background-color: #eee; }
+
+h2 {
+  font-size: 14pt;
+  color: #aaa;
+  margin-left: 1px;
+  margin-bottom: 5px; }
+
+a, a:visited {
+  color: #ffe5e5; }
+
+a:hover {
+  color: #ffeeee; }
+
 #header-container {
   height: 70px;
   position: fixed;
   border-bottom: 1px solid #001d44;
   background-color: #003377;
   z-index: 99; }
+  #header-container h1#title {
+    font-family: 'Annie Use Your Telescope',cursive;
+    font-size: 30pt;
+    margin-left: 0.6em;
+    margin-top: 0.3em; }
+    #header-container h1#title a {
+      color: #ddd; }
   #header-container .college_logo {
     position: absolute;
     top: 0.8em;
@@ -261,20 +328,26 @@ body {
       border: 0;
       width: 81px;
       height: 46px; }
-  #header-container h1#title {
-    font-family: 'Annie Use Your Telescope',cursive;
-    font-size: 30pt;
-    margin-left: 0.6em;
-    margin-top: 0.3em; }
-    #header-container h1#title a {
-      color: #ddd; }
 
+@media screen and (max-width : 761px) {
+  #header-container {
+    height: 35px; }
+    #header-container .college_logo {
+      top: 0.5em;
+      right: 0.8em; }
+      #header-container .college_logo img {
+        width: 40px;
+        height: 22px; }
+    #header-container h1#title {
+      font-size: 18pt;
+      margin-left: 0.5em;
+      margin-top: 0.1em; } }
 #nav-container {
   position: fixed;
   z-index: 98;
   top: 70px;
-  background-color: #330099;
-  border-bottom: 1px solid #220066; }
+  background-color: #337799;
+  border-bottom: 1px solid #265973; }
   #nav-container ul {
     display: block;
     position: relative;
@@ -282,50 +355,15 @@ body {
     #nav-container ul li {
       display: inline-block;
       list-style: none; }
-  #nav-container a {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border: 1px solid #110033;
-    font-size: 10pt;
-    background-color: #330099; }
+      #nav-container ul li a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #193b4d;
+        font-size: 10pt;
+        background-color: #337799; }
 
 @media screen and (max-width : 499px) {
-  #header-container {
-    height: 35px; }
-    #header-container .college_logo {
-      top: 0.5em;
-      right: 0.8em; }
-      #header-container .college_logo img {
-        width: 40px;
-        height: 22px; }
-    #header-container h1#title {
-      font-size: 18pt;
-      margin-left: 0.5em;
-      margin-top: 0.1em; } }
-@media screen and (max-width : 760px) and (orientation : landscape) {
-  #header-container {
-    height: 35px; }
-    #header-container .college_logo {
-      top: 0.5em;
-      right: 0.8em; }
-      #header-container .college_logo img {
-        width: 40px;
-        height: 22px; }
-    #header-container h1#title {
-      font-size: 18pt;
-      margin-left: 0.5em;
-      margin-top: 0.1em; } }
-@media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape), screen and (max-device-width : 1024px) {
-  #nav-container {
-    top: 35px; }
-    #nav-container a {
-      border-radius: 2px;
-      border-bottom: 0;
-      border-top: 0;
-      margin: 0;
-      padding: 0.2em 0.15em; } }
-@media screen and (min-width : 500px) and (max-width : 760px) and (orientation : landscape) {
   #nav-container {
     top: 35px; }
 
@@ -360,64 +398,40 @@ body {
       margin-right: 1em; }
       li.login a.wrd {
         display: none; } }
-@media screen and (max-width : 499px) {
-  ul li {
-    margin: 0 0.3em; }
-    ul li a {
+@media screen and (min-width : 500px) and (max-width : 760px) {
+  #nav-container {
+    top: 35px; }
+
+  li {
+    margin: 0 0.5em; }
+    li a {
       border-radius: 2px;
       border-bottom: 0;
       border-top: 0;
       margin: 0;
-      padding: 0.35em 0.25em; }
-    ul li .my {
-      display: none; }
-    ul li .all_my {
+      padding: 0.5em; }
+    li .my {
+      display: inline; }
+    li .all_my {
       font-size: 11pt;
       display: inline-block;
       position: absolute;
       left: -1.8em;
       top: 0.2em;
       color: #ddd; }
-    ul li a.icon {
+    li a.icon {
       display: inline-block;
       position: relative;
       top: -0.1em; }
-      ul li a.icon img {
+      li a.icon img {
         width: 1.8em;
         height: 1.8em;
         position: relative;
         top: 0; }
-    ul li.login {
+    li.login {
       float: right;
       margin-right: 1em; }
-      ul li.login a.wrd {
-        display: none; } }
-@media screen and (min-width : 500px) and (max-width : 760px) {
-  ul li {
-    margin: 0 0.5em; }
-    ul li a {
-      border-radius: 2px;
-      border-bottom: 0;
-      border-top: 0;
-      margin: 0;
-      padding: 0.5em; }
-    ul li .my {
-      display: inline; }
-    ul li .all_my {
-      display: none; }
-    ul li a.icon {
-      display: inline-block;
-      position: relative;
-      top: -0.1em; }
-      ul li a.icon img {
-        width: 1.8em;
-        height: 1.8em;
-        position: relative;
-        top: 0; }
-    ul li.login {
-      float: right;
-      margin-right: 1em; }
-      ul li.login a.wrd {
+      li.login a.wrd {
         display: none; } }
 @media screen and (min-width : 761px) {
   ul {
@@ -441,34 +455,6 @@ body {
       ul li.login {
         float: right;
         margin-right: 1em; } }
-@media only screen and (min-device-width : 761px) and (max-device-width : 1280px), screen and (orientation : landscape) {
-  ul li {
-    margin: 0 1em; }
-    ul li a {
-      font-size: 12pt;
-      border-radius: 2px;
-      border-bottom: 0;
-      border-top: 0;
-      margin: 0;
-      padding: 1em 0.3em; }
-    ul li .my {
-      display: inline; }
-    ul li .all_my {
-      display: none; }
-    ul li a.icon {
-      display: inline-block;
-      position: relative;
-      top: -0.1em; }
-      ul li a.icon img {
-        width: 1.8em;
-        height: 1.8em;
-        position: relative;
-        top: 0; }
-    ul li.login {
-      float: right;
-      margin-right: 2.5em; }
-      ul li.login a.wrd {
-        display: none; } }
 #main-container {
   position: relative;
   top: 120px;
@@ -571,37 +557,6 @@ body {
       margin-right: 8px;
       vertical-align: top; } }
 
-@media screen and (max-width : 499px) {
-  #main-container {
-    top: 85px; } }
-@media screen and (max-width : 760px) and (orientation : landscape) {
-  #main-container {
-    top: 85px; } }
-#footer-container {
-  position: fixed;
-  bottom: 0;
-  background-color: #003377; }
-  #footer-container footer {
-    width: 100%; }
-    @media screen and (max-width : 499px) {
-      #footer-container footer .menu {
-        background-color: rgba(51, 0, 153, 0.5);
-        padding: 1px 3px;
-        display: inline-block;
-        margin-bottom: 3px; } }
-    @media screen and (min-width : 500px) and (max-width : 760px) {
-      #footer-container footer .menu {
-        background-color: rgba(51, 0, 153, 0.5);
-        padding: 2px 3px;
-        display: inline-block;
-        margin-bottom: 3px; } }
-    @media screen and (min-width : 761px) {
-      #footer-container footer .menu {
-        background-color: rgba(51, 0, 153, 0.5);
-        padding: 3px 5px;
-        display: inline-block;
-        margin-bottom: 3px; } }
-
 @media screen and (max-width : 760px) {
   .tag {
     background-color: #445588;
@@ -624,65 +579,17 @@ body {
     padding: 5px;
     margin-bottom: 1em;
     width: 50%; } }
-#splash {
-  position: relative;
-  width: 60%;
-  min-height: 80px;
-  max-height: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid rgba(0, 51, 119, 0.5);
-  background-color: rgba(0, 51, 119, 0.2);
-  padding: 8px;
-  text-align: center; }
-  #splash form {
-    margin: 5px 10px;
-    vertical-align: top; }
-  #splash fieldset {
-    border: 1px solid rgba(0, 51, 119, 0.5);
-    padding: 5px;
-    background-color: rgba(0, 51, 119, 0.2); }
-  #splash legend {
-    padding: 5px;
-    font-size: 12pt; }
-
-.h {
-  height: 100%; }
-
-.b {
-  display: block;
-  width: 100%; }
-
-.ib {
-  display: inline-block; }
-
-.fl {
-  float: left; }
-
-.r4 {
-  border-radius: 4px; }
-
-.r8 {
-  border-radius: 8px; }
-
-.btn {
-  background-color: #888;
-  padding: 3px; }
-
-.btn:hover {
-  background-color: #eee; }
-
-h2 {
-  font-size: 14pt;
-  color: #aaa;
-  margin-left: 1px;
-  margin-bottom: 5px; }
-
-a, a:visited {
-  color: #ffe5e5; }
-
-a:hover {
-  color: #ffeeee; }
+#footer-container {
+  position: fixed;
+  bottom: 0;
+  background-color: #003377; }
+  #footer-container footer {
+    width: 100%; }
+    #footer-container footer .menu {
+      background-color: rgba(0, 51, 119, 0.5);
+      padding: 1px 3px;
+      display: inline-block;
+      margin-bottom: 3px; }
 
 /**
  * Non-semantic helper classes: please define your styles before this section.

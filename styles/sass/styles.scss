@@ -14,69 +14,125 @@ $lt-blu: #069;
 $dk-blu: #037;
 $tr-blu: transparentize($dk-blu, 0.8);
 $tr-br-blu: transparentize($dk-blu, 0.5);
-$bl-red: #309;
+$bl-red: #379;
 $link-color: #ffe5e5;
 $hover-color: #fee;
 $top-space: 70px;
 
 
 body{background-color:$lt-blu;}
+#splash{position:relative;width:60%;min-height:80px;max-height:50%;margin-left:auto;margin-right:auto;border:1px solid $tr-br-blu;background-color:$tr-blu;padding:8px;text-align:center;
+    form{margin:5px 10px;vertical-align:top;}
+    fieldset{border:1px solid $tr-br-blu;padding:5px;background-color:$tr-blu;}
+    legend{padding:5px;font-size:12pt;}
+}
+.h{height:100%;}
+.b{display:block;width:100%;}
+.ib{display:inline-block;}
+.fl{float:left;}
+.r4{border-radius:4px;}
+.r8{border-radius:8px;}
+.btn{background-color:#888;padding:3px;}
+.btn:hover{background-color:#eee;}
+h2{font-size:14pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
+a, a:visited{color:$link-color;}
+a:hover{color:$hover-color;}
+
+
+
+
 
 #header-container{height:$top-space;position:fixed;border-bottom:1px solid darken($dk-blu, 10%);background-color:$dk-blu;z-index:99;
-    .college_logo{position:absolute;top:0.8em;right:1.8em;
-        img{border:0;width:81px;height:46px;}
-    }
     h1#title{font-family:'Annie Use Your Telescope',cursive;font-size:30pt;margin-left:0.6em;margin-top:0.3em;
         a{color:#ddd;}
     }
+	.college_logo{position:absolute;top:0.8em;right:1.8em;
+        img{border:0;width:81px;height:46px;}
+    }
 }
+@media screen and (max-width : 499px) {}
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {}
+@media screen and (min-width : 500px) and (max-width : 760px) {}
+@media screen and (min-width : 761px) and (max-width : 1280px) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
+@media screen and (min-width : 1281px) {}
+
+@media screen and (max-width : 761px) {
+    #header-container{height:$top-space - 35px;
+        .college_logo{top:0.5em;right:0.8em;
+            img{width:40px;height:22px;}
+        }
+        h1#title{font-size:18pt;margin-left:0.5em;margin-top:0.1em;}
+    }
+}
+//@media screen and (max-width : 760px) and (orientation : landscape) {
+//    #header-container{height:$top-space - 35px;
+//        .college_logo{top:0.5em;right:0.8em;
+//            img{width:40px;height:22px;}
+//        }
+//        h1#title{font-size:18pt;margin-left:0.5em;margin-top:0.1em;}
+//    }
+//}
+
+
+
+
+
 
 #nav-container{position:fixed;z-index:98;top:$top-space;background-color:$bl-red;border-bottom:1px solid darken($bl-red, 10%);
     ul{display:block;position:relative;left:5px;
-        li{display:inline-block;list-style:none;}
+        li{display:inline-block;list-style:none;
+			a{display:inline-block;height:100%;width:100%;border:1px solid darken($bl-red, 20%);font-size:10pt;background-color:$bl-red;}
+		}
     }
-    a{display:inline-block;height:100%;width:100%;border:1px solid darken($bl-red, 20%);font-size:10pt;background-color:$bl-red;}
 }
-
 @media screen and (max-width : 499px) {}
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {}
 @media screen and (min-width : 500px) and (max-width : 760px) {}
-@media screen and (min-width : 761px) and (max-width : 949px) {}
-@media screen and (min-width : 950px) {}
+@media screen and (min-width : 761px) and (max-width : 1280px) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
+@media screen and (min-width : 1281px) {}
 
-
-
-
-
-
+//@media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape), screen and (max-device-width : 1024px)  { 
+//    #nav-container{top:$top-space - 35px;
+//        a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.2em 0.15em;}
+//    } 
+//}
+//@media screen and (min-width : 500px) and (max-width : 760px) and (orientation : landscape) { 
+//    #nav-container{top:$top-space - 35px;} 
+//    li{margin:0 0.3em;
+//        a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.35em 0.25em;}
+//        .my{display:none;}
+//        .all_my{font-size:11pt;display:inline-block;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
+//        a.icon{display:inline-block;position:relative;top:-0.1em;
+//            img{width:1.8em;height:1.8em;position:relative;top:0;}
+//        }
+//        &.login{float:right;margin-right:1em;
+//            a.wrd{display:none;}
+//        }
+//    }
+//}
 @media screen and (max-width : 499px) {
-    #header-container{height:$top-space - 35px;
-        .college_logo{top:0.5em;right:0.8em;
-            img{width:40px;height:22px;}
-        }
-        h1#title{font-size:18pt;margin-left:0.5em;margin-top:0.1em;}
-    }
+	#nav-container{top:$top-space - 35px;}
+	li{margin:0 0.3em;
+	    a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.35em 0.25em;}
+	    .my{display:none;}
+	    .all_my{font-size:11pt;display:inline-block;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
+	    a.icon{display:inline-block;position:relative;top:-0.1em;
+	        img{width:1.8em;height:1.8em;position:relative;top:0;}
+	    }
+	    &.login{float:right;margin-right:1em;
+	        a.wrd{display:none;}
+	    }
+	}
 }
-@media screen and (max-width : 760px) and (orientation : landscape) {
-    #header-container{height:$top-space - 35px;
-        .college_logo{top:0.5em;right:0.8em;
-            img{width:40px;height:22px;}
-        }
-        h1#title{font-size:18pt;margin-left:0.5em;margin-top:0.1em;}
-    }
-}
-
-
-
-@media screen and (max-width : 499px), screen and (max-width : 499px) and (orientation : landscape), screen and (max-device-width : 1024px)  { 
-    #nav-container{top:$top-space - 35px;
-        a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.2em 0.15em;}
-    } 
-}
-@media screen and (min-width : 500px) and (max-width : 760px) and (orientation : landscape) { 
-    #nav-container{top:$top-space - 35px;} 
-    li{margin:0 0.3em;
-        a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.35em 0.25em;}
-        .my{display:none;}
+@media screen and (min-width : 500px) and (max-width : 760px) {
+	#nav-container{top:$top-space - 35px;}
+    li{margin:0 0.5em;
+        a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.5em;}
+        .my{display:inline;}
         .all_my{font-size:11pt;display:inline-block;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
         a.icon{display:inline-block;position:relative;top:-0.1em;
             img{width:1.8em;height:1.8em;position:relative;top:0;}
@@ -86,77 +142,44 @@ body{background-color:$lt-blu;}
         }
     }
 }
+@media screen and (min-width : 761px) {
+    ul{left:-10px;
+        li{margin:0.2em 0.5em;padding:0;
+            a{font-size:12pt;border-radius:4px;margin:0 0.2em;padding:0.2em;
+                &:hover{background:#68a;}
+            }
+            .my{display:inline;}
+            .all_my{display:none;}
+            .log_my{display:none;}
+            &.login{float:right;margin-right:1em;}
+        }
+    }
+}
 
 
 
-    @media screen and (max-width : 499px) {
-        ul{
-            li{margin:0 0.3em;
-                a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.35em 0.25em;}
-                .my{display:none;}
-                .all_my{font-size:11pt;display:inline-block;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
-                a.icon{display:inline-block;position:relative;top:-0.1em;
-                    img{width:1.8em;height:1.8em;position:relative;top:0;}
-                }
-                &.login{float:right;margin-right:1em;
-                    a.wrd{display:none;}
-                }
-            }
-        }
-    }
-    
-    @media screen and (min-width : 500px) and (max-width : 760px) {
-        ul{
-            li{margin:0 0.5em;
-                a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.5em;}
-                .my{display:inline;}
-                .all_my{display:none;}
-                a.icon{display:inline-block;position:relative;top:-0.1em;
-                    img{width:1.8em;height:1.8em;position:relative;top:0;}
-                }
-                &.login{float:right;margin-right:1em;
-                    a.wrd{display:none;}
-                }
-            }
-        }
-    }
-    
-    @media screen and (min-width : 761px) {
-        ul{left:-10px;
-            li{margin:0.2em 0.5em;padding:0;
-                a{font-size:12pt;border-radius:4px;margin:0 0.2em;padding:0.2em;
-                    &:hover{background:#68a;}
-                }
-                .my{display:inline;}
-                .all_my{display:none;}
-                .log_my{display:none;}
-                &.login{float:right;margin-right:1em;}
-            }
-        }
-    }
     
 //    Tablet styles: 
-    @media only screen and (min-device-width : 761px) and (max-device-width : 1280px), screen and (orientation : landscape) {
-        ul{
-            li{margin:0 1em;
-                a{font-size:12pt;border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:1em 0.3em;}
-                .my{display:inline;}
-                .all_my{display:none;}
-                a.icon{display:inline-block;position:relative;top:-0.1em;
-                    img{width:1.8em;height:1.8em;position:relative;top:0;}
-                }
-                &.login{float:right;margin-right:2.5em;
-                    a.wrd{display:none;}
-                }
-            }
-        }
-    }
+//    @media only screen and (min-device-width : 761px) and (max-device-width : 1280px), screen and (orientation : landscape) {
+//        ul{
+//            li{margin:0 1em;
+//                a{font-size:12pt;border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:1em 0.3em;}
+//                .my{display:inline;}
+//                .all_my{display:none;}
+//                a.icon{display:inline-block;position:relative;top:-0.1em;
+//                    img{width:1.8em;height:1.8em;position:relative;top:0;}
+//                }
+//                &.login{float:right;margin-right:2.5em;
+//                    a.wrd{display:none;}
+//                }
+//            }
+//        }
+//    }
 
 
 
 #main-container{position:relative;top:$top-space+50px;padding-bottom:$top-space;
 	.column{vertical-align:top;margin-bottom:8px;height:100%;background-color:$tr-blu;padding:1em;border-radius:0.2em;}
-    #main{}
     ul{list-style:none;}
     .user_image{float:left;}
     h3{float:left;}
@@ -188,22 +211,13 @@ body{background-color:$lt-blu;}
     @media screen and (min-width : 761px) { #right{display:inline-block;float:right;width:13%;margin-right:8px;vertical-align:top;} }
     
 }
-@media screen and (max-width : 499px) { #main-container{top:$top-space + 15px;} }
-@media screen and (max-width : 760px) and (orientation : landscape) { #main-container{top:$top-space + 15px;} }
-
-#footer-container{position:fixed;bottom:0;background-color:$dk-blu;
-    footer{width:100%;
-        @media screen and (max-width : 499px) {
-            .menu{background-color:transparentize($bl-red, 0.5);padding:1px 3px;display:inline-block;margin-bottom:3px;}
-        }
-        @media screen and (min-width : 500px) and (max-width : 760px) {
-            .menu{background-color:transparentize($bl-red, 0.5);padding:2px 3px;display:inline-block;margin-bottom:3px;}
-        }
-        @media screen and (min-width : 761px) {
-            .menu{background-color:transparentize($bl-red, 0.5);padding:3px 5px;display:inline-block;margin-bottom:3px;}
-        }
-    }
-}
+@media screen and (max-width : 499px) {}
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {}
+@media screen and (min-width : 500px) and (max-width : 760px) {}
+@media screen and (min-width : 761px) and (max-width : 1280px) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
+@media screen and (min-width : 1281px) {}
 
 @media screen and (max-width : 760px) {
 	.tag{background-color:#445588;padding:4px;}
@@ -213,23 +227,29 @@ body{background-color:$lt-blu;}
 	.tag{background-color:#445588;padding:4px;}
 	.post{background-color:$tr-blu;border:1px solid $tr-br-blu;padding:5px;margin-bottom:1em;width:50%;}
 }
+//@media screen and (max-width : 499px) { #main-container{top:$top-space + 15px;} }
+//@media screen and (max-width : 760px) and (orientation : landscape) { #main-container{top:$top-space + 15px;} }
 
-#splash{position:relative;width:60%;min-height:80px;max-height:50%;margin-left:auto;margin-right:auto;border:1px solid $tr-br-blu;background-color:$tr-blu;padding:8px;text-align:center;
-    form{margin:5px 10px;vertical-align:top;}
-    fieldset{border:1px solid $tr-br-blu;padding:5px;background-color:$tr-blu;}
-    legend{padding:5px;font-size:12pt;}
+
+
+
+
+#footer-container{position:fixed;bottom:0;background-color:$dk-blu;
+    footer{width:100%;
+		.menu{background-color:$tr-br-blu;padding:1px 3px;display:inline-block;margin-bottom:3px;}
+    }
 }
-.h{height:100%;}
-.b{display:block;width:100%;}
-.ib{display:inline-block;}
-.fl{float:left;}
-.r4{border-radius:4px;}
-.r8{border-radius:8px;}
-.btn{background-color:#888;padding:3px;}
-.btn:hover{background-color:#eee;}
-h2{font-size:14pt;color:#aaa;margin-left:1px;margin-bottom:5px;}
-a, a:visited{color:$link-color;}
-a:hover{color:$hover-color;}
+@media screen and (max-width : 499px) {}
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {}
+@media screen and (min-width : 500px) and (max-width : 760px) {}
+@media screen and (min-width : 761px) and (max-width : 1280px) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
+@media screen and (min-width : 1281px) {}
+
+
+
+
 
 // Smartphones (portrait and landscape): @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
 
