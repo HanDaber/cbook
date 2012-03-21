@@ -20,14 +20,17 @@
                                 %legend{style: "font-size:13pt;"} Create a post:
                                 %textarea{name: "post", cols: "40", rows: "3", style:"margin:5px;"}
                                 %br/
-                                %fieldset.ib.fl
+                                %fieldset.ib.fl.checkboxes
                                     %legend{style: "font-size:13pt;"} Add some tags:
                                     %ul
                                         - i = 0
                                         - @tags.each do |tag|
                                             - i += 1
-                                            %li
-                                                %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
+                                            %li            
+                                                %label.label_check{for: "checkbox-0#{i}"}
+                                                    %input{name: "tag[#{i}]", id: "tag_#{i}", value: "#{tag.name}", type: "checkbox", style: "margin-right:0.2em;"}= "#{tag.name}"
+
+                                                / %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
                                                 
                                                 
                                 %br/

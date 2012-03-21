@@ -362,94 +362,154 @@ a:hover {
         border: 1px solid #193b4d;
         font-size: 10pt;
         background-color: #337799; }
+      #nav-container ul li a:hover {
+        background: #68a; }
+    #nav-container ul li.login {
+      float: right;
+      display: inline; }
+    #nav-container ul .prefs {
+      display: inline-block;
+      position: relative;
+      right: -2em; }
+      #nav-container ul .prefs a {
+        display: inline-block;
+        margin: 0; }
+      #nav-container ul .prefs a.p1 {
+        position: relative;
+        float: left;
+        clear: none;
+        right: -1em; }
+      #nav-container ul .prefs a.p2 {
+        position: relative; }
 
 @media screen and (max-width : 499px) {
   #nav-container {
     top: 35px; }
-
-  li {
-    margin: 0 0.3em; }
-    li a {
-      border-radius: 2px;
-      border-bottom: 0;
-      border-top: 0;
-      margin: 0;
-      padding: 0.35em 0.25em; }
-    li .my {
-      display: none; }
-    li .all_my {
-      font-size: 11pt;
-      display: inline-block;
-      position: absolute;
-      left: -1.8em;
-      top: 0.2em;
-      color: #ddd; }
-    li a.icon {
-      display: inline-block;
-      position: relative;
-      top: -0.1em; }
-      li a.icon img {
-        width: 1.8em;
-        height: 1.8em;
+    #nav-container li {
+      margin: 0 0.3em; }
+      #nav-container li a {
+        border-radius: 2px;
+        border-bottom: 0;
+        border-top: 0;
+        margin: 0;
+        padding: 0.35em 0.25em; }
+      #nav-container li .my {
+        display: none; }
+      #nav-container li .all_my {
+        font-size: 11pt;
+        display: inline-block;
+        position: absolute;
+        left: -1.8em;
+        top: 0.2em;
+        color: #ddd; }
+      #nav-container li a.icon {
+        display: inline-block;
         position: relative;
-        top: 0; }
-    li.login {
+        top: -0.1em; }
+        #nav-container li a.icon img {
+          width: 1.8em;
+          height: 1.8em;
+          position: relative;
+          top: 0; }
+      #nav-container li a.wrd {
+        display: none; }
+    #nav-container li.login {
       float: right;
-      margin-right: 1em; }
-      li.login a.wrd {
-        display: none; } }
+      margin-right: 0.1em;
+      display: inline; }
+    #nav-container .prefs {
+      display: inline-block;
+      width: 13em; }
+      #nav-container .prefs a {
+        width: 30%;
+        margin: 0;
+        border-radius: 0; }
+      #nav-container .prefs a.p1 {
+        position: relative;
+        padding: 0.35em 0.25em 0.35em 0.25em;
+        position: relative; }
+      #nav-container .prefs a.p2 {
+        position: relative;
+        left: -1.2em;
+        padding: 0.35em 0.25em 0.35em 0.15em; } }
 @media screen and (min-width : 500px) and (max-width : 760px) {
   #nav-container {
     top: 35px; }
-
-  li {
-    margin: 0 0.5em; }
-    li a {
-      border-radius: 2px;
-      border-bottom: 0;
-      border-top: 0;
-      margin: 0;
-      padding: 0.5em; }
-    li .my {
-      display: inline; }
-    li .all_my {
-      display: none; }
-    li a.icon {
-      display: inline-block;
-      position: relative;
-      top: -0.1em; }
-      li a.icon img {
-        width: 1.8em;
-        height: 1.8em;
-        position: relative;
-        top: 0; }
-    li.login {
-      float: right;
-      margin-right: 1em; }
-      li.login a.wrd {
-        display: none; } }
-@media screen and (min-width : 761px) {
-  ul {
-    left: -10px; }
-    ul li {
-      margin: 0.2em 0.5em;
-      padding: 0; }
-      ul li a {
-        font-size: 12pt;
-        border-radius: 4px;
-        margin: 0 0.2em;
-        padding: 0.2em; }
-        ul li a:hover {
-          background: #68a; }
-      ul li .my {
+    #nav-container li {
+      margin: 0 0.5em; }
+      #nav-container li a {
+        font-size: 14pt;
+        border-radius: 2px;
+        border-bottom: 0;
+        border-top: 0;
+        margin: 0;
+        padding: 0.7em 0.5em; }
+      #nav-container li .my {
         display: inline; }
-      ul li .all_my {
+      #nav-container li .all_my {
         display: none; }
-      ul li .log_my {
+      #nav-container li a.icon {
+        display: inline-block;
+        position: relative;
+        top: -0.1em; }
+        #nav-container li a.icon img {
+          width: 1.8em;
+          height: 1.8em;
+          position: relative;
+          top: 0; }
+      #nav-container li a.wrd {
         display: none; }
-      ul li.login {
+    #nav-container li.login {
+      float: right;
+      margin-right: 1em;
+      display: inline; }
+    #nav-container .prefs {
+      display: inline-block;
+      width: 13em; }
+      #nav-container .prefs a {
+        width: 30%;
+        margin: 0; }
+      #nav-container .prefs a.p1 {
+        position: relative;
+        padding: 0.7em 0.5em 0.7em 0.5em;
+        position: relative; }
+      #nav-container .prefs a.p2 {
+        position: relative;
+        left: -1em;
+        padding: 0.7em 0.5em 0.7em 0.3em; } }
+@media screen and (min-width : 761px) {
+  #nav-container {
+    background-color: rgba(51, 119, 153, 0.3); }
+    #nav-container ul {
+      left: -10px; }
+      #nav-container ul li {
+        margin: 0.1em 0.5em;
+        padding: 0.5em; }
+        #nav-container ul li a {
+          font-size: 11pt;
+          border-radius: 4px;
+          margin: 0 0.2em;
+          padding: 0.5em; }
+        #nav-container ul li .my {
+          display: inline; }
+        #nav-container ul li .all_my {
+          display: none; }
+        #nav-container ul li .log_my {
+          display: none; }
+      #nav-container ul li.login {
         float: right;
-        margin-right: 1em; } }
+        margin-right: 1.5em;
+        display: inline; }
+      #nav-container ul .prefs {
+        width: 15em; }
+        #nav-container ul .prefs a {
+          padding: 0.5em;
+          width: 40%; }
+        #nav-container ul .prefs a.p1 {
+          border-radius: 0.3em 0 0 0.3em; }
+        #nav-container ul .prefs a.p2 {
+          padding-left: 0;
+          border-radius: 0 0.3em 0.3em 0; } }
 #main-container {
   position: relative;
   top: 120px;
@@ -552,6 +612,21 @@ a:hover {
       margin-right: 8px;
       vertical-align: top; } }
 
+@media screen and (max-width : 499px) {
+  #main-container {
+    position: relative;
+    top: 70px;
+    padding-bottom: 70px; } }
+@media screen and (min-width : 500px) and (max-width : 760px) {
+  #main-container {
+    position: relative;
+    top: 85px;
+    padding-bottom: 70px; } }
+@media screen and (min-width : 1281px) {
+  #main-container {
+    position: relative;
+    top: 140px;
+    padding-bottom: 70px; } }
 @media screen and (max-width : 760px) {
   .tag {
     background-color: #445588;

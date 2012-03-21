@@ -2,24 +2,26 @@
     %ul
         %li
             %center
-                .all_my My:
-                %a.home{:href => "/#{@user[:name]}/net"}
-                    .my My
-                    Net
+                / .all_my My:
+                %a.home{:href => "/#{@user[:name]}/home"}
+                    / .my My
+                    Home
         %li
             %center
+                .all_my My:
                 %a.posts{:href => "/#{@user[:name]}/posts"}
                     .my My
                     Posts
         %li
             %center
-                %a.tags{:href => "/#{@user[:name]}/tags"}
+                %a.tags{:href => "/#{@user[:name]}/net"}
                     .my My
-                    Tags
-        %li
-            %center
-                %a.prefs{:href => "/#{@user[:name]}/prefs"} Preferences
+                    Net
+        / %li
+        /     %center
+        /         %a.prefs{:href => "/#{@user[:name]}/prefs"} Preferences
         %li.login
-            %center
-                %a.logout{:href => "/logout"}
-                    Log Out
+            %center.ib
+                .prefs
+                    %a.p1{:href => "/#{@user[:name]}/prefs"} Account
+                    %a.p2{:href => "/logout"} Log Out

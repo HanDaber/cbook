@@ -12,11 +12,13 @@
 // Variables
 $lt-blu: #069;
 $dk-blu: #037;
-$tr-blu: transparentize($dk-blu, 0.8);
-$tr-br-blu: transparentize($dk-blu, 0.5);
 $bl-red: #379;
 $link-color: #ffe5e5;
 $hover-color: #fee;
+$tr-blu: transparentize($dk-blu, 0.8);
+$tr-br-blu: transparentize($dk-blu, 0.5);
+$tr-bl-red: transparentize($bl-red, 0.7);
+
 $top-space: 70px;
 
 
@@ -75,6 +77,13 @@ a:hover{color:$hover-color;}
     ul{display:block;position:relative;left:5px;
         li{display:inline-block;list-style:none;
 			a{display:inline-block;height:100%;width:100%;border:1px solid darken($bl-red, 20%);font-size:10pt;background-color:$bl-red;}
+			a:hover{background:#68a;}
+		}
+		li.login{float:right;display:inline;}
+		.prefs{display:inline-block;position:relative;right:-2em;
+		    a{display:inline-block;margin:0;}
+		    a.p1{position:relative;float:left;clear:none;right:-1em;}
+		    a.p2{position:relative;}
 		}
     }
 }
@@ -87,43 +96,58 @@ a:hover{color:$hover-color;}
 @media screen and (min-width : 1281px) {}
 
 @media screen and (max-width : 499px) {
-	#nav-container{top:$top-space - 35px;}
-	li{margin:0 0.3em;
-	    a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.35em 0.25em;}
-	    .my{display:none;}
-	    .all_my{font-size:11pt;display:inline-block;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
-	    a.icon{display:inline-block;position:relative;top:-0.1em;
-	        img{width:1.8em;height:1.8em;position:relative;top:0;}
-	    }
-	    &.login{float:right;margin-right:1em;
-	        a.wrd{display:none;}
-	    }
-	}
+	#nav-container{top:$top-space - 35px;
+    	li{margin:0 0.3em;
+    	    a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.35em 0.25em;}
+    	    .my{display:none;}
+    	    .all_my{font-size:11pt;display:inline-block;position:absolute;left:-1.8em;top:0.2em;color:#ddd;}
+    	    a.icon{display:inline-block;position:relative;top:-0.1em;
+    	        img{width:1.8em;height:1.8em;position:relative;top:0;}
+    	    }
+            a.wrd{display:none;}
+    	}
+        li.login{float:right;margin-right:0.1em;display:inline;}
+        .prefs{display:inline-block;width:13em;
+		    a{width:30%;margin:0;border-radius:0;}
+		    a.p1{position:relative;padding:0.35em 0.25em 0.35em 0.25em;position:relative;}
+		    a.p2{position:relative;left:-1.2em;padding:0.35em 0.25em 0.35em 0.15em;}
+		}
+    }
 }
 @media screen and (min-width : 500px) and (max-width : 760px) {
-	#nav-container{top:$top-space - 35px;}
-    li{margin:0 0.5em;
-        a{border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.5em;}
-        .my{display:inline;}
-        .all_my{display:none;}
-        a.icon{display:inline-block;position:relative;top:-0.1em;
-            img{width:1.8em;height:1.8em;position:relative;top:0;}
-        }
-        &.login{float:right;margin-right:1em;
+	#nav-container{top:$top-space - 35px;
+        li{margin:0 0.5em;
+            a{font-size:14pt;border-radius:2px;border-bottom:0;border-top:0;margin:0;padding:0.7em 0.5em;}
+            .my{display:inline;}
+            .all_my{display:none;}
+            a.icon{display:inline-block;position:relative;top:-0.1em;
+                img{width:1.8em;height:1.8em;position:relative;top:0;}
+            }
             a.wrd{display:none;}
         }
+        li.login{float:right;margin-right:1em;display:inline;}
+        .prefs{display:inline-block;width:13em;
+		    a{width:30%;margin:0;}
+		    a.p1{position:relative;padding:0.7em 0.5em 0.7em 0.5em;position:relative;}
+		    a.p2{position:relative;left:-1em;padding:0.7em 0.5em 0.7em 0.3em;}
+		}
     }
 }
 @media screen and (min-width : 761px) {
-    ul{left:-10px;
-        li{margin:0.2em 0.5em;padding:0;
-            a{font-size:12pt;border-radius:4px;margin:0 0.2em;padding:0.2em;
-                &:hover{background:#68a;}
+    #nav-container{background-color:$tr-bl-red;
+        ul{left:-10px;
+            li{margin:0.1em 0.5em;padding:0.5em;
+                a{font-size:11pt;border-radius:4px;margin:0 0.2em;padding:0.5em;}
+                .my{display:inline;}
+                .all_my{display:none;}
+                .log_my{display:none;}
             }
-            .my{display:inline;}
-            .all_my{display:none;}
-            .log_my{display:none;}
-            &.login{float:right;margin-right:1em;}
+            li.login{float:right;margin-right:1.5em;display:inline;}
+            .prefs{width:15em;
+    		    a{padding:0.5em;width:40%;}
+    		    a.p1{border-radius:0.3em 0 0 0.3em;}
+    		    a.p2{padding-left:0;border-radius:0 0.3em 0.3em 0;}
+    		}
         }
     }
 }
@@ -164,13 +188,13 @@ a:hover{color:$hover-color;}
     @media screen and (min-width : 761px) { #right{display:inline-block;float:right;width:13%;margin-right:8px;vertical-align:top;} }
     
 }
-@media screen and (max-width : 499px) {}
+@media screen and (max-width : 499px) {#main-container{position:relative;top:$top-space;padding-bottom:$top-space;}}
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {}
-@media screen and (min-width : 500px) and (max-width : 760px) {}
+@media screen and (min-width : 500px) and (max-width : 760px) {#main-container{position:relative;top:$top-space+15px;padding-bottom:$top-space;}}
 @media screen and (min-width : 761px) and (max-width : 1280px) {}
 @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {}
 @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
-@media screen and (min-width : 1281px) {}
+@media screen and (min-width : 1281px) {#main-container{position:relative;top:$top-space+70px;padding-bottom:$top-space;}}
 
 @media screen and (max-width : 760px) {
 	.tag{background-color:#445588;padding:4px;}
@@ -200,6 +224,18 @@ a:hover{color:$hover-color;}
 @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
 @media screen and (min-width : 1281px) {}
 
+
+
+//
+//.has-js .label_check,
+//.has-js .label_radio    { padding-left: 34px; }
+//.has-js .label_radio    { background: url("jquery-checkbox/radio-off.png") no-repeat; }
+//.has-js .label_check    { background: url("jquery-checkbox/check-off.png") no-repeat; }
+//.has-js label.c_on      { background: url("jquery-checkbox/check-on.png") no-repeat; }
+//.has-js label.r_on      { background: url("jquery-checkbox/radio-on.png") no-repeat; }
+//.has-js .label_check input,
+//.has-js .label_radio input  { position: absolute; left: -9999px; }
+//
 
 
 
