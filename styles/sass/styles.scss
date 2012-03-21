@@ -199,6 +199,7 @@ a:hover{color:$hover-color;}
 @media screen and (max-width : 760px) {
 	.tag{background-color:#445588;padding:4px;}
 	.post{background-color:$tr-blu;border:1px solid $tr-br-blu;padding:5px;margin-bottom:1em;width:95%;}
+	.net{width:98%;height:auto;}
 }
 @media screen and (min-width : 761px) {
 	.tag{background-color:#445588;padding:4px;}
