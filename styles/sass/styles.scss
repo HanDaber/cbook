@@ -196,7 +196,7 @@ a:hover{color:$hover-color;}
 @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {
     #left{float:left;width:21%;display:inline-block;}
     #middle{width:70%;float:right;display:inline-block;}
-    #right{float:left;width:21%;display:inline-block;clear:left;}
+    #right{float:left;width:21%;display:inline-block;}
 }
 @media screen and (min-width : 1281px) {#main-container{position:relative;top:$top-space+70px;padding-bottom:$top-space;}}
 

@@ -636,8 +636,7 @@ a:hover {
   #right {
     float: left;
     width: 21%;
-    display: inline-block;
-    clear: left; } }
+    display: inline-block; } }
 @media screen and (min-width : 1281px) {
   #main-container {
     position: relative;
