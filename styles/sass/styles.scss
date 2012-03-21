@@ -193,7 +193,11 @@ a:hover{color:$hover-color;}
 @media screen and (min-width : 500px) and (max-width : 760px) {#main-container{position:relative;top:$top-space+15px;padding-bottom:$top-space;}}
 @media screen and (min-width : 761px) and (max-width : 1280px) {}
 @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {}
-@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {
+    #left{float:left;width:21%;display:inline-block;}
+    #middle{width:70%;float:right;display:inline-block;}
+    #right{float:left;width:21%;display:inline-block;clear:left;}
+}
 @media screen and (min-width : 1281px) {#main-container{position:relative;top:$top-space+70px;padding-bottom:$top-space;}}
 
 @media screen and (max-width : 760px) {

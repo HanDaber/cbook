@@ -622,6 +622,22 @@ a:hover {
     position: relative;
     top: 85px;
     padding-bottom: 70px; } }
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {
+  #left {
+    float: left;
+    width: 21%;
+    display: inline-block; }
+
+  #middle {
+    width: 70%;
+    float: right;
+    display: inline-block; }
+
+  #right {
+    float: left;
+    width: 21%;
+    display: inline-block;
+    clear: left; } }
 @media screen and (min-width : 1281px) {
   #main-container {
     position: relative;
