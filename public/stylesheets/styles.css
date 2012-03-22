@@ -382,7 +382,10 @@ a:hover {
       #nav-container ul .prefs a.p2 {
         position: relative; }
 
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+@media only screen and (-webkit-min-device-pixel-ratio : 1.9), only screen and (min-device-pixel-ratio : 1.9) {
+  li {
+    margin: 0 0.1em; }
+
   a {
     border-radius: 2px;
     border-bottom: 0;
