@@ -94,7 +94,7 @@ a:hover{color:$hover-color;}
 }
 @media screen and (min-width : 500px) and (max-width : 760px) {}
 @media screen and (min-width : 761px) and (max-width : 1280px) {}
-@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {}
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {li.login{float:right;display:inline;}}
 @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : portrait) {}
 @media screen and (min-width : 1281px) {}
 

@@ -392,6 +392,10 @@ a:hover {
     border-top: 0;
     margin: 0;
     padding: 0.25em 0.15em; } }
+@media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {
+  li.login {
+    float: right;
+    display: inline; } }
 @media screen and (max-width : 499px) {
   #nav-container {
     top: 35px; }
