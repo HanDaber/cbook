@@ -382,6 +382,13 @@ a:hover {
       #nav-container ul .prefs a.p2 {
         position: relative; }
 
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+  a {
+    border-radius: 2px;
+    border-bottom: 0;
+    border-top: 0;
+    margin: 0;
+    padding: 0.25em 0.15em; } }
 @media screen and (max-width : 499px) {
   #nav-container {
     top: 35px; }
