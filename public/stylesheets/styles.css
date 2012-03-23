@@ -588,7 +588,10 @@ a:hover {
         height: 40px; } }
   @media screen and (max-width : 499px) {
     #main-container #left {
-      display: block; } }
+      display: block; }
+    #main-container img.user_image {
+      float: left;
+      width: 5em; } }
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #left {
       float: left;
