@@ -386,6 +386,11 @@ a:hover {
   li {
     margin: 0 0.1em; }
 
+  .prefs {
+    display: inline-block;
+    position: relative;
+    right: -0.5em; }
+
   a {
     border-radius: 2px;
     border-bottom: 0;
@@ -395,7 +400,8 @@ a:hover {
 @media only screen and (min-device-width : 761px) and (max-device-width : 1280px) and (orientation : landscape) {
   li.login {
     float: right;
-    display: inline; } }
+    display: inline;
+    margin-right: 0.5em; } }
 @media screen and (max-width : 499px) {
   #nav-container {
     top: 35px; }

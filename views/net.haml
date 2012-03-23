@@ -6,6 +6,7 @@
     .net-container{style: "padding:20px;"}
         %h2 My Net (more coming soon...)
         %center
-            %img.net{src: "img/net-1.png"}
+            = haml :'partials/_img_map'
+            %img.net{src: "img/net-1.png", usemap: "#net_map"}
     
 = haml(:'partials/_footer', :layout => false)

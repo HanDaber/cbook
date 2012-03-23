@@ -7,6 +7,7 @@ gem 'bson_ext'
 gem 'log_buddy'
 gem 'haml'
 gem 'sass'
+# gem 'sprockets', '~> 2.0'
 
 #gem 'pg'
 
