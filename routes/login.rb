@@ -24,15 +24,12 @@ post "/signup" do
     email = params[:email]
     pass = params[:pass]
     
-    new_user = User.create({
-        :name => name,
-        :email => email,
-        :pass => pass
-    })
+    new_user = User.new
+    error_string_haml("new_user . name : #{new_user.name}")
     
     if new_user
         if new_user.exists
-            error_string_haml("User already exists, please go back and try a different name.")
+            error_string_haml("#{new_user.exists} User already exists, please go back and try a different name.")
         else
             if new_user.save
                 session = new_user.build_session
@@ -43,7 +40,7 @@ post "/signup" do
             end
         end
     else
-        error_string_haml("Could not create new User #{new_user}")
+        error_string_haml("Could not create new User")
     end
 end
 

@@ -1,4 +1,9 @@
 class User < CollegeBook
+    attr_accessor :name
+    
+    def initialize
+        @name = nil
+    end
     
     key :name,          String,     required: true, unique: true
     key :email,         String,     required: true, unique: true#, format: /^[A-Z0-9._]+@mit\.edu$/i
@@ -9,9 +14,7 @@ class User < CollegeBook
 
     many :posts
     many :tags, :as => :taggable
-    
-    
-    
+
     def exists
         user_exists = User.where(name: self.name, pass: self.pass)
         if user_exists
@@ -20,7 +23,7 @@ class User < CollegeBook
             return false
         end
     end
-    
+
     def build_session
         return {
             name: self.name,
