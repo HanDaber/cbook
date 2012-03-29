@@ -1,56 +1,53 @@
 # Duct-taped error messages for now
 post "/login" do
-    name = params[:name]
-    pass = params[:pass]
+    user_hash = {
+        name: params[:name],
+        pass: params[:pass]
+    }
     
-    auth_user = User.create({
-        :name => name,
-        :pass => pass,
-        :email => "temp-#{Time.now.to_i}@mit.edu"
-    })
+    @found_user = User.first(user_hash)
     
-    if auth_user.exists
-        session = auth_user.build_session
-        redirect auth_user.home
+    if @found_user
+        [:name, :email, :pass].map { |a| session[a] = @found_user[a] }
+
+        redirect @found_user.home
     else
-        error_string_haml("User name not found. Please go back and try again.")
+        session[:stat] = {status: false, msg: "Incorrect Username or Password"}
+        
+        redirect "/"
     end 
 end
 
 
 
 post "/signup" do
-    name = params[:name]
-    email = params[:email]
-    pass = params[:pass]
+    user_hash = {
+        name: params[:name],
+        email: params[:email],
+        pass: params[:pass]
+    }
+
+    @new_user = User.create(user_hash)
     
-    new_user = User.new({
-        name: name,
-        email: email,
-        pass: pass
-    })
-    
-    if new_user
-        # if new_user.exists
-        #     error_string_haml("new_user . name : #{new_user.name}")
-        #     # error_string_haml("#{new_user.exists} User already exists, please go back and try a different name.")
-        # else
-            if new_user.save
-                session = new_user.build_session
-                # redirect new_user.home
-                error_string_haml("#{new_user.home} : #{$!}")
-            else
-                error_string_haml("Could not save user #{new_user}")
-            end
-        # end
+    # .save runs validations
+    if @new_user.save
+        [:name, :email, :pass].map { |a| session[a] = @new_user[a] }
+
+        redirect @new_user.home
     else
-        error_string_haml("Could not create new User #{$!}")
+        session[:stat] = {status: false, msg: "Couldn't create user: #{@new_user.err}"}
+        
+        redirect "/"
     end
 end
 
 
+def log_out
+    [:name, :email, :pass].map { |a| session[a] = nil }
+end
 
 get "/logout" do
-    session[:name] = session[:pass] = nil
+    log_out
+    
     redirect '/'
 end

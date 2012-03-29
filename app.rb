@@ -29,6 +29,7 @@ class CollegeBook
 
     # Import the MongoMapper::Document Class
     include MongoMapper::Document
+    safe
 
     helpers do
         include Rack::Utils

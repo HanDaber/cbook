@@ -32,7 +32,17 @@
             or
             %a{:href => "http://www.google.com/chromeframe/?redirect=true"} install Google Chrome Frame
             to experience this site.
-
+    - if session
+        .ib{style: "position: fixed; z-index: 99999; color: #ef1010"}
+            %p
+                name:
+                = session[:name]
+            %p
+                email:
+                = session[:email]        
+            %p
+                pass:
+                = session[:pass]
     = yield
 
 %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
