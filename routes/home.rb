@@ -89,7 +89,7 @@ post '/:user/post' do
     @post_text = params[:post]
     @post_tags = params[:tag]
 
-    if found_user
+    if found_user.exists
         if found_user[:pass] == @pass
 
             new_post = found_user.posts.create({text: @post_text})

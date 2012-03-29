@@ -54,6 +54,16 @@ class User < CollegeBook
 
     many :posts
     many :tags, :as => :taggable
+    
+    def exists
+        my_name = self.name
+        if found_user = User.find_by_name(my_name)
+            return true
+        else
+            return false
+        end
+    end
+    
 end
 
 class Post < CollegeBook
