@@ -75,5 +75,5 @@ class Tag < CollegeBook
 end
 
 # URL routing and helper functions
-require_relative 'routes/init'
 require_relative 'helpers/init'
+require_relative 'routes/init'
