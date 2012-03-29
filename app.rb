@@ -36,54 +36,15 @@ class CollegeBook
     end
 end
 
-class Board < CollegeBook
-    
-    key :name,  String, required: true
-    key :bio,   String, required: true
-    
-    many :posts
-end
+require_relative 'board'
 
-class User < CollegeBook
-    
-    key :name,          String,     required: true, unique: true
-    key :email,         String,     required: true, unique: true, format: /^[A-Z0-9._]+@mit\.edu$/i
-    key :pass,          String,     required: true
-    key :bio,           String
-    key :created_at,    DateTime,   required: true
+require_relative 'user'
 
-    many :posts
-    many :tags, :as => :taggable
-    
-    def exists
-        my_name = self.name
-        if found_user = User.find_by_name(my_name)
-            return true
-        else
-            return false
-        end
-    end
-    
-end
+require_relative 'post'
 
-class Post < CollegeBook
-    
-    key :text,      String, required: true
-    key :post_tags, Array
-    timestamps!
-    
-    belongs_to :user
-    many :tags, :in => :post_tags, :as => :taggable
-end
-
-class Tag < CollegeBook
-    
-    key :name, String, required: true
-    
-    belongs_to :taggable, :polymorphic => true
-    # belongs_to :post
-end
+require_relative 'tag'
 
 # URL routing and helper functions
 require_relative 'helpers/init'
+
 require_relative 'routes/init'

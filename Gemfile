@@ -8,6 +8,7 @@ gem 'log_buddy'
 gem 'haml'
 gem 'sass'
 # gem 'sprockets', '~> 2.0'
+# gem 'mongo_mapper', 'digest/sha1', 'rack-flash'
 
 #gem 'pg'
 

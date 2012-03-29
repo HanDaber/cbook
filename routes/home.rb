@@ -38,6 +38,10 @@ get '/:board' do
     
     if session[:name] && session[:pass]
         @user = User.find_by_name(session[:name])
+        
+        tags = @user.tags
+        @has_tag = false
+        tags.each { |t| @has_tag = true if t[1] == @board.name }
     else
         @login = true
     end
@@ -55,10 +59,6 @@ get '/:board' do
                 @posts << post
             end
         end
-        
-        tags = @user.tags
-        @has_tag = false
-        tags.each { |t| @has_tag = true if t[1] == @board.name }
         
         unless @posts
             @posts = {text: "nil", post_tags: "nil"}

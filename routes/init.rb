@@ -9,6 +9,11 @@ def error_string_haml(str)
 EOT
 end
 
+# # Authenticate
+# before do
+#     authenticate_user(session[:name], session[:pass])
+# end
+
 # Generalized get route
 def route_to(loc)
     @page = loc
@@ -64,5 +69,5 @@ end
 
 
 require_relative 'login'
-require_relative 'users'
+# require_relative 'users'
 require_relative 'home'

@@ -12,5 +12,5 @@
             - color = "green"
         - else
             - color = "red"
-        %p{style: "color:black;position:relative;top:3em;background-color:#{color};margin:0 5em;"}= session[:stat][:msg]
+        %p{style: "color:black;position:relative;top:3em;background-color:#{color};margin:0 auto;width:20em;"}= session[:stat][:msg]
         - session[:stat] = nil
