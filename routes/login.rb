@@ -24,23 +24,27 @@ post "/signup" do
     email = params[:email]
     pass = params[:pass]
     
-    new_user = User.new
-    error_string_haml("new_user . name : #{new_user.name}")
+    new_user = User.new({
+        name: name,
+        email: email,
+        pass: pass
+    })
     
     if new_user
-        if new_user.exists
-            error_string_haml("#{new_user.exists} User already exists, please go back and try a different name.")
-        else
+        # if new_user.exists
+        #     error_string_haml("new_user . name : #{new_user.name}")
+        #     # error_string_haml("#{new_user.exists} User already exists, please go back and try a different name.")
+        # else
             if new_user.save
                 session = new_user.build_session
                 # redirect new_user.home
-                error_string_haml("#{new_user.home}")
+                error_string_haml("#{new_user.home} : #{$!}")
             else
                 error_string_haml("Could not save user #{new_user}")
             end
-        end
+        # end
     else
-        error_string_haml("Could not create new User")
+        error_string_haml("Could not create new User #{$!}")
     end
 end
 

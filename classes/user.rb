@@ -1,10 +1,4 @@
 class User < CollegeBook
-    attr_accessor :name
-    
-    def initialize
-        @name = nil
-    end
-    
     key :name,          String,     required: true, unique: true
     key :email,         String,     required: true, unique: true#, format: /^[A-Z0-9._]+@mit\.edu$/i
     key :pass,          String,     required: true
@@ -16,7 +10,7 @@ class User < CollegeBook
     many :tags, :as => :taggable
 
     def exists
-        user_exists = User.where(name: self.name, pass: self.pass)
+        find_user = User.where(name: self.name, pass: self.pass)
         if user_exists
             return true
         else
