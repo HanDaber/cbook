@@ -15,5 +15,5 @@ URL request from browser (http://cbook...com/:a/:b/:c)
     |
     --> [web server ('Thin')] => [Rack] => app.rb
         |
-        --> routes/init.rb => {login.rb, main.rb...} <= [Sinatra]
+        --> routes/init.rb => {login.rb, main.rb...} \<= [Sinatra]
 </pre>
