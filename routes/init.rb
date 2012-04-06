@@ -1,7 +1,3 @@
-require 'mongo_mapper'
-
-enable :sessions
-
 # Some beautiful errors
 def error_string_haml(str)
     return haml <<"EOT", :layout => :layout
@@ -13,6 +9,11 @@ end
 # before do
 #     authenticate_user(session[:name], session[:pass])
 # end
+
+# 404 error route
+not_found do
+    haml :e404
+end
 
 # Generalized get route
 def route_to(loc)
@@ -64,11 +65,6 @@ def route_to(loc)
     else
         redirect "/"
     end
-end
-
-# 404 error route
-not_found do
-    haml :e404
 end
 
 

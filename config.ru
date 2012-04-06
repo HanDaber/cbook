@@ -10,7 +10,7 @@ set :environment, ENV['RACK_ENV'].to_sym
 set :root,        root_dir
 set :app_file,    app_file
 
-# Require our application
+# Require our application (app.rb)
 require app_file
 
 # Some configuration
