@@ -16,7 +16,11 @@ end
 
 # Generalized get route
 def route_to(loc)
+
     @page = loc
+    
+    
+    
     # params[] is a hash containing parameters passed in via URL
     @who = params[:user]
     # session[] is a mutable hash of parameters stored as a cookie on the user's browser
@@ -53,7 +57,7 @@ def route_to(loc)
                 @posts = user.posts.all
             end
             
-            haml @page
+            haml loc
         else
             redirect "/"
         end

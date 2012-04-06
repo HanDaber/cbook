@@ -1,7 +1,21 @@
 get '/' do
-    if session[:name]
-        params[:user] = session[:name]
-        route_to(:home)
+    if session
+        user_hash = {
+            name: session[:name],
+            pass: session[:pass]
+        }
+
+        @found_user = User.first(user_hash)
+        
+        if @found_user
+            [:name, :email, :pass].map { |a| session[a] = @found_user[a] }
+
+            redirect @found_user.home
+        else
+            log_out
+            
+            haml :index
+        end
     else
         haml :index
     end
