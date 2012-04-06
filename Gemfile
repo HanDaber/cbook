@@ -7,6 +7,9 @@ gem 'bson_ext'
 gem 'log_buddy'
 gem 'haml'
 gem 'sass'
+gem 'rack-flash'
+gem 'sinatra-redirect-with-flash'
+
 # gem 'sprockets', '~> 2.0'
 # gem 'mongo_mapper', 'digest/sha1', 'rack-flash'
 
