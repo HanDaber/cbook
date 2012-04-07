@@ -41,11 +41,6 @@ post "/signup" do
     end
 end
 
-
-def log_out
-    [:name, :email, :pass].map { |a| session[a] = nil }
-end
-
 get "/logout" do
     log_out
     
