@@ -6,7 +6,7 @@ EOT
 end
 
 # Nillify session data
-def log_out
+def destroy_session
     [:name, :email, :pass].map { |a| session[a] = nil }
 end
 
@@ -15,25 +15,30 @@ not_found do
     haml :e404, :layout => false
 end
 
+# Avoid namespaced css/js requests
+get '/:word/*.*' do
+    redirect "/#{params[:splat][0]}.#{params[:splat][1]}"
+end
+
 # Check if there is an active session (a user is logged in)
 before do
-    session_hash = {name: session[:name], pass: session[:pass]}
-    if session_hash
+    if session[:name] && session[:pass]
+        session_hash = { name: session[:name], pass: session[:pass] }
         @session = true
         @user = User.first(session_hash)
-        unless @user
+        if !@user
             # Reset session just in case it is corrupt
-            log_out
-            session[:stat] = {status: @session, msg: "User not found."}
-            haml :index
+            destroy_session
+            error_string_haml "User #{session_hash[:name]} not found."
         end
     else 
         @session = false
-        log_out
-        session[:stat] = {status: @session, msg: "You are not logged in."}
+        # session[:stat] = {status: @session, msg: "You are not logged in."}
         haml :index
     end
 end
+
+
 
 # 
 # 

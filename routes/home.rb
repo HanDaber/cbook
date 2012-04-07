@@ -1,16 +1,3 @@
-
-
-
-
-# Avoid namespaced css/js requests
-get '/:word/*.*' do
-    redirect "/#{params[:splat][0]}.#{params[:splat][1]}"
-end
-
-
-# post routes ======================================================= #
-
-
 post '/:user/post' do
     @who = params[:user]
     @pass = params[:pass]

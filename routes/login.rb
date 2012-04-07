@@ -40,9 +40,3 @@ post "/signup" do
         redirect "/"
     end
 end
-
-get "/logout" do
-    log_out
-    
-    redirect '/'
-end

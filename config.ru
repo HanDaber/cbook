@@ -8,7 +8,6 @@ root_dir = File.dirname(__FILE__)
 app_file = File.join(root_dir, 'app.rb')
 set :environment, ENV['RACK_ENV'].to_sym
 set :root,        root_dir
-set :app_file,    app_file
 
 # Require our application (app.rb)
 require app_file
@@ -25,4 +24,4 @@ set :sass, {:style => :compressed}
 set :clean_trace, true
 
 # run app.rb
-run :app_file
+run app_file

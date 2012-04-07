@@ -1,5 +1,9 @@
 get '/?' do
-    redirect @user.home
+    if @user
+        redirect @user.home
+    else
+        haml :index
+    end
 end
 
 # Generalized route for user pages
@@ -53,7 +57,13 @@ get '/:user_name/:page/?' do |user_name, page|
     end
 end
 
-get '/:board' do |board_tag|
+get "/logout/?" do
+    destroy_session
+    
+    redirect '/'
+end
+
+get '/:board/?' do |board_tag|
 
     board = Board.find_by_name(board_tag)
     
