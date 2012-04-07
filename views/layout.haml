@@ -43,6 +43,11 @@
             %p
                 pass:
                 = session[:pass]
+    - if @cookie
+        .ib{style: "position: fixed; z-index: 99999; color: #451713"}
+            %p
+                cookie:
+                = @cookie
     = yield
 
 %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}

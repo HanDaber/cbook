@@ -40,14 +40,3 @@ post "/signup" do
         redirect "/"
     end
 end
-
-
-def log_out
-    [:name, :email, :pass].map { |a| session[a] = nil }
-end
-
-get "/logout" do
-    log_out
-    
-    redirect '/'
-end

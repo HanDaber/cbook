@@ -17,13 +17,6 @@ require 'mongo'
 require 'mongo_mapper'
 require_relative 'configs/mongo'
 
-# Extend request object to handle pjax requests
-# class Sinatra::Request
-#     def pjax?
-#         env['HTTP_X_PJAX'] || self["_pjax"]
-#     end
-# end
-
 # Application Class
 class CollegeBook
 
@@ -38,14 +31,10 @@ class CollegeBook
 end
 
 require_relative 'classes/board'
-
 require_relative 'classes/user'
-
 require_relative 'classes/post'
-
 require_relative 'classes/tag'
 
 # URL routing and helper functions
 require_relative 'helpers/init'
-
 require_relative 'routes/init'
