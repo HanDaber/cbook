@@ -18,16 +18,16 @@ require 'mongo_mapper'
 require_relative 'configs/mongo'
 
 # Extend request object to handle pjax requests
-class Sinatra::Request
-    def pjax?
-        env['HTTP_X_PJAX'] || self["_pjax"]
-    end
-end
+# class Sinatra::Request
+#     def pjax?
+#         env['HTTP_X_PJAX'] || self["_pjax"]
+#     end
+# end
 
 # Application Class
 class CollegeBook
 
-    # Import the MongoMapper::Document Class
+    # Import the MongoMapper::Document Class (inherited by all subclasses)
     include MongoMapper::Document
     safe
 
