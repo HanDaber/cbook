@@ -1,7 +1,9 @@
 # Duct-taped error messages for now
 post "/login/?" do
     if user_authenticated
-        @user.create_session
+        session[:name] = @user.name
+        session[:email] = @user.email
+        session[:pass] = @user.pass
         redirect @user.home
     else
         session[:stat] = { status: false, msg: "Incorrect Username or Password..." }

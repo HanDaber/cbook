@@ -15,7 +15,7 @@ end
 get '/:user_name/home/?' do
     if user_session
         @tags = @user.tags
-        @posts = @user.relevant_posts
+        @posts = @user.relevant_posts(@tags)
         haml :home
     else
         redirect '/'

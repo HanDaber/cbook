@@ -1,3 +1,5 @@
+enable :sessions
+
 # Some beautiful errors
 def error_string_haml(str)
     return haml <<"EOT", :layout => :layout
@@ -27,6 +29,20 @@ def user_session
         session_hash = { name: session[:name], pass: session[:pass] }
         @user = User.first(session_hash)
         return true
+    else
+        return false
+    end
+end
+
+def user_authenticated
+    if params[:name] && params[:pass]
+        params_hash = { name: params[:name], pass: params[:pass] }
+        @user = User.first(params_hash)
+        if @user
+            return true
+        else
+            return false
+        end
     else
         return false
     end

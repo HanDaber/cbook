@@ -14,9 +14,9 @@ class User < CollegeBook
         return "#{self.name}/home"
     end
 
-    def relevant_posts
-        tags = self.tags
-        @posts = []
+    def relevant_posts(tags)
+        # tags = self.tags
+        posts_array = []
         
         all_posts = Post.all
         all_posts.each do |post|
@@ -27,12 +27,13 @@ class User < CollegeBook
             end
 
             if show_post
-                @posts << post
+                posts_array << post
             end
         end
-        unless @posts
-            @posts = {text: "nil", post_tags: "nil"}
-        end
+        # if posts_array.length == 0
+        #     posts_array << Post.new({text: "nil", post_tags: "nil", user: self})
+        # end
+        return posts_array
     end
     
     def err
