@@ -14,8 +14,8 @@ class User < CollegeBook
         return "#{self.name}/home"
     end
 
-    def relevant_posts(tags)
-        # tags = self.tags
+    def relevant_posts
+        tags = self.tags
         posts_array = []
         
         all_posts = Post.all
