@@ -7,7 +7,9 @@ end
 
 # Nillify session data
 def destroy_session
-    [:name, :email, :pass].map { |a| session[a] = nil }
+    [:name, :email, :pass].map do |prm|
+        session[prm] = nil
+    end
 end
 
 # 404 error route
@@ -15,28 +17,41 @@ not_found do
     haml :e404, :layout => false
 end
 
-# Avoid namespaced css/js requests
-get '/:word/*.*' do
-    redirect "/#{params[:splat][0]}.#{params[:splat][1]}"
+# Default kick-off route to root/login
+def render_root
+    haml :index
+end
+
+def user_session
+    if session[:name] && session[:pass]
+        session_hash = { name: session[:name], pass: session[:pass] }
+        @user = User.first(session_hash)
+        return true
+    else
+        return false
+    end
 end
 
 # Check if there is an active session (a user is logged in)
-before do
-    if session[:name] && session[:pass]
-        session_hash = { name: session[:name], pass: session[:pass] }
-        @session = true
-        @user = User.first(session_hash)
-        if !@user
-            # Reset session just in case it is corrupt
-            destroy_session
-            error_string_haml "User #{session_hash[:name]} not found."
-        end
-    else 
-        @session = false
-        # session[:stat] = {status: @session, msg: "You are not logged in."}
-        haml :index
-    end
-end
+# before do
+#     @user = false
+#     
+#     if request.get?
+#         if session[:name] && session[:pass]
+#             session_hash = { name: session[:name], pass: session[:pass] }
+#             @user = User.first(session_hash)
+#         end
+#     end
+# end
+# 
+# before '/login/?' do
+#     if request.post?
+#         if params[:name] && params[:pass]
+#             params_hash = { name: params[:name], pass: params[:pass] }
+#             @user = User.first(params_hash)
+#         end
+#     end
+# end
 
 
 

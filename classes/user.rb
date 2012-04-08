@@ -13,6 +13,27 @@ class User < CollegeBook
     def home
         return "#{self.name}/home"
     end
+
+    def relevant_posts
+        tags = self.tags
+        @posts = []
+        
+        all_posts = Post.all
+        all_posts.each do |post|
+            show_post = false
+
+            tags.each do |tag|
+                post.post_tags.each { |t| show_post = true if t[1] == tag.name && post.user != self }
+            end
+
+            if show_post
+                @posts << post
+            end
+        end
+        unless @posts
+            @posts = {text: "nil", post_tags: "nil"}
+        end
+    end
     
     def err
         arr = []
