@@ -18,9 +18,10 @@ post "/signup/?" do
 
     new_user = User.create(new_user_hash)
 
-    if new_user.save   # returns false if @new_user fails any validations
+    if new_user.save   # returns false if new_user fails any validations
         @user = new_user
         make_session
+        session[:stat] = { status: true, msg: "Welcome to CollegEbook, #{@user.name}" }
         redirect @user.home
     else
         session[:stat] = { status: false, msg: "Couldn't create user: #{new_user.err}" }
