@@ -12,10 +12,10 @@
 
             #middle
                 .h.column
-                    %h3 My Feed
+                    %h2 Feed
                     %br/
                     .create_post.ib
-                        %form.ib{:name => "post_form", :action => "/#{@user[:name]}/post", :method => "post"}
+                        %form.ib{:name => "post_form", :action => "/#{@user.name}/post", :method => "post"}
                             %fieldset{style: "border:1px solid black;padding:0.5em 2em;"}
                                 %legend{style: "font-size:13pt;"} Create a post:
                                 %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
@@ -23,17 +23,13 @@
                                 %textarea{name: "post", cols: "40", rows: "3", style:"margin:5px;"}
                                 %br/
                                 %fieldset.ib.fl.checkboxes
-                                    %legend{style: "font-size:13pt;"} Add some tags:
+                                    %legend{style: "font-size:13pt;padding:1em;"} Tag your post:
                                     %ul
                                         - i = 0
                                         - @tags.each do |tag|
                                             - i += 1
-                                            %li            
-                                                %label.label_check{for: "checkbox-0#{i}"}
-                                                    %input{name: "tag[#{i}]", id: "tag_#{i}", value: "#{tag.name}", type: "checkbox", style: "margin-right:0.2em;"}= "#{tag.name}"
-
-                                                / %input{type: "checkbox", name: "tag[#{i}]", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
-                                                
+                                            %li
+                                                %input{type: "checkbox", name: "tag[#{i}]", id: "tag_#{i}", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
                                                 
                                 %br/
                                 %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
@@ -44,22 +40,27 @@
             
             #right.column
                 .b.h
-                    %h3 My Net
+                    %h2 Net
                     %br/
-                    %form.ib{:name => "tag_form", :action => "/#{@user.name}/tag", :method => "post"}
-                        %fieldset{style: "padding:0.2em 0.8em;"}
-                            %legend{style: "font-size:11pt;"} Create a tag:
-                            %input{:type => "text", :name => "tag", :size => "8", style:"margin:2px;"}/
-                            %br/
-                            -# Totally not secure:
-                            %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
-                            %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
-                            %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
+                    / %form.ib{:name => "tag_form", :action => "/#{@user.name}/tag", :method => "post"}
+                    /     %fieldset{style: "padding:0.2em 0.8em;"}
+                    /         %legend{style: "font-size:11pt;"} Create a tag:
+                    /         %input{:type => "text", :name => "tag", :size => "8", style:"margin:2px;"}/
+                    /         %br/
+                    /         -# Totally not secure:
+                    /         %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
+                    /         %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                    /         %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %ul
                         - if @tags.length == 0
-                            %p you have no tags yet
+                            %h3{style: "color:white;"} You haven't added any tags yet.
+                            %br/
+                            %br/
+                            %p{style: "margin-top: 2em;padding:0.5em;background-color: hsla(48, 98%, 75%, 0.3)"}
+                                Use 
+                                %a{href: "/#{@user.name}/net"} "My Net"
+                                to manage your tags.
                         - else
-                            -# = @tags.inspect
                             - @tags.each do |tag|
                                 %li.home_tags
                                     %a{:href => "../#{tag.name}"}= "#{tag.name}"

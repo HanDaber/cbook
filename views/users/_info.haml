@@ -1,13 +1,13 @@
-%h3.heading= @user[:name].capitalize
+%h2= @user.name.capitalize
 %br/
 %br/
 %img.user_image{src: "img/blank-user.gif"}
 
 .box.ib
     %h3.b User bio:
-    %h4="Member since #{@user[:created_at]}."
+    %h4="Member since #{@user.created_at}."
     %br/
-    %p= @user[:bio]
+    %p= @user.bio
     
 .box.ib
     %h4.b Courses:
