@@ -31,9 +31,9 @@ class CollegeBook
 end
 
 require_relative 'classes/board'
-require_relative 'classes/user'
 require_relative 'classes/post'
 require_relative 'classes/tag'
+require_relative 'classes/user'
 
 # URL routing and helper functions
 require_relative 'helpers/init'

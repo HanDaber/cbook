@@ -1,105 +1,73 @@
-post '/:user/post' do
-    @who = params[:user]
-    @pass = params[:pass]
-    found_user = User.find_by_name(@who)
+post '/:user_name/post' do
+    if user_authenticated
         
-    @post_text = params[:post]
-    @post_tags = params[:tag]
+        post_text = params[:post]
+        post_tags = params[:tag]
 
-    if found_user.exists
-        if found_user[:pass] == @pass
-
-            new_post = found_user.posts.create({text: @post_text})
-            
-            new_post.post_tags = @post_tags.each { |t| t[1] } if @post_tags
-            
-            unless new_post.save
-                error_string_haml("Post save fail.")
-            end
-
-            session[:stat] = {status: new_post.save, msg: "Success?"}
-            redirect "#{found_user.name}/home"
-        else
-            error_string_haml("Wrong password, please go back and try again.")
+        new_post = @user.posts.create({text: post_text})
+        
+        post_tags.map do |t|
+            new_post.post_tags << t
+        end if post_tags
+        
+        unless new_post.save
+            session[:stat] = { status: false, msg: "Could not save post..." }
+            redirect '/'
         end
+
+        make_session
+        redirect @user.home
     else
-        error_string_haml("Username not found, please go back and try again.")
+        session[:stat] = { status: false, msg: "Could not authenticate user..." }
+        redirect '/'
     end
 end
 
-post '/:user/tag' do
-    @who = params[:user]
-    @pass = params[:pass]
-    found_user = User.find_by_name(@who)
-    
-    @tag_name = params[:tag]
-
-    if found_user
-        if found_user[:pass] == @pass
-            
-            duh = false
-            found_user.tags.each { |t| duh = true if t.name == @tag_name }
-            if duh
-                error_string_haml("You already have that tag.")
-            else
-                new_tag = found_user.tags.create({name: @tag_name})
-                session[:stat] = {status: new_tag.save, msg: "Success?"}
-                redirect "#{found_user.name}/home"
+post '/:user_name/tag' do
+    if user_authenticated
+        
+        tag_name = params[:tag]
+        
+        tag_exists = false
+        
+        @user.tags.each do |t|
+            if t.name == tag_name
+                tag_exists = true
             end
-
+        end
+        
+        if tag_exists
+            session[:stat] = { status: false, msg: "You already have that tag." }
+            redirect @user.home
         else
-            error_string_haml("Wrong password, please go back and try again.")
+            new_tag = @user.tags.create({name: tag_name})
+            unless new_tag.save
+                session[:stat] = { status: false, msg: "Error saving tag." }
+                redirect @user.home
+            end
+            
+            make_session
+            redirect @user.home
         end
     else
-        error_string_haml("Username not found, please go back and try again.")
+        session[:stat] = { status: false, msg: "Could not authenticate user" }
+        redirect '/'
     end
 end
 
-post '/:user/prefs' do
-    @who = params[:user]
-    @pass = params[:pass]
-    found_user = User.find_by_name(@who)
-    
-    @user_bio = params[:bio]
+post '/:user_name/prefs' do
+    if user_authenticated
+        user_bio = params[:bio]
 
-    if found_user
-        if found_user[:pass] == @pass
-
-            session[:stat] = {status: found_user.update_attributes!(:bio => @user_bio), msg: "Success?"}
-            redirect "#{found_user.name}/home"
-        else
-            error_string_haml("Wrong password, please go back and try again.")
+        unless @user.update_attributes!(bio: user_bio)
+            session[:stat] = { status: false, msg: "Error editing preferences." }
+            redirect @user.home
         end
-    else
-        error_string_haml("Username not found, please go back and try again.")
-    end
-end
 
-post '/board/new' do
-    @who = params[:user]
-    @pass = params[:pass]
-    found_user = User.find_by_name(@who)
-    
-    @board_name = params[:board_name]
-    @board_desc = params[:board_desc]
-    
-    if found_user
-        if found_user[:pass] == @pass
-            
-            new_board = Board.create()
-            new_board.name = @board_name
-            new_board.bio = @board_desc
-            
-            unless new_board.save
-                error_string_haml("Post save fail.")
-            end
-            
-            session[:stat] = {status: new_board.save, msg: "Success?"}
-            redirect "#{@board_name}"
-        else
-            error_string_haml("Wrong password, please go back and try again.")
-        end
+        make_session
+        redirect @user.home
     else
-        error_string_haml("Username not found, please go back and try again.")
+        session[:stat] = { status: false, msg: "Could not authenticate user" }
+        redirect '/'
     end
 end

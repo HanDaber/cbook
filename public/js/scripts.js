@@ -14,8 +14,22 @@ $(document).ready( function() {
 		menu_items.width( (this_w - (x * this_w))/n );
 	});
 	
+
+    // $("#ploop").contextMenu({
+    //     menu: ''img_map_menu''
+    // },
+    //     function(action, el, pos) {
+    //     alert(
+    //         ''Action: '' + action + ''\n\n'' +
+    //         ''Element ID: '' + $(el).attr(''id'') + ''\n\n'' +
+    //         ''X: '' + pos.x + ''  Y: '' + pos.y + '' (relative to element)\n\n'' +
+    //         ''X: '' + pos.docX + ''  Y: '' + pos.docY+ '' (relative to document)''
+    //         );
+    // });
+
 	
-/*	
+	
+
 	var xref = {
         carrots: "<b>Carrots</b> are delicious and may turn your skin orange!",
         asparagus: "<b>Asparagus</b> is one of the first vegetables of the spring. " 
@@ -88,7 +102,7 @@ $(document).ready( function() {
             ]
     });​
         
-        */
+    
 	// Select which container to load pjax responses into
     // $("a.pjax").pjax("#main-container");
     // $(".posts").pjax("#middle");

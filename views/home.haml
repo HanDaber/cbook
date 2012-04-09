@@ -18,6 +18,8 @@
                         %form.ib{:name => "post_form", :action => "/#{@user[:name]}/post", :method => "post"}
                             %fieldset{style: "border:1px solid black;padding:0.5em 2em;"}
                                 %legend{style: "font-size:13pt;"} Create a post:
+                                %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                                %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
                                 %textarea{name: "post", cols: "40", rows: "3", style:"margin:5px;"}
                                 %br/
                                 %fieldset.ib.fl.checkboxes
@@ -34,8 +36,6 @@
                                                 
                                                 
                                 %br/
-                                -# Totally not secure:
-                                %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
                                 %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %p
                         %hr{width:"50%"}/
@@ -52,6 +52,7 @@
                             %input{:type => "text", :name => "tag", :size => "8", style:"margin:2px;"}/
                             %br/
                             -# Totally not secure:
+                            %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
                             %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
                             %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %ul

@@ -1,18 +1,13 @@
 # Duct-taped error messages for now
 post "/login/?" do
     if user_authenticated
-        session[:name] = @user.name
-        session[:email] = @user.email
-        session[:pass] = @user.pass
+        make_session
         redirect @user.home
     else
         session[:stat] = { status: false, msg: "Incorrect Username or Password..." }
         redirect '/'
-        # render_root
     end 
 end
-
-
 
 post "/signup/?" do
     new_user_hash = {
@@ -22,13 +17,11 @@ post "/signup/?" do
     }
 
     @new_user = User.create(new_user_hash)
-    
-    # .save runs validations
-    if @new_user.save
+
+    if @new_user.save   # returns false if @new_user fails any validations
         redirect @new_user.home
     else
         session[:stat] = { status: false, msg: "Couldn't create user: #{@new_user.err}" }
         redirect '/'
-        # render_root
     end
 end

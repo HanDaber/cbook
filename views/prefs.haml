@@ -13,6 +13,7 @@
                         %textarea{name: "bio", cols: "30", rows: "3", style:"margin:5px;"}
                         %br/
                         -# Totally not secure:
+                        %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
                         %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
                         %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
             .pref{style: "margin-left:1em;padding-top:1em;"}

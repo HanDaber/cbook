@@ -1,9 +1,47 @@
-def authenticate_user(name, pass)
-    found_user = User.find_by_name(name)
+enable :sessions
 
-    if found_user && found_user[:pass] == pass
+# Create a session
+def make_session
+    session[:stat] = {status: true, msg: "Success"}
+    session[:name] = @user.name
+    session[:email] = @user.email
+    session[:pass] = @user.pass
+end
+
+# Nillify session data
+def destroy_session
+    [:name, :email, :pass].map do |prm|
+        session[prm] = nil
+    end
+end
+
+# Check for active session
+def user_session
+    if session[:name] && session[:pass]
+        session_hash = { name: session[:name], pass: session[:pass] }
+        @user = User.first(session_hash)
         return true
     else
         return false
     end
+end
+
+# Check user credentials
+def user_authenticated
+    if params[:name] && params[:pass]
+        params_hash = { name: params[:name], pass: params[:pass] }
+        @user = User.first(params_hash)
+        if @user
+            return true
+        else
+            return false
+        end
+    else
+        return false
+    end
+end
+
+# Key for creating new tags
+def allow_new_tags
+    return true
 end
