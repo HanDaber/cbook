@@ -14,8 +14,8 @@ get '/logout/?' do
 end
 
 # Redirect namespaced css/js requests
-get '/:name/*.*' do
-    redirect "/#{params[:splat][0]}.#{params[:splat][1]}"
+get '/*/*.*' do
+    redirect "/#{params[:splat][1]}.#{params[:splat][2]}"
 end
 
 get '/:user_name/home/?' do |username|
