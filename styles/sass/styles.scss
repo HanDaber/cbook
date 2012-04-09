@@ -167,6 +167,10 @@ a:hover{color:$hover-color;}
     .box{padding:2px;margin:1px;border:1px dotted $tr-br-blu;}
     .feed_item{background-color:$tr-blu;}
     pre{text-align:justify;}
+	.net_tags{
+		li{padding:0.3em;}
+		.hide_me{display:none;}
+	}
     .create_post{width:80%;
         fieldset{background-color:$tr-blu; border-radius:0.5em;}
         ul{position:relative;left:-2em;}

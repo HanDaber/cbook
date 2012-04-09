@@ -267,10 +267,11 @@ d={keyframes:"name",viewport:null,document:'regexp(".")'};b.selectors=[];b.atrul
 /* ************************** END External Libraries ***************************** */
 
 /* App Scripts: */
+
 // load on document.ready
 $(document).ready(function() {
 
-    // Resize footer menu items
+    /* Resize footer items to fill screen width */
     var footer_menu_items = $(".menu");
     var footer = $("footer");
     var w = $(window).width();
@@ -283,14 +284,20 @@ $(document).ready(function() {
 		var this_w = $(window).width();
 		footer_menu_items.width( (this_w - (x * this_w))/n );
 	});
-	//
+	/* END Resize footer menu items */
 
-	// 'Net' image map context menus
+	/* 'My Net' image map context menus */
+	var tag_list = $(".net_tags ul");
+	var tag_list_save = $(".net_tags .save");
+	
 	var net_menu_callback = function(key, options) {
-		var m = "clicked: " + key;
-		window.console && console.log(m) || alert(m);
+		tag_list.append("<li>"+key+"</li>");
+		tag_list_save.removeClass("hide_me");
+		// var m = "clicked: " + key;
+		// window.console && console.log(m) || alert(m);
 	};
 
+	// Create a net_items object containing the context menu items
 	var net_items = {
 		social: {
 			clubs: {
@@ -404,10 +411,11 @@ $(document).ready(function() {
 		}
 	};
 
+	// Build a contextMenu for each net_item
 	for(var i in net_items) {
 		for(var c in net_items[i]) {
 			$.contextMenu({
-				selector: net_items[i][c].selector || net_items[i].selector,
+				selector: net_items[i][c].selector || net_items[i].selector, // market && housing are one level shallower
 				items: net_items[i][c].items || net_items[i].items,
 				callback: net_menu_callback,
 				trigger: 'left',
@@ -415,32 +423,8 @@ $(document).ready(function() {
 			});
 		}
 	}
+	/* END 'Net' image map context menus */
+	
 
-	// $.contextMenu({
-	// 	selector: net_items.social.clubs.selector,
-	// 	items: net_items.social.clubs.items,
-	// 	callback: net_menu_callback,
-	// 	trigger: 'left',
-	// 	ignoreRightClick: true
-	// });
-
-
-	// $.contextMenu({
-	// 	selector: '.courses',
-	// 	items: {
-	// 		"2": {
-	// 			"name": "2",
-	// 			"items": {
-	// 				"2.001": { "name": "2.001" },
-	// 				"2.003": { "name": "2.003" }
-	// 			}
-	// 		},
-	// 		"6": { name: "6's" },
-	// 		"15": { name: "15's" }
-	// 	},
-	// 	trigger: 'left',
-	// 	ignoreRightClick: true,
-	// 	callback: net_menu_callback
-	// });
 
 });

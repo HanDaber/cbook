@@ -5,6 +5,9 @@
 #main-container.wrapper.clearfix.b{:role => "main"}
     .net-container{style: "padding:20px;"}
         %h2 My Net
+        .net_tags{style: "border:1px dotted blue; position: absolute;"}
+            %ul
+            %input.btn.r4.save.hide_me{:type => "submit", :value => "Save (dummy btn)", style:"margin:5px;"}/
         %center
             = haml :'partials/_img_map'
             %img#net{src: "img/net-1.png", usemap: "#net_map"}
