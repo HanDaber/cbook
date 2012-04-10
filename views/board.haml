@@ -10,50 +10,52 @@
             #left.column
                 .b.h
                     .b
-                        = @board.name
-                        %br/
-
-                    - if @exists
-                        %h3.b Board info:
-                        %p= @board.bio
-                        %br/
+                        - if @board
+                            %h3= @board.name
+                            %br/
+                            - if @board.bio
+                                %h3.b Board info:
+                                %p= @board.bio
+                                %br/
+                        - else
+                            %h3 Board not found.
                         
-                        - if !@login && !@has_tag
-                            %form.ib{:name => "tag_form", :action => "/#{@user.name}/tag", :method => "post"}
+                        - if @add_tag_option
+                            %form.ib{:name => "tag_form", :action => "/#{@user.name}/tags", :method => "post"}
                                 %fieldset{style: "padding:0.2em 0.8em;"}
                                     %legend{style: "font-size:11pt;"} Add this tag:
                                     -# Totally not secure:
                                     %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
                                     %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
-                                    %input{:type => "hidden", :name => "tag", value: "#{@board.name}"}/
+                                    %input{:type => "hidden", :name => "tag[#{@board.name}]", value: "#{@board.name}"}/
                                     %input.btn.r4{:type => "submit", :value => "Add!", style:"margin:5px;"}/
 
             #middle
                 .h.column
-                    %h3= "#{@posts.length} posts tagged with #{@board.name}" 
-                    %br/
-                    - if @exists
+                    - if @board
+                        %h3= "#{@posts.length} posts tagged with #{@board.name}" 
+                        %br/
                         %p
                             %hr{width:"50%"}/
                         .feed-container= haml(:'partials/_posts_list')
-
-                    - if !@exists && !@login
+                    - else
                         .new_board
-                            %h1 No such board exists yet.
-                            %form.ib{:name => "board_form", :action => "/board/new", :method => "post"}
-                                %fieldset
-                                    %legend You can create it:
-                                    %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
-                                    %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
-                                    %input{:type => "hidden", :name => "board_name", value: "#{@board.name}"}/
-                                    Enter a description:
-                                    %textarea{name: "board_desc", cols: "30", rows: "5", style:"margin:5px;"}
-                                    %input.btn.r4{:type => "submit", :value => "Create!", style:"margin:5px;"}/
-                    - if @login
-                        .login_form= haml(:'partials/_login_form', :layout => false)
+                            %h1 No such board exists
+                            -# yet.
+                            -# %form.ib{:name => "board_form", :action => "/board/new", :method => "post"}
+                            -#     %fieldset
+                            -#         %legend You can create it:
+                            -#         %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                            -#         %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
+                            -#         %input{:type => "hidden", :name => "board_name", value: "#{@board.name}"}/
+                            -#         Enter a description:
+                            -#         %textarea{name: "board_desc", cols: "30", rows: "5", style:"margin:5px;"}
+                            -#         %input.btn.r4{:type => "submit", :value => "Create!", style:"margin:5px;"}/
             
             #right.column
                 .b.h
+                    - if @login_option
+                        .login_form= haml(:'partials/_login_form', :layout => false)
                     %h3 Other info
                     %br/
                     %ul

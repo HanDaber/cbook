@@ -288,10 +288,13 @@ $(document).ready(function() {
 
 	/* 'My Net' image map context menus */
 	var tag_list = $(".net_tags ul");
-	var tag_list_save = $(".net_tags .save");
+	var tag_list_save = $(".save");
+	var append_src = function(k){
+	    return "<li>"+k+"<input type='hidden' name='tag["+k+"]' value='"+k+"' /></li>";
+	}
 	
 	var net_menu_callback = function(key, options) {
-		tag_list.append("<li>"+key+"</li>");
+		tag_list.append(append_src(key));
 		tag_list_save.removeClass("hide_me");
 		// var m = "clicked: " + key;
 		// window.console && console.log(m) || alert(m);
@@ -332,8 +335,8 @@ $(document).ready(function() {
 				items: {
 					'Squash': {name: 'Squash'},
 					'Water Polo': {name: 'Water Polo'},
-					'Soccer': {name: 'Soccer'},
-					'Basketball': {name: 'Basketball'}
+					'Sailing': {name: 'Sailing'},
+					'Soccer': {name: 'Soccer'}
 				}
 			},
 			im: {
@@ -364,8 +367,8 @@ $(document).ready(function() {
 					"6": {
 						name: "6's",
 						"items": {
-							"6.01": { "name": "6.01" },
-							"6.02": { "name": "6.02" },
+							"6.001": { "name": "6.001" },
+							"6.002": { "name": "6.002" },
 							"6.004": { "name": "6.004" },
 							"6.006": { "name": "6.006" }
 						}

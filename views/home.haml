@@ -42,7 +42,7 @@
                 .b.h
                     %h2 Net
                     %br/
-                    / %form.ib{:name => "tag_form", :action => "/#{@user.name}/tag", :method => "post"}
+                    / %form.ib{:name => "tag_form", :action => "/#{@user.name}/tags", :method => "post"}
                     /     %fieldset{style: "padding:0.2em 0.8em;"}
                     /         %legend{style: "font-size:11pt;"} Create a tag:
                     /         %input{:type => "text", :name => "tag", :size => "8", style:"margin:2px;"}/
@@ -53,7 +53,7 @@
                     /         %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %ul
                         - if @tags.length == 0
-                            %h3{style: "color:white;"} You haven't added any tags yet.
+                            %h3{style: "color:white;"}= "#{@tags.inspect} You haven't added any tags yet."
                             %br/
                             %br/
                             %p{style: "margin-top: 2em;padding:0.5em;background-color: hsla(48, 98%, 75%, 0.3)"}

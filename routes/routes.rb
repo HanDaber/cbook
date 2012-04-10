@@ -74,32 +74,16 @@ get '/:user_name/net/?' do |username|
     end
 end
 
-post '/:user_name/tag' do
+post '/:user_name/tags' do
     if user_authenticated && allow_new_tags
-        
-        tag_name = params[:tag]
-        
-        tag_exists = false
-        
-        @user.tags.each do |t|
-            if t.name == tag_name
-                tag_exists = true
-            end
-        end
-        
-        if tag_exists
-            session[:stat] = { status: false, msg: "You already have that tag." }
-            redirect @user.home
-        else
-            new_tag = @user.tags.create({name: tag_name})
-            unless new_tag.save
-                session[:stat] = { status: false, msg: "Error saving tag." }
-                redirect @user.home
-            end
-            
-            make_session
-            redirect @user.home
-        end
+
+        submitted_tags = params[:tag]
+
+        saved_tags = @user.add_tags submitted_tags
+
+        make_session
+        session[:stat] = { status: true, msg: "#{saved_tags.length || 0} of #{submitted_tags.length} tags saved." }
+        redirect @user.home
     else
         session[:stat] = { status: false, msg: "Could not authenticate user" }
         redirect '/'
@@ -136,49 +120,42 @@ end
 
 get '/:board_name/?' do |board_tag|
 
-    board = Board.find_by_name(board_tag)
-    
-    if board
-        @board = board
-        @posts = @board.tagged_posts
-        @exists = true
+    if Board.enabled board_tag
+        @board = Board.find_or_create_by_name(board_tag)
     else
-        @board = Board.create({name: board_tag})
-        @posts = []
-        @exists = false
+        @board = false
+    end
+
+    if @board 
+        @posts = @board.tagged_posts || []
     end
     
-    if user_session
-        
-        @login = false
-        tags = @user.tags
-        @has_tag = false
-        
-        tags.each do |t|
-            @has_tag = true if t.name == @board.name
+    if user_session && @board
+        @user.tags.each do |tag|
+            @add_tag_option = true unless tag.name == @board.name
         end
-    else
-        @login = true
     end
+    
+    @login_option = true unless user_session
     
     haml :board
 end
 
-post '/board/new' do
-    if user_authenticated
-        board_name = params[:board_name]
-        board_desc = params[:board_desc]
-
-        new_board = Board.create({name: board_name, bio: board_desc})
-        
-        unless new_board.save
-            session[:stat] = { status: false, msg: "Error saving board"}
-        end
-        
-        make_session
-        redirect "/#{new_board.name}"
-    else
-        session[:stat] = { status: false, msg: "Could not authenticate user" }
-        redirect '/'
-    end
-end
+# post '/board/new' do
+#     if user_authenticated
+#         board_name = params[:board_name]
+#         board_desc = params[:board_desc]
+# 
+#         new_board = Board.create({name: board_name, bio: board_desc})
+#         
+#         unless new_board.save
+#             session[:stat] = { status: false, msg: "Error saving board"}
+#         end
+#         
+#         make_session
+#         redirect "/#{new_board.name}"
+#     else
+#         session[:stat] = { status: false, msg: "Could not authenticate user" }
+#         redirect '/'
+#     end
+# end
