@@ -5,12 +5,11 @@ class User < CollegeBook
     key :email,         String,     required: true, unique: true, format: /^[A-Z0-9._]+@mit\.edu$/i
     key :pass,          String,     required: true,               format: /[A-Za-z0-9_]{3,16}/
     key :bio,           String
-    key :tags,          Array,                      unique: true
     timestamps!
 
     # ORM:
     many :posts
-    many :tags, :in => :tags#, :as => :taggable
+    many :tags#, :as => :taggable
     
     # Class methods:
     
@@ -35,27 +34,44 @@ class User < CollegeBook
     
     def add_tags tag_array
         saved_array = []
+        my_tags = self.tags
+        
+        # If tag_array is a string, make it an array
         unless tag_array.respond_to? 'each'
-            tag_array = [tag_array]
+            tmp = [tag_array]
+            tag_array = tmp
         end
+        
         tag_array.each do |tag|
-            if tag exists
-                don't do shit'
-            else
-                save it
+            exists_flag = false
+            
+            my_tags.each do |mytag|
+                if tag[0] == mytag.name
+                    exists_flag = true
+                end
             end
-            # have_tag = self.
-            # build_tag = Tag.find_or_create_by_name(tag[0])
-            new_tag = self.tags.create({name: tag})
-            if new_tag.save(safe: true)
-                saved_array << new_tag
+            
+            unless exists_flag
+                new_tag = self.tags.create({name: tag[0]})
+                
+                if new_tag.save
+                    saved_array << new_tag
+                end
             end
         end
+        
         if saved_array.length < 1
             return false
         else
             return saved_array
         end
+        #     
+        #     new_tag = self.tags.create({name: tag})
+        #     if new_tag.save(safe: true)
+        #         saved_array << new_tag
+        #     end
+        # end
+
     end
            
 end

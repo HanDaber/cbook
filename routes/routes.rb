@@ -76,13 +76,17 @@ end
 
 post '/:user_name/tags' do
     if user_authenticated && allow_new_tags
-
         submitted_tags = params[:tag]
-
         saved_tags = @user.add_tags submitted_tags
 
         make_session
-        session[:stat] = { status: true, msg: "#{saved_tags.length || 0} of #{submitted_tags.length} tags saved." }
+        
+        if saved_tags == false
+            session[:stat] = { status: false, msg: "You already follow those tags." }
+        else
+            session[:stat] = { status: true, msg: "#{saved_tags.length} of #{submitted_tags.length} tags saved." }
+        end
+
         redirect @user.home
     else
         session[:stat] = { status: false, msg: "Could not authenticate user" }
@@ -131,8 +135,12 @@ get '/:board_name/?' do |board_tag|
     end
     
     if user_session && @board
+        @add_tag_option = true
+        
         @user.tags.each do |tag|
-            @add_tag_option = true unless tag.name == @board.name
+            if tag.name == @board.name
+                @add_tag_option = false
+            end
         end
     end
     
