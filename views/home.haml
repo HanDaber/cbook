@@ -21,15 +21,16 @@
                                 %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
                                 %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
                                 %textarea{name: "post", cols: "40", rows: "3", style:"margin:5px;"}
-                                %br/
-                                %fieldset.ib.fl.checkboxes
-                                    %legend{style: "font-size:13pt;padding:1em;"} Tag your post:
-                                    %ul
-                                        - i = 0
-                                        - @tags.each do |tag|
-                                            - i += 1
-                                            %li
-                                                %input{type: "checkbox", name: "tag[#{i}]", id: "tag_#{i}", value: "#{tag.name}", style: "margin-right:0.2em;"}= "#{tag.name}"
+                                / %br/
+                                - if @tags.length > 0
+                                    %fieldset.ib.fl.checkboxes
+                                        %legend{style: "font-size:13pt;padding:1em;"} Tag your post:
+                                        %ul
+                                            - i = 0
+                                            - @tags.each do |tag|
+                                                - i += 1
+                                                %li.r4
+                                                    %input{type: "checkbox", name: "tag[#{i}]", id: "tag_#{i}", value: "#{tag.name}"}= "#{tag.name}"
                                                 
                                 %br/
                                 %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
@@ -52,8 +53,8 @@
                     /         %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
                     /         %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %ul
-                        - if @tags.length == 0
-                            %h3{style: "color:white;"}= "#{@tags.inspect} You haven't added any tags yet."
+                        - if @tags.length < 1
+                            %h3{style: "color:white;"}= "You haven't added any tags yet."
                             %br/
                             %br/
                             %p{style: "margin-top: 2em;padding:0.5em;background-color: hsla(48, 98%, 75%, 0.3)"}

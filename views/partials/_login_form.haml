@@ -1,10 +1,10 @@
 %form.ib{:name => "login_form", :action => "/login", :method => "post"}
     %fieldset
         %legend Log In:
-        Username: 
-        %input{:type => "text", :name => "name", :size => "10", style:"margin:5px;"}/
+        %label{:for => "username"} Username
+        %input#username{:type => "text", :name => "name", :size => "10", style:"margin:5px;"}/
         %br/
-        Password:
-        %input{:type => "password", :name => "pass", :size => "10", style:"margin:5px;"}/
+        %label{:for => "passwd"} Password
+        %input#passwd{:type => "password", :name => "pass", :size => "10", style:"margin:5px;"}/
         %br/
         %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/

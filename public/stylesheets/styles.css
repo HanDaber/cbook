@@ -543,20 +543,20 @@ a:hover {
     border-radius: 0.2em; }
   #main-container ul {
     list-style: none; }
-  #main-container .user_image {
-    float: left; }
   #main-container h3 {
     float: left; }
+  #main-container .bio {
+    background-color: rgba(0, 51, 119, 0.2); }
   #main-container .box {
     padding: 2px;
     margin: 1px;
-    border: 1px dotted rgba(0, 51, 119, 0.5); }
+    min-width: 80%; }
   #main-container .feed_item {
     background-color: rgba(0, 51, 119, 0.2); }
   #main-container pre {
     text-align: justify; }
   #main-container .net_tags li {
-    padding: 0.3em; }
+    padding: 0.5em; }
   #main-container .net_tags .hide_me {
     display: none; }
   #main-container .create_post {
@@ -570,11 +570,14 @@ a:hover {
     #main-container .create_post li {
       float: left;
       list-style: none;
-      margin: 0.3em 1em;
+      padding: 0.5em;
+      margin: 0.4em 0.5em;
       text-align: left;
-      width: 3.8em;
+      min-width: 4em;
       height: 2em;
-      border: 1px dotted rgba(0, 51, 119, 0.2); }
+      border: 1px dotted rgba(0, 51, 119, 0.5);
+      font-size: 11pt;
+      background-color: rgba(0, 51, 119, 0.2); }
     @media screen and (max-width : 499px) {
       #main-container .create_post textarea {
         width: 180px; } }
@@ -594,7 +597,6 @@ a:hover {
     #main-container #left {
       display: block; }
     #main-container img.user_image {
-      float: left;
       width: 5em; } }
   @media screen and (min-width : 500px) and (max-width : 760px) {
     #main-container #left {
