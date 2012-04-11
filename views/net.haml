@@ -17,55 +17,55 @@
             = haml :'partials/_img_map'
             %img#net{src: "img/net-1.png", usemap: "#net_map"}
 
-
-        -# show full net in list form
--#         %center
--#             %ol.full_net
--#                 - @full_net.each do |net_item|
--#         
--#                     - net_item.each do |level_1|
--#                         - if level_1.respond_to? 'each'
--#                         
--#                             - level_1.each do |level_2|
--#                                 - if level_2.respond_to? 'each'
--#                                 
--#                                     - level_2.each do |level_3|
--#                                         - if level_3.respond_to? 'each'
--#                                         
--#                                             - level_3.each do |level_4|
--#                                                 - if level_4.respond_to? 'each'
--#                                                 
--#                                                     - level_4.each do |level_5|
--#                                                         - if level_5.respond_to? 'each'
--#                                                         
--#                                                             - level_5.each do |level_6|
--#                                                                 - if level_6.respond_to? 'each'
--#                                                                 
--#                                                                     - level_6.each do |level_7|
--#                                                                         - if level_7.respond_to? 'each'
--#                                                                         
--#                                                                             - level_7.each do |level_8|
--#                                                                                 %a.l8= level_8
--#                                                                                 %br/
--#                                                                         - else
--#                                                                             %h4.l7{style: "font-size:10pt;"}= "Level 3: #{level_7}"
--#                                                                 - else
--#                                                                     %a.l6= level_6
--#                                                                     %br/
--#                                                         - else
--#                                                             %a.l5= level_5
--#                                                             %br/
--#                                                 - else
--#                                                     %h4.l4{style: "font-size:12pt;"}= level_4
--#                                         - else
--#                                             %a.l3= level_3
--#                                             %br/
--#                                 - else
--#                                     %a.l2= level_2
--#                                     %br/
--#                         - else
--#                             %li
--#                                 %h4.l1{style: "font-size:14pt;"}= level_1
+/ 
+/         -# show full net in list form
+/ -#         %center
+/ -#             %ol.full_net
+/ -#                 - @full_net.each do |net_item|
+/ -#         
+/ -#                     - net_item.each do |level_1|
+/ -#                         - if level_1.respond_to? 'each'
+/ -#                         
+/ -#                             - level_1.each do |level_2|
+/ -#                                 - if level_2.respond_to? 'each'
+/ -#                                 
+/ -#                                     - level_2.each do |level_3|
+/ -#                                         - if level_3.respond_to? 'each'
+/ -#                                         
+/ -#                                             - level_3.each do |level_4|
+/ -#                                                 - if level_4.respond_to? 'each'
+/ -#                                                 
+/ -#                                                     - level_4.each do |level_5|
+/ -#                                                         - if level_5.respond_to? 'each'
+/ -#                                                         
+/ -#                                                             - level_5.each do |level_6|
+/ -#                                                                 - if level_6.respond_to? 'each'
+/ -#                                                                 
+/ -#                                                                     - level_6.each do |level_7|
+/ -#                                                                         - if level_7.respond_to? 'each'
+/ -#                                                                         
+/ -#                                                                             - level_7.each do |level_8|
+/ -#                                                                                 %a.l8= level_8
+/ -#                                                                                 %br/
+/ -#                                                                         - else
+/ -#                                                                             %h4.l7{style: "font-size:10pt;"}= "Level 3: #{level_7}"
+/ -#                                                                 - else
+/ -#                                                                     %a.l6= level_6
+/ -#                                                                     %br/
+/ -#                                                         - else
+/ -#                                                             %a.l5= level_5
+/ -#                                                             %br/
+/ -#                                                 - else
+/ -#                                                     %h4.l4{style: "font-size:12pt;"}= level_4
+/ -#                                         - else
+/ -#                                             %a.l3= level_3
+/ -#                                             %br/
+/ -#                                 - else
+/ -#                                     %a.l2= level_2
+/ -#                                     %br/
+/ -#                         - else
+/ -#                             %li
+/ -#                                 %h4.l1{style: "font-size:14pt;"}= level_1
 
     
 = haml(:'partials/_footer', :layout => false)
