@@ -271,6 +271,16 @@ d={keyframes:"name",viewport:null,document:'regexp(".")'};b.selectors=[];b.atrul
 // load on document.ready
 $(document).ready(function() {
     
+    // dim status msg
+    var status_msg = $(".status");
+    var doIt = function() {
+        status_msg.fadeOut('slow', function() {
+            this.css({display: "none"});
+          });
+    }
+    setTimeout(doIt, 3000);
+    
+    // show email hint in signup form
     var signup_email = $('#eml');
     signup_email.focus(function(){
         var defaultVal = $(this).attr('title');
@@ -283,7 +293,6 @@ $(document).ready(function() {
             $(this).val(defaultVal);
     });
     signup_email.trigger('blur');
-
 
     /* Resize footer items to fill screen width */
     var footer_menu_items = $(".menu");
