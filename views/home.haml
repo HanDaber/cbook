@@ -43,15 +43,15 @@
                 .b.h
                     %h2 Tags
                     %br/
--#                     %form.ib{:name => "tag_form", :action => "/#{@user.name}/tags", :method => "post"}
--#                         %fieldset{style: "padding:0.2em 0.8em;"}
--#                             %legend{style: "font-size:11pt;"} Create a tag:
--#                             %input{:type => "text", :name => "tag", :size => "8", style:"margin:2px;"}/
--#                             %br/
--#                             -# Totally not secure:
--#                             %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
--#                             %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
--#                             %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
+/ -#                     %form.ib{:name => "tag_form", :action => "/#{@user.name}/tags", :method => "post"}
+/ -#                         %fieldset{style: "padding:0.2em 0.8em;"}
+/ -#                             %legend{style: "font-size:11pt;"} Create a tag:
+/ -#                             %input{:type => "text", :name => "tag", :size => "8", style:"margin:2px;"}/
+/ -#                             %br/
+/ -#                             -# Totally not secure:
+/ -#                             %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
+/ -#                             %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+/ -#                             %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
                     %ul
                         - if @tags.length < 1
                             %h3{style: "color:white;"}= "You haven't added any tags yet."
