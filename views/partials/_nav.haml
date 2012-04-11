@@ -6,6 +6,10 @@
                     Home
         %li
             %center
+                %a.tags{:href => "/boards"}
+                    All Boards
+        %li
+            %center
                 .all_my My:
                 %a.posts{:href => "/#{@user.name}/posts"}
                     .my My

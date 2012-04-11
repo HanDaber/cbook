@@ -13,6 +13,41 @@ get '/logout/?' do
     redirect '/'
 end
 
+get '/boards/?' do
+    user_session
+    
+    @full_net = CollegeBook.net
+    
+    haml :all_boards
+end
+
+get '/:board_name/?' do |board_tag|
+
+    if Board.enabled board_tag
+        @board = Board.find_or_create_by_name(board_tag)
+    else
+        @board = false
+    end
+
+    if @board 
+        @posts = @board.tagged_posts || []
+    end
+    
+    if user_session && @board
+        @add_tag_option = true
+        
+        @user.tags.each do |tag|
+            if tag.name == @board.name
+                @add_tag_option = false
+            end
+        end
+    end
+    
+    @login_option = true unless user_session
+    
+    haml :board
+end
+
 # Redirect namespaced css/js requests
 get '/*/*.*' do
     redirect "/#{params[:splat][1]}.#{params[:splat][2]}"
@@ -67,7 +102,6 @@ end
 get '/:user_name/net/?' do |username|
     if user_session
         @tags = @user.tags
-        @full_net = CollegeBook.net
         
         show username, :net
     else
@@ -121,31 +155,4 @@ post '/:user_name/prefs' do
         session[:stat] = { status: false, msg: "Could not authenticate user" }
         redirect '/'
     end
-end
-
-get '/:board_name/?' do |board_tag|
-
-    if Board.enabled board_tag
-        @board = Board.find_or_create_by_name(board_tag)
-    else
-        @board = false
-    end
-
-    if @board 
-        @posts = @board.tagged_posts || []
-    end
-    
-    if user_session && @board
-        @add_tag_option = true
-        
-        @user.tags.each do |tag|
-            if tag.name == @board.name
-                @add_tag_option = false
-            end
-        end
-    end
-    
-    @login_option = true unless user_session
-    
-    haml :board
 end
