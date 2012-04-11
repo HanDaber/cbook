@@ -15,21 +15,10 @@ require 'sass/plugin/rack'
 require 'mongo'
 # MongoMapper provides an Object-Relational Model between our Classes and MongoDB
 require 'mongo_mapper'
+
 require_relative 'configs/mongo'
 
-# Application Class
-class CollegeBook
-
-    # Import the MongoMapper::Document Class (inherited by all subclasses)
-    include MongoMapper::Document
-    safe
-
-    helpers do
-        include Rack::Utils
-        alias_method :h, :escape_html
-    end
-end
-
+require_relative 'classes/collegebook'
 require_relative 'classes/board'
 require_relative 'classes/post'
 require_relative 'classes/tag'

@@ -67,6 +67,7 @@ end
 get '/:user_name/net/?' do |username|
     if user_session
         @tags = @user.tags
+        @full_net = CollegeBook.net
         
         show username, :net
     else
@@ -148,22 +149,3 @@ get '/:board_name/?' do |board_tag|
     
     haml :board
 end
-
-# post '/board/new' do
-#     if user_authenticated
-#         board_name = params[:board_name]
-#         board_desc = params[:board_desc]
-# 
-#         new_board = Board.create({name: board_name, bio: board_desc})
-#         
-#         unless new_board.save
-#             session[:stat] = { status: false, msg: "Error saving board"}
-#         end
-#         
-#         make_session
-#         redirect "/#{new_board.name}"
-#     else
-#         session[:stat] = { status: false, msg: "Could not authenticate user" }
-#         redirect '/'
-#     end
-# end

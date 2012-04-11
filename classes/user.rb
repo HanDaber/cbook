@@ -65,13 +65,6 @@ class User < CollegeBook
         else
             return saved_array
         end
-        #     
-        #     new_tag = self.tags.create({name: tag})
-        #     if new_tag.save(safe: true)
-        #         saved_array << new_tag
-        #     end
-        # end
-
     end
            
 end
