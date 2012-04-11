@@ -270,6 +270,20 @@ d={keyframes:"name",viewport:null,document:'regexp(".")'};b.selectors=[];b.atrul
 
 // load on document.ready
 $(document).ready(function() {
+    
+    var signup_email = $('#eml');
+    signup_email.focus(function(){
+        var defaultVal = $(this).attr('title');
+        if($(this).val() == defaultVal)
+            $(this).val('');
+    });
+    signup_email.blur(function(){
+        var defaultVal = $(this).attr('title');
+        if($(this).val() == '')
+            $(this).val(defaultVal);
+    });
+    signup_email.trigger('blur');
+
 
     /* Resize footer items to fill screen width */
     var footer_menu_items = $(".menu");

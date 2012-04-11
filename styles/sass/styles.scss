@@ -27,6 +27,8 @@ body{background-color:$lt-blu;}
     form{margin:5px 10px;vertical-align:top;}
     fieldset{border:1px solid $tr-br-blu;padding:5px;background-color:$tr-blu;}
     legend{padding:5px;font-size:12pt;}
+    input.txt{color:#888;}
+    input.txt:focus{color:#000;}
 }
 .h{height:100%;}
 .b{display:block;width:100%;}

@@ -2,12 +2,12 @@
     %fieldset
         %legend Sign Up:
         %label{:for => "unm"} Username
-        %input#unm{:type => "text", :name => "name", :size => "10", style:"margin:5px;"}/
+        %input#unm.txt{:type => "text", :name => "name", :size => "10", style:"margin:5px;"}/
         %br/
         %label{:for => "eml"} E-mail
-        %input#eml{:type => "text", :name => "email", :size => "10", style:"margin:5px;"}/
+        %input#eml.txt{:type => "text", :name => "email", :size => "10", style:"margin:5px;", title: "@mit.edu only"}/
         %br/
         %label{:for => "pwd"} Password
-        %input#pwd{:type => "password", :name => "pass", :size => "10", style:"margin:5px;"}/
+        %input#pwd.txt{:type => "password", :name => "pass", :size => "10", style:"margin:5px;"}/
         %br/
         %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/

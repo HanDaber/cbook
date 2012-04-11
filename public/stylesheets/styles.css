@@ -268,6 +268,10 @@ body {
   #splash legend {
     padding: 5px;
     font-size: 12pt; }
+  #splash input.txt {
+    color: #888; }
+  #splash input.txt:focus {
+    color: #000; }
 
 .h {
   height: 100%; }
