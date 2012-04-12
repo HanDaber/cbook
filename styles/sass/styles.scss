@@ -18,8 +18,8 @@ $hover-color: #fee;
 $tr-blu: transparentize($dk-blu, 0.8);
 $tr-br-blu: transparentize($dk-blu, 0.5);
 $tr-bl-red: transparentize($bl-red, 0.7);
-
 $top-space: 70px;
+
 
 
 body{background-color:$lt-blu;}
@@ -171,7 +171,8 @@ a:hover{color:$hover-color;}
 		.hide_me{display:none;}
 	}
     .create_post{width:80%;
-        fieldset{background-color:$tr-blu; border-radius:0.5em;}
+        fieldset{background-color:$tr-blu; border-radius:0.5em;
+        }
         ul{position:relative;left:-2em;}
         li{float:left;list-style:none;padding:0.5em;margin:0.4em 0.5em;text-align:left;min-width:4em;height:2em;border:1px dotted $tr-br-blu;font-size:11pt;background-color:$tr-blu;}
         @media screen and (max-width : 499px) {textarea{width:180px;}}
