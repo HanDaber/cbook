@@ -8,6 +8,7 @@ class Post < CollegeBook
     # ORM:
     belongs_to :user
     many :tags, :in => :post_tags, :as => :taggable
+    many :comments
     
     # Class methods:
     def self.relevant_to user

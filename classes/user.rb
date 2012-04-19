@@ -3,13 +3,15 @@ class User < CollegeBook
     # Database model:
     key :name,          String,     required: true, unique: true
     key :email,         String,     required: true, unique: true, format: /^[A-Z0-9._]+@mit\.edu$/i
-    key :pass,          String,     required: true,               format: /[A-Za-z0-9_]{3,16}/
+    key :pass,          String,     required: true,               format: /[A-Za-z0-9_\.]{3,16}/
     key :bio,           String
+    key :user_comments, Array
     timestamps!
 
     # ORM:
     many :posts
-    many :tags#, :as => :taggable
+    many :tags
+    many :comments, :in => :user_comments, :as => :commentable
     
     # Class methods:
     
