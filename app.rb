@@ -13,7 +13,7 @@ require 'sass'
 require 'sass/plugin/rack'
 # MongoDB is a small document database
 require 'mongo'
-# MongoMapper provides an Object-Relational Model between our Classes and MongoDB
+# MongoMapper provides an Object-Relational Model (ORM) between our classes and MongoDB
 require 'mongo_mapper'
 # Configure MongoMapper
 require_relative 'configs/mongo'

@@ -1,4 +1,11 @@
 - @posts.each do |p|
-    .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:1em;"}
+    .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:2em;"}
         %h1.b= "#{p.text}"
-        %p{style: "float:right;margin:0 0.5em 3em 0;"}= "by #{p.user.name}"
+        %p{style: "float:right;margin:0 0.5em 3em 0;"}= "Posted by: #{p.user.name}"
+        %span{style: "float:left;"}
+            = "Comments: (#{p.comments.length})"
+            %input.b{type:"text", value: "Add a comment"}
+        - if p.comments.length > 0
+            .comments_list{style: "border:1px dashed orange;padding:0.5em;margin-bottom:0.5em;"}
+                - p.comments.each do |c|
+                    .comment= c.text
