@@ -19,11 +19,11 @@ $tr-blu: transparentize($dk-blu, 0.8);
 $tr-br-blu: transparentize($dk-blu, 0.5);
 $tr-bl-red: transparentize($bl-red, 0.7);
 $top-space: 70px;
-$white: #FFF;
 
 
 
-body{background-color:$white;}
+
+body{background-color:$lt-blu;}
 #splash{position:relative;width:60%;min-height:80px;max-height:50%;margin-left:auto;margin-right:auto;border:1px solid $tr-br-blu;background-color:$tr-blu;padding:8px;text-align:center;
     form{margin:5px 10px;vertical-align:top;}
     fieldset{border:1px solid $tr-br-blu;padding:5px;background-color:$tr-blu;}
