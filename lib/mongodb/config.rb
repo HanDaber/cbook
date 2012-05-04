@@ -1,5 +1,5 @@
 # Yaml config file for db info
-@config = YAML.load_file("configs/database.yml")
+@config = YAML.load_file("lib/mongodb/config.yml")
   
 @environment = @config["environment"]
 
@@ -17,12 +17,8 @@ if ENV['MONGOHQ_URL']
     MongoMapper.connect(DB_ENV)
 else
     # Logger code: https://github.com/jnunemaker/mongomapper/blob/master/test/test_helper.rb
-    log_dir = File.expand_path('../log/', __FILE__)
-    FileUtils.mkdir_p(log_dir) unless File.exist?(log_dir)
-    logger = Logger.new(log_dir + @db_log)
 
-    # LogBuddy.init(:logger => logger)
-    MongoMapper.connection = Mongo::Connection.new(@db_host, @db_port, :logger => logger)
+    MongoMapper.connection = Mongo::Connection.new(@db_host, @db_port)
     MongoMapper.database = @db_name
 
     MongoMapper.connection.connect

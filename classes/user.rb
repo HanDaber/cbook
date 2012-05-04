@@ -1,6 +1,6 @@
-class User# < CollegeBook
+class User < Web
     
-    # Import the MongoMapper::Document Class (inherited by all subclasses)
+    # Import the MongoMapper::Document Class
     include MongoMapper::Document
     safe
 
@@ -9,13 +9,15 @@ class User# < CollegeBook
     key :email,         String,     required: true, unique: true, format: /^[A-Z0-9._]+@mit\.edu$/i
     key :pass,          String,     required: true,               format: /[A-Za-z0-9_\.]{3,16}/
     key :bio,           String
-    key :user_comments, Array
+    # key :user_comments, Array
     timestamps!
+
+    attr_accessible :name, :email, :pass
 
     # ORM:
     many :posts
-    many :tags
-    many :comments, :in => :user_comments#, :as => :commentable
+    many :tags, :as => :taggable
+    many :comments#, :in => :user_comments#, :as => :commentable
     
     # Class methods:
     

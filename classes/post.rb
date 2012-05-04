@@ -1,19 +1,19 @@
-class Post
+class Post < Web
     
-    # Import the MongoMapper::Document Class (inherited by all subclasses)
+    # Import the MongoMapper::Document Class
     include MongoMapper::Document
     safe
     
     # Database model:
     key :text,      String, required: true
-    key :post_tags, Array
-    key :post_comments, Array
+    # key :post_tags, Array
+    # key :post_comments, Array
     timestamps!
     
     # ORM:
     belongs_to :user
-    many :tags, :in => :post_tags#, :as => :taggable
-    many :comments, :in => :post_comments
+    many :tags, :as => :taggable
+    many :comments#, :in => :post_comments
     
     # Class methods:
     def self.relevant_to user

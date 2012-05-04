@@ -1,13 +1,15 @@
-class CollegeBook
+class CollegeBook < Web
 
-    # Import the MongoMapper::Document Class (inherited by all subclasses)
-    include MongoMapper::Document
-    safe
-
-    helpers do
-        include Rack::Utils
-        alias_method :h, :escape_html
+    @@title = "CollegEbook"
+    
+    # Routes:
+    
+    get '/' do
+        show :index
     end
+
+    # require_relative '../routes/init'
+
     
     def self.net
     	net_items = {

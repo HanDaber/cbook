@@ -1,8 +1,3 @@
-# 404 error route
-not_found do
-    haml :e404, :layout => false
-end
-
 # Default kick-off route to root/login
 def render_root
     haml :index
