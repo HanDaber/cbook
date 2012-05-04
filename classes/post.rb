@@ -1,14 +1,19 @@
-class Post < CollegeBook
+class Post
+    
+    # Import the MongoMapper::Document Class (inherited by all subclasses)
+    include MongoMapper::Document
+    safe
     
     # Database model:
     key :text,      String, required: true
     key :post_tags, Array
+    key :post_comments, Array
     timestamps!
     
     # ORM:
     belongs_to :user
-    many :tags, :in => :post_tags, :as => :taggable
-    many :comments
+    many :tags, :in => :post_tags#, :as => :taggable
+    many :comments, :in => :post_comments
     
     # Class methods:
     def self.relevant_to user
@@ -51,6 +56,10 @@ class Post < CollegeBook
             end
         end
         return posts_array
+    end
+    
+    def self.find_by_object_id id
+        return self.find( { _id: BSON::ObjectId( id )} )
     end
     
     # Instance methods:

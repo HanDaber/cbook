@@ -1,0 +1,25 @@
+.post_haml
+    .post_text{style: "word-wrap: break-word;"}
+        - post_id = /([\d]{12})/.match(locals[:p]._id)
+        -# = "#{post_id}"
+        = "#{locals[:p]._id}"
+        %h1.b{style: "font-size: 1.2em; position: static;"}= "#{locals[:p].text}"
+    .post_user
+        %p{style: "float:right;margin:0 0.5em 3em 0;"}= "Posted by user: #{locals[:p].user.name}"
+    .post_comment_add
+        %span{style: "position: absolute;"}
+            = "[#{locals[:comments].length}]Comments: (#{locals[:comments].length})"
+        %form.b{:name => "comment_form", :action => "comment", :method => "post"}
+            %fieldset
+                %legend Comment:
+                %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
+                %input{:type => "hidden", :name => "post_id", value: "#{locals[:p]._id}"}/
+                %textarea{name: "comment", cols: "20", rows: "2", style:"margin:5px;", value: "Add a comment"}
+                %input.submit.btn.r4.ib{:type => "submit", :value => "Submit"}/
+    .post_comments
+        - if locals[:comments].length > 0
+            / .comments_list{style: "border:1px dashed orange;padding:0.5em;margin-bottom:0.5em;"}
+            - locals[:comments].each do |c|
+                = haml :'partials/_comment', :locals => {:c => c}
+            / .comment= c.text

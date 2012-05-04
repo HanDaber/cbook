@@ -515,6 +515,44 @@ a:hover {
       #nav-container ul .prefs a.p2 {
         padding-left: 0;
         border-radius: 0 0.3em 0.3em 0; } }
+@media screen and (max-width : 420px) {
+  #nav-container li {
+    margin: 0;
+    padding: 0.2em;
+    display: inline; }
+    #nav-container li a {
+      font-size: 0.6em;
+      border-radius: 3px;
+      margin: 0;
+      padding: 0.05em;
+      display: inline; }
+  #nav-container li.login {
+    position: absolute;
+    display: block;
+    margin-left: 1.2em; }
+    #nav-container li.login center {
+      width: auto; }
+  #nav-container .prefs {
+    display: inline-block;
+    position: relative;
+    width: auto; }
+    #nav-container .prefs a.p1 {
+      font-size: 0.8em;
+      border-radius: 3px;
+      margin: 0;
+      padding: 0.2em 0.3em;
+      display: inline-block;
+      width: 3.7em;
+      position: relative; }
+    #nav-container .prefs a.p2 {
+      font-size: 0.8em;
+      border-radius: 3px;
+      margin: 0 0.2em;
+      padding: 0.2em 0.3em;
+      display: inline-block;
+      width: 3.7em;
+      position: relative;
+      left: 1em; } }
 #main-container {
   position: relative;
   top: 120px;
@@ -528,6 +566,10 @@ a:hover {
     border-radius: 0.2em; }
   #main-container ul {
     list-style: none; }
+  #main-container .post_haml {
+    padding: 0.6em; }
+  #main-container .post_comment_add .submit {
+    margin-top: -2em; }
   #main-container h3 {
     float: left; }
   #main-container .bio {
@@ -630,7 +672,12 @@ a:hover {
   #main-container {
     position: relative;
     top: 70px;
-    padding-bottom: 70px; } }
+    padding-bottom: 70px; }
+    #main-container .post_comment_add .submit {
+      margin-top: 0; }
+    #main-container .post_comment_add span {
+      position: relative;
+      margin-top: 2.8em; } }
 @media screen and (min-width : 500px) and (max-width : 760px) {
   #main-container {
     position: relative;

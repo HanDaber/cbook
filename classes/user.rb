@@ -1,4 +1,8 @@
-class User < CollegeBook
+class User# < CollegeBook
+    
+    # Import the MongoMapper::Document Class (inherited by all subclasses)
+    include MongoMapper::Document
+    safe
 
     # Database model:
     key :name,          String,     required: true, unique: true
@@ -11,7 +15,7 @@ class User < CollegeBook
     # ORM:
     many :posts
     many :tags
-    many :comments, :in => :user_comments, :as => :commentable
+    many :comments, :in => :user_comments#, :as => :commentable
     
     # Class methods:
     

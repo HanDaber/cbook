@@ -99,6 +99,40 @@ post '/:user_name/post' do
     end
 end
 
+post '/:user_name/comment' do
+    if user_authenticated
+        
+        comment_text = params[:comment]
+        comment_post_id = params[:post_id]
+
+        this_post = Post.find(BSON::ObjectId.from_string(comment_post_id))
+        unless this_post.text
+            session[:stat] = { status: false, msg: "Could not find post..." }
+            redirect '/'
+        end
+        
+        # this_post.comments.create({text: comment_text, :posted_by => @user.name})
+        
+        # new_comment = Comment.new({text: comment_text, :posted_by => @user.name})        
+        # unless new_comment.save
+        #     session[:stat] = { status: false, msg: "Could not submit comment..." }
+        #     redirect '/'
+        # end
+        
+        unless this_post.post_comments.push( Comment.new({text: comment_text, :posted_by => @user.name}) )
+            session[:stat] = { status: false, msg: "Could not save comment..." }
+            redirect '/'
+        end
+
+        make_session
+        session[:stat] = { status: true, msg: "Added comment." }
+        redirect @user.home
+    else
+        session[:stat] = { status: false, msg: "Could not authenticate user..." }
+        redirect '/'
+    end
+end
+
 get '/:user_name/net/?' do |username|
     if user_session
         @tags = @user.tags

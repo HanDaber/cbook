@@ -2,9 +2,21 @@
     .feed_item{style: "border:1px dotted blue;padding:1em;width:75%;margin-bottom:2em;"}
         %h1.b= "#{p.text}"
         %p{style: "float:right;margin:0 0.5em 3em 0;"}= "Posted by: #{p.user.name}"
-        %span{style: "float:left;"}
+        %span{style: "position: relative;"}
             = "Comments: (#{p.comments.length})"
-            %input.b{type:"text", value: "Add a comment"}
+            %br/
+            %br/
+            %form.ib{:name => "comment_form", :action => "/comment", :method => "post", style: "float: left;"}
+                %fieldset
+                    %legend Comment:
+                    %label{:for => "username"}
+                    %input#comment{type:"text", value: "Add a comment"}
+                    %input{:type => "hidden", :name => "pass", value: "#{session[:pass]}"}/
+                    %input{:type => "hidden", :name => "name", value: "#{session[:name]}"}/
+                    %input{:type => "hidden", :name => "post", value: "#{p}"}/
+                    %br/
+                    %input.btn.r4{:type => "submit", :value => "Submit", style:"margin:5px;"}/
+            
         - if p.comments.length > 0
             .comments_list{style: "border:1px dashed orange;padding:0.5em;margin-bottom:0.5em;"}
                 - p.comments.each do |c|
