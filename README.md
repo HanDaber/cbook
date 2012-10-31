@@ -1,3 +1,5 @@
+Note: This branch is currently not working.
+
 CollegEbook
 ====================
 
